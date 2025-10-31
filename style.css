@@ -1099,7 +1099,95 @@ a:hover {
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 95%;
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .affiliation-section h2,
+    .research-interests-section h2 {
+        font-size: 1.4rem;
+    }
+    
+    .content-body h2 {
+        font-size: 1.4rem;
+    }
+    
+    .content-body h3 {
+        font-size: 1.2rem;
+    }
+    
+    .conference-category h3,
+    .research-content h3 {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    body {
+        font-size: 15px;
+    }
+    
+    .main-title {
+        font-size: 2.25rem;
+    }
+    
+    .section-title {
+        font-size: 1.9rem;
+    }
+    
+    .affiliation-section h2,
+    .research-interests-section h2 {
+        font-size: 1.3rem;
+    }
+    
+    .affiliation-section p,
+    .contact-info p,
+    .news-content p,
+    .content-body p {
+        font-size: 1rem;
+    }
+    
+    .publication-item li {
+        font-size: 0.98rem;
+    }
+    
+    .conference-text {
+        font-size: 1rem;
+    }
+    
+    .tab-button {
+        font-size: 1rem;
+        padding: 0.9rem 1.8rem;
+    }
+    
+    .nav-brand {
+        font-size: 1.1rem;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+    }
+}
+
 @media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: 0 15px;
+        max-width: 100%;
+    }
+
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -1133,36 +1221,76 @@ a:hover {
     }
 
     .main-title {
-        font-size: 2.25rem;
+        font-size: 2rem;
     }
-
+    
     .subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .section-title {
-        font-size: 1.9rem;
+        font-size: 1.75rem;
+    }
+    
+    .affiliation-section h2,
+    .research-interests-section h2 {
+        font-size: 1.2rem;
+    }
+    
+    .affiliation-section p,
+    .contact-info p,
+    .news-content p,
+    .content-body p {
+        font-size: 0.95rem;
+    }
+    
+    .publication-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .publication-item li {
+        font-size: 0.93rem;
+    }
+    
+    .conference-category h3,
+    .research-content h3 {
+        font-size: 1.15rem;
+    }
+    
+    .conference-text {
+        font-size: 0.95rem;
+    }
+    
+    .content-body h2 {
+        font-size: 1.25rem;
+    }
+
+    .content-body h3 {
+        font-size: 1.1rem;
     }
 
     .news-item {
         flex-direction: column;
         gap: 0.5rem;
+        padding: 1.2rem;
     }
 
     .news-date {
         min-width: auto;
+        font-size: 0.9rem;
     }
-
-    .container {
-        padding: 0 15px;
+    
+    .news-content p {
+        font-size: 0.95rem;
     }
 
     .main-content {
         padding: 30px 0;
+        margin-top: 70px;
     }
     
     .content-section {
-        padding: 1.5rem;
+        padding: 1.2rem;
         border-radius: 16px;
     }
     
@@ -1170,21 +1298,36 @@ a:hover {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 1.5rem;
+        padding: 1.2rem;
+        gap: 1.5rem;
     }
     
     .profile-image {
-        width: 160px;
-        height: 160px;
+        width: 140px;
+        height: 140px;
         margin-bottom: 1rem;
     }
     
     .profile-text {
         align-items: center;
     }
+    
+    .info-section {
+        padding: 0.8rem;
+    }
+    
+    .social-link {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .tabs-container {
+        padding: 1.2rem;
+    }
 
     .content-body p {
         text-align: left;
+        font-size: 0.95rem;
     }
     
     .tabs-nav {
@@ -1202,22 +1345,168 @@ a:hover {
     .tabs-content {
         min-height: 300px;
     }
+    
+    .research-list {
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+    }
+    
+    .conference-list li {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .conference-date {
+        min-width: auto;
+    }
+    
+    .publication-item {
+        padding: 1.2rem;
+    }
+    
+    .publication-item li {
+        padding: 0.8rem;
+    }
+    
+    .about-profile-section {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+    
+    .about-profile-section img {
+        width: 140px !important;
+        height: 140px !important;
+        margin-bottom: 1rem;
+    }
+    
+    .about-profile-section .contact-info {
+        text-align: center;
+    }
 }
 
 @media (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+    
+    .container {
+        padding: 0 12px;
+    }
+
     .main-title {
         font-size: 1.7rem;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
     }
 
     .section-title {
         font-size: 1.5rem;
     }
+    
+    .affiliation-section h2,
+    .research-interests-section h2 {
+        font-size: 1.1rem;
+    }
+    
+    .affiliation-section p,
+    .contact-info p,
+    .news-content p,
+    .content-body p {
+        font-size: 0.9rem;
+    }
+    
+    .publication-item h3 {
+        font-size: 1rem;
+    }
+    
+    .publication-item li {
+        font-size: 0.88rem;
+    }
+    
+    .conference-category h3,
+    .research-content h3 {
+        font-size: 1.05rem;
+    }
+    
+    .conference-text {
+        font-size: 0.9rem;
+    }
 
     .content-body h2 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .content-body h3 {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
+    }
+    
+    .content-section {
+        padding: 1rem;
+    }
+    
+    .profile-header {
+        padding: 1rem;
+    }
+    
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .nav-brand {
+        font-size: 1rem;
+    }
+    
+    .tab-button {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .about-profile-section img {
+        width: 120px !important;
+        height: 120px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    body {
+        font-size: 12px;
+    }
+    
+    .main-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+    }
+    
+    .affiliation-section h2,
+    .research-interests-section h2 {
+        font-size: 1rem;
+    }
+    
+    .affiliation-section p,
+    .contact-info p,
+    .news-content p,
+    .content-body p {
+        font-size: 0.85rem;
+    }
+    
+    .publication-item li {
+        font-size: 0.83rem;
+    }
+    
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .about-profile-section img {
+        width: 100px !important;
+        height: 100px !important;
     }
 }
