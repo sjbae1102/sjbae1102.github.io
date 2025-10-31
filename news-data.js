@@ -55,22 +55,37 @@ const newsDataObjects = [
         link: "https://doi.org/10.1016/j.rse.2025.114735",
         linkText: "Advancing hourly gross primary productivity mapping over East Asia using Himawari-8 AHI and artificial intelligence: Unveiling the impact of aerosol-induced radiation dynamics",
         image: "news/rse1.png"
-    },    
+    },
 
-    // {
-    //     date: "Aug 1, 2024",
-    //     content: "프로젝트 관련 소식입니다. 자세한 내용은",
-    //     link: "#",
-    //     linkText: "여기"
-    // }
-    // 새로운 News를 추가하려면 위 형식을 따라 아래에 추가하세요:
-    // {
-    //     date: "날짜",
-    //     content: "내용",
-    //     link: "링크 URL (선택사항)",
-    //     linkText: "링크 텍스트 (선택사항)",
-    //     image: "이미지 URL (선택사항)"
-    // }
+    {
+        date: "May 30, 2025",
+        content: "I delivered a presentation at the Korean Association of Geographic Information Studies (KAGIS) Spring Conference and received the **Outstanding Paper Presentation Award**.",
+    },
+
+    {
+        date: "May 15, 2025",
+        content: "I delivered a presentation at the International Symposium on Remote Sensing (ISRS) conference.",
+    },
+
+    {
+        date: "Oct 17, 2024",
+        content: "I delivered a presentation at the Korean Society of Remote Sensing (KSRS) Autumn Conference.",
+    },
+
+    {
+        date: "Jun 24, 2024",
+        content: "I delivered a presentation at the Asia Oceania Geosciences Society (AOGS) conference.",
+    },
+
+    {
+        date: "Apr 26, 2024",
+        content: "I delivered a presentation at the Korean Association of Geographic Information Studies (KAGIS) Spring Conference and received the **Outstanding Paper Presentation Award**.",
+    },
+
+    {
+        date: "Nov 15, 2023",
+        content: "I delivered a presentation at the Korean Society of Remote Sensing (KSRS) Autumn Conference.",
+    },
 ];
 
 // 간단한 텍스트를 객체로 변환하는 함수
