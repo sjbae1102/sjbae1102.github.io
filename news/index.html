@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="News - Sejeong Bae">
+    <title>News - Sejeong Bae</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <script src="../news-data.js"></script>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">SEJEONG BAE</div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/news/" class="nav-link active">News</a></li>
+                <li><a href="/about/" class="nav-link">About</a></li>
+                <li><a href="/research/" class="nav-link">Research</a></li>
+                <li><a href="/publications/" class="nav-link">Publications</a></li>
+                <li><a href="/contact/" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- News Section -->
+            <section id="news-section" class="content-section">
+                <h2 class="section-title">News</h2>
+                <div class="news-timeline" id="news-timeline">
+                    <!-- News items will be automatically generated from news-data.js -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Copyright <span id="current-year">2024</span> Your Name. Last updated: <span id="last-updated">October 2024</span>.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
+
