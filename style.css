@@ -93,6 +93,8 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
 }
 
 .nav-menu {
@@ -978,6 +980,20 @@ body {
     border-radius: 10px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     font-size: 1.02rem;
+    position: relative;
+}
+
+.publication-year {
+    position: absolute;
+    bottom: -1.5rem;
+    right: 0;
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(209, 213, 219, 0.4);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
 }
 
 .publication-item li:hover {
@@ -991,16 +1007,17 @@ body {
     color: var(--text-light);
 }
 
-.publication-item a {
-    color: var(--link-color);
+.publication-item li a {
     text-decoration: none;
-    margin-left: 0.5rem;
-    transition: color 0.2s ease;
+    color: inherit;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    width: 100%;
 }
 
-.publication-item a:hover {
-    color: var(--link-hover);
-    text-decoration: underline;
+.publication-item li a:hover {
+    text-decoration: none;
 }
 
 /* About Section */
@@ -1368,6 +1385,10 @@ a:hover {
         padding: 0.8rem;
     }
     
+    .publication-year {
+        font-size: 2rem;
+    }
+    
     .about-profile-section {
         flex-direction: column !important;
         align-items: center !important;
@@ -1424,6 +1445,10 @@ a:hover {
     
     .publication-item li {
         font-size: 0.88rem;
+    }
+    
+    .publication-year {
+        font-size: 1.8rem;
     }
     
     .conference-category h3,
