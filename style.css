@@ -1003,6 +1003,36 @@ body {
     text-decoration: underline;
 }
 
+/* About Section */
+.about-content {
+    margin-top: 1rem;
+}
+
+.about-content .publication-item {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+}
+
+.about-content .publication-item h3 {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+}
+
+.about-content .publication-item li {
+    margin-bottom: 0.6rem;
+    padding: 0.5rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.about-content .publication-item li:hover {
+    padding-left: 0.75rem;
+}
+
+.about-content .contact-info {
+    margin-top: 1.5rem;
+}
+
 /* Contact Section */
 .contact-content {
     margin-top: 1rem;

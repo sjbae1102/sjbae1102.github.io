@@ -22,9 +22,9 @@ git push -->
             <ul class="nav-menu">
                 <li><a href="/" class="nav-link active">Home</a></li>
                 <li><a href="/news/" class="nav-link">News</a></li>
-                <li><a href="/about/" class="nav-link">About</a></li>
-                <li><a href="/research/" class="nav-link">Conference</a></li>
                 <li><a href="/publications/" class="nav-link">Publications</a></li>
+                <li><a href="/research/" class="nav-link">Conference</a></li>
+                <li><a href="/about/" class="nav-link">About</a></li>
                 <li><a href="/contact/" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -104,10 +104,8 @@ git push -->
                 <div class="tabs-container">
                     <div class="tabs-nav">
                         <button class="tab-button active" data-tab="news">News</button>
-                        <button class="tab-button" data-tab="about">About</button>
-                        <button class="tab-button" data-tab="conference">Conference</button>
                         <button class="tab-button" data-tab="publications">Publications</button>
-                        <button class="tab-button" data-tab="contact">Contact</button>
+                        <button class="tab-button" data-tab="conference">Conference</button>
                     </div>
 
                     <div class="tabs-content">
@@ -118,14 +116,60 @@ git push -->
                             </div>
                         </div>
 
-                        <!-- About Tab -->
-                        <div id="about-tab" class="tab-panel">
-                            <h2 class="section-title">About</h2>
-                            <div class="contact-info">
-                                <p><strong>Email:</strong> <a href="mailto:sjbae1102@unist.ac.kr">sjbae1102@unist.ac.kr</a></p>
-                                <p><strong>Status:</strong> Combined M.S. and Ph.D. Student</p>
-                                <p><strong>Major:</strong> Environmental Science and Engineering</p>
-                                <p><strong>Department:</strong> Civil, Urban, Earth, and Enviornmental Engineering</p>
+                        <!-- Publications Tab -->
+                        <div id="publications-tab" class="tab-panel">
+                            <h2 class="section-title">Publications</h2>
+                            <div class="publications-list">
+                                <div class="publication-item">
+                                    <h3 style="font-size: 0.9em; opacity: 0.7; font-weight: normal; margin-bottom: 1rem;">In progress publications</h3>
+                                    <ul style="margin-bottom: 2rem;">
+                                        <li>Bae, S., Son, B., Sung, T., Kim, Y., Kim., Y., & Im, J, 2025: All-sky hourly estimation over East Asia using Himawari-8 AHI and multi-source data: Investigating the main climatic drivers of afternoon depression and intraday variability in gross primary productivity. Remote Sensing of Environment. [Under Review]</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="publication-item">
+                                    <h3>International Journal Articles</h3>
+                                    <ul>
+                                        <li style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                                            <div style="flex-shrink: 0;">
+                                                <img src="news/rse1.png" alt="RSE Paper" style="max-width: 200px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                                            </div>
+                                            <div style="flex: 1;">
+                                                Bae, S., Son, B., Sung, T., Kang, Y., & Im, J. (2025). Advancing hourly gross primary productivity mapping over East Asia using Himawari-8 AHI and artificial intelligence: Unveiling the impact of aerosol-induced radiation dynamics. <em>Remote Sensing of Environment</em>, 323, 114735. (Impact Factor: 11.4 in 2025, JCR: 2.4%) (2025.06.01)
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="publication-item">
+                                    <h3>Domestic Journal Articles</h3>
+                                    <ul>
+                                        <li style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                                            <div style="flex-shrink: 0;">
+                                                <img src="news/kjrs2.png" alt="SAMBA Paper" style="max-width: 200px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                                            </div>
+                                            <div style="flex: 1;">
+                                                Tobias, R. R., Bae, S., Cho, H., & Im, J. (2024). SAMBA: Synthetic Data-Augmented Mamba-Based Change Detection Algorithm Using KOMPSAT-3A Imagery. <em>Korean Journal of Remote Sensing</em>, 40(6_3), 1505-1521. (2024.12.31)
+                                            </div>
+                                        </li>
+                                        <li style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                                            <div style="flex-shrink: 0;">
+                                                <img src="news/kjrs1.png" alt="Estimation Paper" style="max-width: 200px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                                            </div>
+                                            <div style="flex: 1;">
+                                                Bae, S., Son, B., Sung, T., Lee, Y., Im, J., & Kang, Y. (2023). Estimation of Fractional Urban Tree Canopy Cover through Machine Learning Using Optical Satellite Images. 기계학습을 이용한 광학 위성 영상 기반의 도시 내 수목 피복률 추정. <em>Korean Journal of Remote Sensing</em>, 39(5), 1009-1029. (2023.10.31)
+                                            </div>
+                                        </li>
+                                        <li style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                                            <div style="flex-shrink: 0;">
+                                                <img src="news/ksgpc1.png" alt="Analysis Paper" style="max-width: 200px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                                            </div>
+                                            <div style="flex: 1;">
+                                                Lee, C., Yun, Y., Bae, S., Eo, Y. D., Kim, C., Shin, S., ... & Han, Y. (2021). Analysis of deep learning research trends applied to remote sensing through paper review of Korean domestic journals. 국내학회지 논문 리뷰를 통한 원격탐사 분야 딥러닝 연구 동향 분석. <em>Journal of the Korean Society of Surveying, Geodesy, Photogrammetry and Cartography</em>, 39(6), 437-456. (2021.12.31)
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
 
@@ -160,63 +204,29 @@ git push -->
                                     <ul class="conference-list">
                                         <li>
                                             <span class="conference-date">Oct 23, 2025</span>
-                                            <span class="conference-text">Korean Society of Remote Sensing (KSRS) Autumn Conference (Best Presentation Award)</span>
+                                            <span class="conference-text">Korean Society of Remote Sensing (KSRS) Autumn Conference🏆</span>
                                         </li>
                                         <li>
                                             <span class="conference-date">Oct 17, 2024</span>
-                                            <span class="conference-text">KSRS Autumn Conference</span>
+                                            <span class="conference-text">Korean Society of Remote Sensing (KSRS) Autumn Conference</span>
                                         </li>
                                         <li>
                                             <span class="conference-date">May 30, 2025</span>
-                                            <span class="conference-text">Korean Association of Geographic Information Studies (KAGIS) Spring Conference (Outstanding Paper Presentation Award)</span>
+                                            <span class="conference-text">Korean Association of Geographic Information Studies (KAGIS) Spring Conference🏆</span>
                                         </li>
                                         <li>
                                             <span class="conference-date">Apr 26, 2024</span>
-                                            <span class="conference-text">KAGIS Spring Conference (Outstanding Paper Presentation Award)</span>
+                                            <span class="conference-text">Korean Association of Geographic Information Studies (KAGIS) Spring Conference🏆</span>
                                         </li>
                                         <li>
                                             <span class="conference-date">Nov 15, 2023</span>
-                                            <span class="conference-text">KSRS Autumn Conference</span>
+                                            <span class="conference-text">Korean Society of Remote Sensing (KSRS) Autumn Conference</span>
                                         </li>
                                         <li>
                                             <span class="conference-date">Nov 05, 2021</span>
-                                            <span class="conference-text">Korean Society of Surveying, Geodesy, Photogrammetry and Cartography (KSGPC)</span>
+                                            <span class="conference-text">Korean Society of Surveying, Geodesy, Photogrammetry and Cartography (KSGPC)🏆</span>
                                         </li>
                                     </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Publications Tab -->
-                        <div id="publications-tab" class="tab-panel">
-                            <h2 class="section-title">Publications</h2>
-                            <div class="publications-list">
-                                <div class="publication-item">
-                                    <h3>Journal Articles</h3>
-                                    <ul>
-                                        <li>Author Name, "Paper Title," <em>Journal Name</em>, vol. X, no. Y, pp. Z-Z, Year. <a href="#">[PDF]</a> <a href="#">[Link]</a></li>
-                                        <li>Author Name, "Paper Title," <em>Journal Name</em>, vol. X, no. Y, pp. Z-Z, Year. <a href="#">[PDF]</a></li>
-                                    </ul>
-                                </div>
-                                
-                                <div class="publication-item">
-                                    <h3>Conference Papers</h3>
-                                    <ul>
-                                        <li>Author Name, "Paper Title," <em>Conference Name</em>, Location, Year. <a href="#">[PDF]</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Contact Tab -->
-                        <div id="contact-tab" class="tab-panel">
-                            <h2 class="section-title">Contact</h2>
-                            <div class="contact-content">
-                                <p>연락을 원하시면 아래 정보를 통해 문의해주세요.</p>
-                                <div class="contact-details">
-                                    <p><strong>Office:</strong> Room XXX, Building Name</p>
-                                    <p><strong>Email:</strong> <a href="mailto:sjbae1102@unist.ac.kr">sjbae1102@unist.ac.kr</a></p>
-                                    <p><strong>Address:</strong> Institution Address</p>
                                 </div>
                             </div>
                         </div>

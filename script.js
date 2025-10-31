@@ -185,6 +185,28 @@ if (lastUpdatedElement) {
 // Initialize active nav on page load
 updateActiveNav();
 
+// 날짜 문자열을 Date 객체로 변환하는 함수
+function parseDate(dateString) {
+    // "Oct 23, 2025" 형식을 파싱
+    const months = {
+        'Jan': 0, 'Feb': 1, 'Mar': 2, 'Apr': 3, 'May': 4, 'Jun': 5,
+        'Jul': 6, 'Aug': 7, 'Sep': 8, 'Oct': 9, 'Nov': 10, 'Dec': 11
+    };
+    
+    const parts = dateString.split(' ');
+    if (parts.length === 3) {
+        const month = months[parts[0]];
+        const day = parseInt(parts[1].replace(',', ''));
+        const year = parseInt(parts[2]);
+        
+        if (month !== undefined && !isNaN(day) && !isNaN(year)) {
+            return new Date(year, month, day);
+        }
+    }
+    
+    return new Date(0); // 파싱 실패 시 최소 날짜 반환
+}
+
 // Render News from news-data.js
 function renderNews() {
     const newsTimeline = document.getElementById('news-timeline');
@@ -192,7 +214,14 @@ function renderNews() {
     
     newsTimeline.innerHTML = '';
     
-    window.newsData.forEach(item => {
+    // 날짜순으로 정렬 (최신순 - 내림차순)
+    const sortedNews = [...window.newsData].sort((a, b) => {
+        const dateA = parseDate(a.date);
+        const dateB = parseDate(b.date);
+        return dateB - dateA;
+    });
+    
+    sortedNews.forEach(item => {
         const newsItem = document.createElement('div');
         newsItem.className = 'news-item';
         
@@ -314,7 +343,35 @@ if (typeof newsData !== 'undefined') {
     window.newsData = newsData;
 }
 
-// 페이지 로드 시 News 렌더링
+// Conference 리스트를 날짜순으로 정렬하는 함수
+function sortConferenceLists() {
+    const conferenceLists = document.querySelectorAll('.conference-list');
+    
+    conferenceLists.forEach(list => {
+        const items = Array.from(list.querySelectorAll('li'));
+        
+        // 각 아이템을 날짜를 기준으로 정렬
+        items.sort((a, b) => {
+            const dateA = a.querySelector('.conference-date');
+            const dateB = b.querySelector('.conference-date');
+            
+            if (!dateA || !dateB) return 0;
+            
+            // 날짜 문자열을 Date 객체로 변환
+            const dateAObj = parseDate(dateA.textContent.trim());
+            const dateBObj = parseDate(dateB.textContent.trim());
+            
+            // 최신순으로 정렬 (내림차순)
+            return dateBObj - dateAObj;
+        });
+        
+        // 정렬된 아이템을 다시 DOM에 추가
+        items.forEach(item => list.appendChild(item));
+    });
+}
+
+// 페이지 로드 시 News 렌더링 및 Conference 정렬
 window.addEventListener('DOMContentLoaded', () => {
     renderNews();
+    sortConferenceLists();
 });

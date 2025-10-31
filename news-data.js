@@ -37,21 +37,21 @@ const newsDataObjects = [
 
     {
         date: "Aug 07, 2025",
-        content: "I delivered a presentation at the 2025 IEEE International Geoscience and Remote Sensing Symposium (IGARSS) entitled 'AI-DRIVEN HOURLY GPP MAPPING IN EAST ASIA INCORPORATING HIMAWARI-8 AHI AND AEROSOL-INDUCED RADIATION VARIABILITY'.",
+        content: "I delivered a presentation at the **2025 IEEE International Geoscience and Remote Sensing Symposium (IGARSS)** international conference entitled 'AI-DRIVEN HOURLY GPP MAPPING IN EAST ASIA INCORPORATING HIMAWARI-8 AHI AND AEROSOL-INDUCED RADIATION VARIABILITY'.",
         link: "https://2025.ieeeigarss.org/",
         linkText: "2025 IEEE International Geoscience and Remote Sensing Symposium (IGARSS)",
     },
 
     {
         date: "Jul 02, 2025",
-        content: "I delivered a presentation at the 2025 CMAS-Asia-Pacific and Regional IUAPPA Conference entitled 'Unveiling the impact of aerosol-induced radiation dynamics on vegetation productivity: AI-driven hourly GPP mapping in East Asia using Himawari-8'.",
+        content: "I delivered a presentation at the **2025 CMAS-Asia-Pacific and Regional IUAPPA Conference** entitled 'Unveiling the impact of aerosol-induced radiation dynamics on vegetation productivity: AI-driven hourly GPP mapping in East Asia using Himawari-8'.",
         link: "https://www.cmas-asia-pacific-2025.org/index.asp",
         linkText: "2025 CMAS-Asia-Pacific and Regional IUAPPA Conference",
     },
 
     {
         date: "Jun 01, 2025",
-        content: "Our new paper entitled 'Advancing hourly gross primary productivity mapping over East Asia using Himawari-8 AHI and artificial intelligence: Unveiling the impact of aerosol-induced radiation dynamics' has been published in **Remote Sensing of Environment (IF: 11.4, JCR: 2.4%)**.",
+        content: "Our new paper entitled '**Advancing hourly gross primary productivity mapping over East Asia using Himawari-8 AHI and artificial intelligence: Unveiling the impact of aerosol-induced radiation dynamics**' has been published in **Remote Sensing of Environment (IF: 11.4, JCR: 2.4%)**",
         link: "https://doi.org/10.1016/j.rse.2025.114735",
         linkText: "Advancing hourly gross primary productivity mapping over East Asia using Himawari-8 AHI and artificial intelligence: Unveiling the impact of aerosol-induced radiation dynamics",
         image: "news/rse1.png"
@@ -59,32 +59,62 @@ const newsDataObjects = [
 
     {
         date: "May 30, 2025",
-        content: "I delivered a presentation at the Korean Association of Geographic Information Studies (KAGIS) Spring Conference and received the **Outstanding Paper Presentation Award**.",
+        content: "I delivered a presentation at the **Korean Association of Geographic Information Studies (KAGIS)** Spring Conference and received the **Outstanding Paper Presentation Award🏆**.",
+        link: "#",
+        linkText: "Outstanding Paper Presentation Award",
+        image: "news/kagis2025.jpg"
     },
 
     {
         date: "May 15, 2025",
-        content: "I delivered a presentation at the International Symposium on Remote Sensing (ISRS) conference.",
+        content: "I delivered a presentation at the **International Symposium on Remote Sensing (ISRS)** international conference.",
+    },
+
+    {
+        date: "Dec 31, 2024",
+        content: "Our paper entitled '**SAMBA: Synthetic Data-Augmented Mamba-Based Change Detection Algorithm Using KOMPSAT-3A Imagery**' has been published in **Korean Journal of Remote Sensing**, 40(6_3), 1505-1521.",
+        link: "#",
+        linkText: "SAMBA: Synthetic Data-Augmented Mamba-Based Change Detection Algorithm Using KOMPSAT-3A Imagery",
+        image: "news/kjrs2.png"
     },
 
     {
         date: "Oct 17, 2024",
-        content: "I delivered a presentation at the Korean Society of Remote Sensing (KSRS) Autumn Conference.",
+        content: "I delivered a presentation at the **Korean Society of Remote Sensing (KSRS)** Autumn Conference.",
     },
 
     {
         date: "Jun 24, 2024",
-        content: "I delivered a presentation at the Asia Oceania Geosciences Society (AOGS) conference.",
+        content: "I delivered a presentation at the **Asia Oceania Geosciences Society (AOGS)** international conference.",
     },
 
     {
         date: "Apr 26, 2024",
-        content: "I delivered a presentation at the Korean Association of Geographic Information Studies (KAGIS) Spring Conference and received the **Outstanding Paper Presentation Award**.",
+        content: "I delivered a presentation at the **Korean Association of Geographic Information Studies (KAGIS)** Spring Conference and received the **Outstanding Paper Presentation Award🏆**.",
+        link: "#",
+        linkText: "Outstanding Paper Presentation Award",
+        image: "news/kagis2024.jpg"
+    },
+
+    {
+        date: "Oct 31, 2023",
+        content: "Our paper entitled 'Estimation of Fractional Urban Tree Canopy Cover through Machine Learning Using Optical Satellite Images. (기계학습을 이용한 광학 위성 영상 기반의 도시 내 수목 피복률 추정)' has been published in **Korean Journal of Remote Sensing**, 39(5), 1009-1029.",
+        link: "#",
+        linkText: "Estimation of Fractional Urban Tree Canopy Cover through Machine Learning Using Optical Satellite Images. (기계학습을 이용한 광학 위성 영상 기반의 도시 내 수목 피복률 추정)",
+        image: "news/kjrs1.png"
     },
 
     {
         date: "Nov 15, 2023",
-        content: "I delivered a presentation at the Korean Society of Remote Sensing (KSRS) Autumn Conference.",
+        content: "I delivered a presentation at the **Korean Society of Remote Sensing (KSRS)** Autumn Conference.",
+    },
+
+    {
+        date: "Dec 31, 2021",
+        content: "Analysis of deep learning research trends applied to remote sensing through paper review of Korean domestic journals. (국내학회지 논문 리뷰를 통한 원격탐사 분야 딥러닝 연구 동향 분석) has been published in **Journal of the Korean Society of Surveying, Geodesy, Photogrammetry and Cartography**, 39(6), 437-456.",
+        link: "#",
+        linkText: "Analysis of deep learning research trends applied to remote sensing through paper review of Korean domestic journals. (국내학회지 논문 리뷰를 통한 원격탐사 분야 딥러닝 연구 동향 분석)",
+        image: "news/ksgpc1.png"
     },
 ];
 
