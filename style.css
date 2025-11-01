@@ -1270,6 +1270,8 @@ a:hover {
     
     .container.home-container {
         flex-direction: column;
+        margin-right: 0;
+        padding: 0 20px;
     }
     
     .home-main-wrapper {
@@ -1363,6 +1365,11 @@ a:hover {
     .container {
         padding: 0 15px;
         max-width: 100%;
+    }
+    
+    .container.home-container {
+        padding: 0 15px;
+        margin-right: 0;
     }
 
     .nav-menu {
@@ -1657,6 +1664,11 @@ a:hover {
     .container {
         padding: 0 12px;
     }
+    
+    .container.home-container {
+        padding: 0 12px;
+        margin-right: 0;
+    }
 
     .main-title {
         font-size: 1.7rem;
@@ -1778,6 +1790,15 @@ a:hover {
 @media (max-width: 360px) {
     body {
         font-size: 12px;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    .container.home-container {
+        padding: 0 10px;
+        margin-right: 0;
     }
     
     .main-title {
