@@ -27,7 +27,7 @@ const translations = {
             research1: 'Environmental Remote Sensing',
             research2: 'Terrestrial Carbon Flux',
             research3: 'Artificial Intelligence',
-            research4: 'Deep Learning',
+            research4: 'Machine Learning / Deep Learning',
             externalNews: 'External News'
         },
         tabs: {
@@ -109,7 +109,7 @@ const translations = {
             research1: '환경 원격탐사',
             research2: '육상 탄소 모니터링',
             research3: '인공지능',
-            research4: '딥러닝',
+            research4: '머신러닝/딥러닝',
             externalNews: '외부 소식'
         },
         tabs: {
