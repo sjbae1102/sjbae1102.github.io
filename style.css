@@ -1535,15 +1535,15 @@ a:hover {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 1.8rem 1.2rem;
+        padding: 4.5rem 1.2rem;
         gap: 0.75rem;
         background: rgba(255, 255, 255, 0.95);
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     }
     
     .profile-image {
-        width: 160px;
-        height: 160px;
+        width: 130px;
+        height: 130px;
         margin-bottom: 0.5rem;
     }
     
@@ -1687,7 +1687,7 @@ a:hover {
     .profile-header {
         background: rgba(255, 255, 255, 0.95);
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-        padding: 1.6rem 1rem;
+        padding: 4rem 1rem;
     }
     
     .info-section {
@@ -1783,12 +1783,12 @@ a:hover {
     }
     
     .profile-header {
-        padding: 1.7rem 1rem;
+        padding: 3.5rem 1rem;
     }
     
     .profile-image {
-        width: 140px;
-        height: 140px;
+        width: 110px;
+        height: 110px;
     }
     
     .nav-brand {
@@ -1827,7 +1827,7 @@ a:hover {
     .profile-header {
         background: rgba(255, 255, 255, 0.95);
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-        padding: 1.4rem 0.875rem;
+        padding: 3.2rem 0.875rem;
     }
     
     .info-section {
@@ -1854,8 +1854,8 @@ a:hover {
     }
     
     .profile-image {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
     
     .about-profile-section img {
