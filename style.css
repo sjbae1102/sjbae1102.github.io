@@ -1076,6 +1076,12 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
+/* In progress publications - 더 컴팩트한 스타일 */
+.publication-item:has(h3[data-i18n="publications.inProgress"]) {
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
 .publication-item:hover {
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);

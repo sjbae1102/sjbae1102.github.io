@@ -3,7 +3,7 @@ const translations = {
     en: {
         nav: {
             home: 'Home',
-            about: 'About',
+            about: 'Biography',
             news: 'News',
             publications: 'Publications',
             conference: 'Conference',
@@ -42,7 +42,7 @@ const translations = {
             domestic: 'Domestic Journal Articles'
         },
         about: {
-            title: 'About',
+            title: 'Biography',
             name: 'SEJEONG BAE',
             university: 'UNIST',
             email: 'Email:',
