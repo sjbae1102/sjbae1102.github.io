@@ -27,7 +27,8 @@ const translations = {
             research1: 'Environmental Remote Sensing',
             research2: 'Terrestrial Carbon Flux',
             research3: 'Artificial Intelligence',
-            research4: 'Deep Learning'
+            research4: 'Deep Learning',
+            externalNews: 'External News'
         },
         tabs: {
             publications: 'Publications',
@@ -103,12 +104,13 @@ const translations = {
             studentStatus: '석박사통합과정',
             university: 'UNIST, 울산과학기술원',
             instructor: '지도교수: 울산과학기술원 임정호 교수',
-            labMember: '지능형 원격탐사 및 공간정보 과학 연구실(IRIS) 소속',
+            labMember: 'Intelligent Remote sensing and geospatial Information Science (IRIS) 연구실 소속',
             link: '[링크]',
             research1: '환경 원격탐사',
             research2: '육상 탄소 모니터링',
             research3: '인공지능',
-            research4: '딥러닝'
+            research4: '딥러닝',
+            externalNews: '외부 소식'
         },
         tabs: {
             publications: '논문',
@@ -137,11 +139,10 @@ const translations = {
             education1: '석박사통합과정 - 울산과학기술원 지구환경도시건설공학과',
             education2: '공학사 - 서울과학기술대학교 건설시스템공학과',
             awards: '수상',
-            award1: '우수발표상, 한국원격탐사학회',
-            award2: '우수논문발표상, 한국지리정보학회',
+            award1: '우수발표논문상, 대한원격탐사학회',
+            award2: '우수논문상, 한국지리정보학회',
             award3: '우주항공청장상 (대상), 2024 위성정보활용 경진대회 - [부문2] 다시기 영상 기반 변화탐지 알고리즘 개발',
-            award3Ko: '우주항공청장상, 2024 위성정보활용 경진대회 - [부문2] 다시기 영상 기반 변화탐지 알고리즘 개발',
-            award4: '우수논문발표상, 한국지리정보학회',
+            award4: '우수논문상, 한국지리정보학회',
             grants: '장학',
             grant1: '석사과정생 연구장려금 지원사업 2024, 한국연구재단',
             grant1Ko: 'RS-2024-00465'
@@ -243,6 +244,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // News 렌더링 및 Conference 정렬
     renderNews();
     sortConferenceLists();
+    
+    // External news 렌더링
+    if (typeof externalNewsData !== 'undefined') {
+        renderExternalNews();
+    }
     
     // Check URL parameters for tab
     const urlParams = new URLSearchParams(window.location.search);
@@ -587,6 +593,105 @@ if (typeof newsData !== 'undefined') {
     window.newsData = newsData;
 }
 
+// Render external news
+async function renderExternalNews() {
+    const externalNewsList = document.getElementById('external-news-list');
+    if (!externalNewsList || typeof externalNewsData === 'undefined') return;
+    
+    externalNewsList.innerHTML = '';
+    
+    for (const item of externalNewsData) {
+        const newsItem = document.createElement('a');
+        newsItem.href = item.url;
+        newsItem.target = '_blank';
+        newsItem.rel = 'noopener noreferrer';
+        newsItem.className = 'external-news-item';
+        
+        const thumbnail = document.createElement('div');
+        thumbnail.className = 'external-news-thumbnail';
+        
+        // 썸네일 자동 로드: 사용자 제공 썸네일 또는 자동 생성
+        let thumbnailUrl = item.thumbnail;
+        if (!thumbnailUrl) {
+            thumbnailUrl = await fetchThumbnailFromUrl(item.url);
+        }
+        
+        if (thumbnailUrl) {
+            const img = document.createElement('img');
+            img.src = thumbnailUrl;
+            img.alt = item.title;
+            img.loading = 'lazy';
+            img.onerror = function() {
+                // 썸네일 로드 실패 시 기본 이미지 또는 빈 상태 유지
+                this.style.display = 'none';
+            };
+            thumbnail.appendChild(img);
+        }
+        
+        const title = document.createElement('div');
+        title.className = 'external-news-title';
+        title.textContent = item.title;
+        
+        newsItem.appendChild(thumbnail);
+        newsItem.appendChild(title);
+        externalNewsList.appendChild(newsItem);
+    }
+}
+
+// URL에서 썸네일 가져오기 (og:image 메타 태그 읽기)
+async function fetchThumbnailFromUrl(url) {
+    try {
+        // CORS 프록시를 사용하거나, 직접 fetch 시도
+        // 실제로는 서버 사이드에서 처리하는 것이 좋지만, 클라이언트 사이드에서 시도
+        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
+        
+        const response = await fetch(proxyUrl);
+        const data = await response.json();
+        const html = data.contents;
+        
+        // og:image 메타 태그 찾기
+        const ogImageMatch = html.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i);
+        if (ogImageMatch && ogImageMatch[1]) {
+            return ogImageMatch[1];
+        }
+        
+        // og:image가 없으면 generateThumbnailUrl 사용
+        return generateThumbnailUrl(url);
+    } catch (e) {
+        console.error('Error fetching thumbnail:', e);
+        // 실패 시 기본 생성 함수 사용
+        return generateThumbnailUrl(url);
+    }
+}
+
+// UNIST 뉴스 URL에서 썸네일 URL 생성 (fallback)
+function generateThumbnailUrl(url) {
+    try {
+        // URL 패턴: https://news.unist.ac.kr/kor/YYYYMMDD/ 또는 https://news.unist.ac.kr/kor/YYYYMMDD-X/
+        const urlMatch = url.match(/\/kor\/(\d{8})(?:-(\d+))?/);
+        if (urlMatch) {
+            const dateStr = urlMatch[1];
+            const year = dateStr.substring(0, 4);
+            const month = dateStr.substring(4, 6);
+            
+            // UNIST 뉴스 썸네일 URL 패턴 추정
+            const baseUrl = `https://news.unist.ac.kr/wp-content/uploads/${year}/${month}/`;
+            
+            // 일반적인 파일명 패턴
+            const possibleNames = [
+                `news-${dateStr}.jpg`,
+                `thumbnail-${dateStr}.jpg`,
+                `featured-${dateStr}.jpg`
+            ];
+            
+            return baseUrl + possibleNames[0];
+        }
+    } catch (e) {
+        console.error('Error generating thumbnail URL:', e);
+    }
+    return null;
+}
+
 // Conference 리스트를 날짜순으로 정렬하는 함수
 function sortConferenceLists() {
     const conferenceLists = document.querySelectorAll('.conference-list');
@@ -630,6 +735,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // News 렌더링 및 Conference 정렬
     renderNews();
     sortConferenceLists();
+    
+    // External news 렌더링
+    if (typeof externalNewsData !== 'undefined') {
+        renderExternalNews();
+    }
     
     // Check URL parameters for tab
     const urlParams = new URLSearchParams(window.location.search);
