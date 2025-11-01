@@ -15,17 +15,24 @@
         <div class="container">
             <div class="nav-brand">SEJEONG BAE</div>
             <ul class="nav-menu">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="/news/" class="nav-link">News</a></li>
-                <li><a href="/publications/" class="nav-link">Publications</a></li>
-                <li><a href="/research/" class="nav-link">Conference</a></li>
-                <li><a href="/about/" class="nav-link">About</a></li>
-                <li><a href="/contact/" class="nav-link active">Contact</a></li>
+                <li><a href="/" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="/about/" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="/news/" class="nav-link" data-i18n="nav.news">News</a></li>
+                <li><a href="/publications/" class="nav-link" data-i18n="nav.publications">Publications</a></li>
+                <li><a href="/research/" class="nav-link" data-i18n="nav.conference">Conference</a></li>
+                <li><a href="/contact/" class="nav-link active" data-i18n="nav.others">Others</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="navbar-right">
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">Eng</button>
+                    <span class="lang-separator">/</span>
+                    <button class="lang-btn" data-lang="ko">Kor</button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -35,13 +42,13 @@
         <div class="container">
             <!-- Contact Section -->
             <section id="contact-section" class="content-section">
-                <h2 class="section-title">Contact</h2>
+                <h2 class="section-title" data-i18n="contact.title">Contact</h2>
                 <div class="contact-content">
-                    <p>연락을 원하시면 아래 정보를 통해 문의해주세요.</p>
+                    <p data-i18n="contact.description">Please contact me using the information below.</p>
                     <div class="contact-details">
-                        <p><strong>Office:</strong> Room XXX, Building Name</p>
-                        <p><strong>Email:</strong> <a href="mailto:sjbae1102@unist.ac.kr">sjbae1102@unist.ac.kr</a></p>
-                        <p><strong>Address:</strong> Institution Address</p>
+                        <p><strong data-i18n="contact.office">Office:</strong> Room XXX, Building Name</p>
+                        <p><strong data-i18n="contact.email">Email:</strong> <a href="mailto:sjbae1102@unist.ac.kr">sjbae1102@unist.ac.kr</a></p>
+                        <p><strong data-i18n="contact.address">Address:</strong> Institution Address</p>
                     </div>
                 </div>
             </section>

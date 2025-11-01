@@ -15,17 +15,24 @@
         <div class="container">
             <div class="nav-brand">SEJEONG BAE</div>
             <ul class="nav-menu">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="/news/" class="nav-link">News</a></li>
-                <li><a href="/publications/" class="nav-link">Publications</a></li>
-                <li><a href="/research/" class="nav-link active">Conference</a></li>
-                <li><a href="/about/" class="nav-link">About</a></li>
-                <li><a href="/contact/" class="nav-link">Contact</a></li>
+                <li><a href="/" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="/about/" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="/news/" class="nav-link" data-i18n="nav.news">News</a></li>
+                <li><a href="/publications/" class="nav-link" data-i18n="nav.publications">Publications</a></li>
+                <li><a href="/research/" class="nav-link active" data-i18n="nav.conference">Conference</a></li>
+                <li><a href="/contact/" class="nav-link" data-i18n="nav.others">Others</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="navbar-right">
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">Eng</button>
+                    <span class="lang-separator">/</span>
+                    <button class="lang-btn" data-lang="ko">Kor</button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -35,10 +42,10 @@
         <div class="container">
             <!-- Conference Section -->
             <section id="conference-section" class="content-section">
-                <h2 class="section-title">Conference</h2>
+                <h2 class="section-title" data-i18n="conference.title">Conference</h2>
                 <div class="conference-content">
                     <div class="conference-category">
-                        <h3>International</h3>
+                        <h3 data-i18n="conference.international">International</h3>
                         <ul class="conference-list">
                             <li>
                                 <span class="conference-date">Aug 07, 2025</span>
@@ -60,7 +67,7 @@
                     </div>
                     
                     <div class="conference-category">
-                        <h3>Domestic</h3>
+                        <h3 data-i18n="conference.domestic">Domestic</h3>
                         <ul class="conference-list">
                             <li>
                                 <span class="conference-date">Oct 23, 2025</span>

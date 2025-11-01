@@ -1,3 +1,296 @@
+// Language translation data
+const translations = {
+    en: {
+        nav: {
+            home: 'Home',
+            about: 'About',
+            news: 'News',
+            publications: 'Publications',
+            conference: 'Conference',
+            others: 'Others'
+        },
+        social: {
+            googleScholar: 'Google Scholar',
+            orcid: 'ORCID',
+            researchGate: 'ResearchGate',
+            linkedIn: 'LinkedIn'
+        },
+        home: {
+            affiliation: 'Affiliation',
+            researchInterests: 'Research Interests',
+            southKorea: 'South Korea',
+            studentStatus: 'Combined M.S. & Ph.D. Student',
+            university: 'UNIST, Ulsan National Institute of Science and Technology',
+            instructor: 'Instructor: Prof. Jungho Im',
+            labMember: 'Member of the Intelligent Remote sensing and geospatial Information Science (IRIS) Lab',
+            link: '[Link]',
+            research1: 'Environmental Remote Sensing',
+            research2: 'Terrestrial Carbon Flux',
+            research3: 'Artificial Intelligence',
+            research4: 'Deep Learning'
+        },
+        tabs: {
+            publications: 'Publications',
+            conference: 'Conference',
+            news: 'News'
+        },
+        publications: {
+            title: 'Publications',
+            inProgress: 'In progress publications',
+            international: 'International Journal Articles',
+            domestic: 'Domestic Journal Articles'
+        },
+        about: {
+            title: 'About',
+            name: 'SEJEONG BAE',
+            university: 'UNIST',
+            email: 'Email:',
+            status: 'Status:',
+            studentStatus: 'Combined M.S. and Ph.D. Student',
+            major: 'Major:',
+            majorName: 'Environmental Science and Engineering',
+            department: 'Department:',
+            departmentName: 'Civil, Urban, Earth, and Environmental Engineering',
+            education: 'Education',
+            present: 'Present',
+            education1: 'Combined M.S. & Ph.D - Department of Civil, Urban, Earth, and Environmental Engineering, Ulsan National Institute of Science and Technology',
+            education2: 'Bachelor of Engineering - Department of Civil Engineering, Seoul National University of Science and Technology',
+            awards: 'Awards',
+            award1: 'Best Presentation Award, Korean Society of Remote Sensing',
+            award2: 'Outstanding Paper Presentation Award, Korean Association of Geographic Information Studies',
+            award3: 'Korea Aerospace Administration (KASA) Administrator\'s Award (Grand Prize), 2024 Satellite Information Application Contest - [Division 2] Development of a Change Detection Algorithm Based on Multi-temporal Images',
+            award3Ko: '우주항공청장상, 2024 위성정보활용 경진대회 - [부문2] 다시기 영상 기반 변화탐지 알고리즘 개발',
+            award4: 'Outstanding Paper Presentation Award, Korean Association of Geographic Information Studies',
+            grants: 'Grants',
+            grant1: 'Research Scholarship for Master\'s Students, National Research Foundation of Korea',
+            grant1Ko: '2024 석사과정생 연구장려금 지원사업; RS-2024-00465'
+        },
+        conference: {
+            title: 'Conference',
+            international: 'International',
+            domestic: 'Domestic'
+        },
+        contact: {
+            title: 'Contact',
+            description: 'Please contact me using the information below.',
+            office: 'Office:',
+            email: 'Email:',
+            address: 'Address:'
+        },
+        news: {
+            title: 'News'
+        }
+    },
+    ko: {
+        nav: {
+            home: '홈',
+            about: '소개',
+            news: '소식',
+            publications: '논문',
+            conference: '학회',
+            others: '기타'
+        },
+        social: {
+            googleScholar: 'Google Scholar',
+            orcid: 'ORCID',
+            researchGate: 'ResearchGate',
+            linkedIn: 'LinkedIn'
+        },
+        home: {
+            affiliation: '소속',
+            researchInterests: '연구 분야',
+            southKorea: '대한민국',
+            studentStatus: '석박사통합과정',
+            university: 'UNIST, 울산과학기술원',
+            instructor: '지도교수: 울산과학기술원 임정호 교수',
+            labMember: '지능형 원격탐사 및 공간정보 과학 연구실(IRIS) 소속',
+            link: '[링크]',
+            research1: '환경 원격탐사',
+            research2: '육상 탄소 모니터링',
+            research3: '인공지능',
+            research4: '딥러닝'
+        },
+        tabs: {
+            publications: '논문',
+            conference: '학회',
+            news: '소식'
+        },
+        publications: {
+            title: '논문',
+            inProgress: '진행 중인 논문',
+            international: '국제 학술지 논문',
+            domestic: '국내 학술지 논문'
+        },
+        about: {
+            title: '소개',
+            name: 'SEJEONG BAE',
+            university: 'UNIST',
+            email: '메일:',
+            status: '학위:',
+            studentStatus: '석박사통합과정',
+            major: '전공:',
+            majorName: '환경과학공학',
+            department: '학과:',
+            departmentName: '지구환경도시건설공학과',
+            education: '학력',
+            present: '현재',
+            education1: '석박사통합과정 - 울산과학기술원 지구환경도시건설공학과',
+            education2: '공학사 - 서울과학기술대학교 건설시스템공학과',
+            awards: '수상',
+            award1: '우수발표상, 한국원격탐사학회',
+            award2: '우수논문발표상, 한국지리정보학회',
+            award3: '우주항공청장상 (대상), 2024 위성정보활용 경진대회 - [부문2] 다시기 영상 기반 변화탐지 알고리즘 개발',
+            award3Ko: '우주항공청장상, 2024 위성정보활용 경진대회 - [부문2] 다시기 영상 기반 변화탐지 알고리즘 개발',
+            award4: '우수논문발표상, 한국지리정보학회',
+            grants: '장학',
+            grant1: '석사과정생 연구장려금 지원사업 2024, 한국연구재단',
+            grant1Ko: 'RS-2024-00465'
+        },
+        conference: {
+            title: '학회',
+            international: '국제',
+            domestic: '국내'
+        },
+        contact: {
+            title: '연락처',
+            description: '연락을 원하시면 아래 정보를 통해 문의해주세요.',
+            office: '사무실:',
+            email: '이메일:',
+            address: '주소:'
+        },
+        news: {
+            title: '소식'
+        }
+    }
+};
+
+// Language switching functionality
+let currentLang = 'en';
+
+function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('language', lang);
+    
+    // Update language buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Update navigation links and tab buttons
+    document.querySelectorAll('[data-i18n^="nav."]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const translationKey = key.split('.')[1];
+        if (translations[lang] && translations[lang].nav && translations[lang].nav[translationKey]) {
+            element.textContent = translations[lang].nav[translationKey];
+        }
+    });
+    
+    // Update social links (skip as requested)
+    // Social links remain unchanged
+    
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const keys = key.split('.');
+        let translation = translations[lang];
+        
+        for (let i = 0; i < keys.length; i++) {
+            if (translation && translation[keys[i]]) {
+                translation = translation[keys[i]];
+            } else {
+                translation = null;
+                break;
+            }
+        }
+        
+        if (translation) {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                element.value = translation;
+            } else {
+                element.textContent = translation;
+            }
+        }
+    });
+    
+    // Update research interests list items
+    const researchItems = document.querySelectorAll('.research-list li');
+    if (researchItems.length >= 4) {
+        if (translations[lang] && translations[lang].home) {
+            researchItems[0].textContent = translations[lang].home.research1 || researchItems[0].textContent;
+            researchItems[1].textContent = translations[lang].home.research2 || researchItems[1].textContent;
+            researchItems[2].textContent = translations[lang].home.research3 || researchItems[2].textContent;
+            researchItems[3].textContent = translations[lang].home.research4 || researchItems[3].textContent;
+        }
+    }
+}
+
+// Initialize language from localStorage or default to 'en'
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('language') || 'en';
+    setLanguage(savedLang);
+    
+    // Add event listeners to language buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            setLanguage(lang);
+        });
+    });
+    
+    // News 렌더링 및 Conference 정렬
+    renderNews();
+    sortConferenceLists();
+    
+    // Check URL parameters for tab
+    const urlParams = new URLSearchParams(window.location.search);
+    const tabParam = urlParams.get('tab');
+    
+    // Check hash
+    const hash = window.location.hash;
+    
+    if (tabParam) {
+        const tabButton = document.querySelector(`.tab-button[data-tab="${tabParam}"]`);
+        if (tabButton) {
+            setTimeout(() => {
+                tabButton.click();
+                const target = document.querySelector('#tabs-section');
+                if (target) {
+                    const offsetTop = target.offsetTop - 70;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 300);
+        }
+    } else if (hash === '#home') {
+        const target = document.querySelector('#home');
+        if (target) {
+            setTimeout(() => {
+                const offsetTop = target.offsetTop - 70;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }, 300);
+        }
+    } else if (hash === '#tabs-section') {
+        const target = document.querySelector('#tabs-section');
+        if (target) {
+            setTimeout(() => {
+                const offsetTop = target.offsetTop - 70;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }, 300);
+        }
+    }
+});
+
 // Mobile menu toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
@@ -83,55 +376,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             }
         }
     });
-});
-
-// Handle tab parameter from URL query string and hash (for new tab opens)
-window.addEventListener('DOMContentLoaded', () => {
-    // Check URL parameters
-    const urlParams = new URLSearchParams(window.location.search);
-    const tabParam = urlParams.get('tab');
-    
-    // Check hash
-    const hash = window.location.hash;
-    
-    if (tabParam) {
-        const tabButton = document.querySelector(`.tab-button[data-tab="${tabParam}"]`);
-        if (tabButton) {
-            setTimeout(() => {
-                tabButton.click();
-                const target = document.querySelector('#tabs-section');
-                if (target) {
-                    const offsetTop = target.offsetTop - 70;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            }, 300);
-        }
-    } else if (hash === '#home') {
-        const target = document.querySelector('#home');
-        if (target) {
-            setTimeout(() => {
-                const offsetTop = target.offsetTop - 70;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }, 100);
-        }
-    } else if (hash === '#tabs-section') {
-        const target = document.querySelector('#tabs-section');
-        if (target) {
-            setTimeout(() => {
-                const offsetTop = target.offsetTop - 70;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }, 100);
-        }
-    }
 });
 
 // Update active nav link on scroll and tab change
@@ -370,8 +614,66 @@ function sortConferenceLists() {
     });
 }
 
-// 페이지 로드 시 News 렌더링 및 Conference 정렬
-window.addEventListener('DOMContentLoaded', () => {
+// Initialize language from localStorage or default to 'en'
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('language') || 'en';
+    setLanguage(savedLang);
+    
+    // Add event listeners to language buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            setLanguage(lang);
+        });
+    });
+    
+    // News 렌더링 및 Conference 정렬
     renderNews();
     sortConferenceLists();
+    
+    // Check URL parameters for tab
+    const urlParams = new URLSearchParams(window.location.search);
+    const tabParam = urlParams.get('tab');
+    
+    // Check hash
+    const hash = window.location.hash;
+    
+    if (tabParam) {
+        const tabButton = document.querySelector(`.tab-button[data-tab="${tabParam}"]`);
+        if (tabButton) {
+            setTimeout(() => {
+                tabButton.click();
+                const target = document.querySelector('#tabs-section');
+                if (target) {
+                    const offsetTop = target.offsetTop - 70;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 300);
+        }
+    } else if (hash === '#home') {
+        const target = document.querySelector('#home');
+        if (target) {
+            setTimeout(() => {
+                const offsetTop = target.offsetTop - 70;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }, 300);
+        }
+    } else if (hash === '#tabs-section') {
+        const target = document.querySelector('#tabs-section');
+        if (target) {
+            setTimeout(() => {
+                const offsetTop = target.offsetTop - 70;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }, 300);
+        }
+    }
 });

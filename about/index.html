@@ -15,17 +15,24 @@
         <div class="container">
             <div class="nav-brand">SEJEONG BAE</div>
             <ul class="nav-menu">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="/news/" class="nav-link">News</a></li>
-                <li><a href="/publications/" class="nav-link">Publications</a></li>
-                <li><a href="/research/" class="nav-link">Conference</a></li>
-                <li><a href="/about/" class="nav-link active">About</a></li>
-                <li><a href="/contact/" class="nav-link">Contact</a></li>
+                <li><a href="/" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="/about/" class="nav-link active" data-i18n="nav.about">About</a></li>
+                <li><a href="/news/" class="nav-link" data-i18n="nav.news">News</a></li>
+                <li><a href="/publications/" class="nav-link" data-i18n="nav.publications">Publications</a></li>
+                <li><a href="/research/" class="nav-link" data-i18n="nav.conference">Conference</a></li>
+                <li><a href="/contact/" class="nav-link" data-i18n="nav.others">Others</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="navbar-right">
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">Eng</button>
+                    <span class="lang-separator">/</span>
+                    <button class="lang-btn" data-lang="ko">Kor</button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -35,43 +42,46 @@
         <div class="container">
             <!-- About Section -->
             <section id="about-section" class="content-section">
-                <h2 class="section-title">About</h2>
+                <h2 class="section-title" data-i18n="about.title">About</h2>
                 
                 <div class="about-content">
-                    <div class="about-profile-section" style="display: flex; gap: 2rem; align-items: center; margin-bottom: 2rem; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(209, 213, 219, 0.4); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);">
+                    <div class="about-profile-section" style="display: flex; gap: 2rem; align-items: flex-start; margin-bottom: 1.5rem; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 16px; padding: 1.25rem; border: 1px solid rgba(209, 213, 219, 0.4); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);">
                         <div style="flex-shrink: 0;">
-                            <img src="about-profile.jpg" alt="Sejeong Bae" style="width: 144px; height: 144px; object-fit: cover; border-radius: 12px; border: 3px solid #E5E7EB; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); display: block;">
+                            <img src="about-profile.jpg" alt="Sejeong Bae" style="width: 180px; height: 180px; object-fit: cover; border-radius: 12px; border: 3px solid #E5E7EB; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); display: block;">
                         </div>
                         <div style="flex: 1; margin: 0; padding: 0; background: none; backdrop-filter: none; border-radius: 0; border: none;">
-                            <p style="margin-bottom: 0.75rem; color: var(--text-color); font-size: 1.05rem; line-height: 1.7;"><strong>Email:</strong> <a href="mailto:sjbae1102@unist.ac.kr">sjbae1102@unist.ac.kr</a></p>
-                            <p style="margin-bottom: 0.75rem; color: var(--text-color); font-size: 1.05rem; line-height: 1.7;"><strong>Status:</strong> Combined M.S. and Ph.D. Student</p>
-                            <p style="margin-bottom: 0.75rem; color: var(--text-color); font-size: 1.05rem; line-height: 1.7;"><strong>Major:</strong> Environmental Science and Engineering</p>
-                            <p style="margin-bottom: 0; color: var(--text-color); font-size: 1.05rem; line-height: 1.7;"><strong>Department:</strong> Civil, Urban, Earth, and Enviornmental Engineering</p>
+                            <h3 style="margin-bottom: 0.75rem; font-size: 1.5rem; font-weight: 600; color: var(--text-color); line-height: 1.5;">
+                                <span data-i18n="about.name">SEJEONG BAE</span> <span style="font-size: 1rem; font-weight: 400; opacity: 0.7; margin-left: 0.5rem;" data-i18n="about.university">UNIST</span>
+                            </h3>
+                            <p style="margin-bottom: 0.5rem; color: var(--text-color); font-size: 1rem; line-height: 1.5;"><strong data-i18n="about.email">Email:</strong> <a href="mailto:sjbae1102@unist.ac.kr">sjbae1102@unist.ac.kr</a></p>
+                            <p style="margin-bottom: 0.5rem; color: var(--text-color); font-size: 1rem; line-height: 1.5;"><strong data-i18n="about.status">Status:</strong> <span data-i18n="about.studentStatus">Combined M.S. and Ph.D. Student</span></p>
+                            <p style="margin-bottom: 0.5rem; color: var(--text-color); font-size: 1rem; line-height: 1.5;"><strong data-i18n="about.major">Major:</strong> <span data-i18n="about.majorName">Environmental Science and Engineering</span></p>
+                            <p style="margin-bottom: 0; color: var(--text-color); font-size: 1rem; line-height: 1.5;"><strong data-i18n="about.department">Department:</strong> <span data-i18n="about.departmentName">Civil, Urban, Earth, and Environmental Engineering</span></p>
                         </div>
                     </div>
                     
                     <div class="publication-item">
-                        <h3>Education</h3>
+                        <h3 data-i18n="about.education">Education</h3>
                         <ul>
-                            <li><strong>2023.09 - Present</strong>: Combined M.S. & Ph.D - Department of Civil, Urban, Earth, and Environmental Engineering, Ulsan National Institute of Science and Technology</li>
-                            <li><strong>2019.03</strong> - <strong>2023.08</strong>: Bachelor of Engineering - Department of Civil Engineering, Seoul National University of Science and Technology</li>
+                            <li><strong>2023.09 - <span data-i18n="about.present">Present</span></strong>: <span data-i18n="about.education1">Combined M.S. & Ph.D - Department of Civil, Urban, Earth, and Environmental Engineering, Ulsan National Institute of Science and Technology</span></li>
+                            <li><strong>2019.03</strong> - <strong>2023.08</strong>: <span data-i18n="about.education2">Bachelor of Engineering - Department of Civil Engineering, Seoul National University of Science and Technology</span></li>
                         </ul>
                     </div>
                     
                     <div class="publication-item">
-                        <h3>Awards</h3>
+                        <h3 data-i18n="about.awards">Awards</h3>
                         <ul>
-                            <li><strong>2025</strong>: Best Presentation Award, Korean Society of Remote Sensing</li>
-                            <li><strong>2025</strong>: Outstanding Paper Presentation Award, Korean Association of Geographic Information Studies</li>
-                            <li><strong>2024</strong>: Korea Aerospace Administration (KASA) Administrator's Award (Grand Prize), 2024 Satellite Information Application Contest - [Division 2] Development of a Change Detection Algorithm Based on Multi-temporal Images (우주항공청장상, 2024 위성정보활용 경진대회 - [부문2] 다시기 영상 기반 변화탐지 알고리즘 개발)</li>
-                            <li><strong>2024</strong>: Outstanding Paper Presentation Award, Korean Association of Geographic Information Studies</li>
+                            <li><strong>2025</strong>: <span data-i18n="about.award1">Best Presentation Award, Korean Society of Remote Sensing</span></li>
+                            <li><strong>2025</strong>: <span data-i18n="about.award2">Outstanding Paper Presentation Award, Korean Association of Geographic Information Studies</span></li>
+                            <li><strong>2024</strong>: <span data-i18n="about.award3">Korea Aerospace Administration (KASA) Administrator's Award (Grand Prize), 2024 Satellite Information Application Contest - [Division 2] Development of a Change Detection Algorithm Based on Multi-temporal Images</span> (<span data-i18n="about.award3Ko">우주항공청장상, 2024 위성정보활용 경진대회 - [부문2] 다시기 영상 기반 변화탐지 알고리즘 개발</span>)</li>
+                            <li><strong>2024</strong>: <span data-i18n="about.award4">Outstanding Paper Presentation Award, Korean Association of Geographic Information Studies</span></li>
                         </ul>
                     </div>
                     
                     <div class="publication-item">
-                        <h3>Grants</h3>
+                        <h3 data-i18n="about.grants">Grants</h3>
                         <ul>
-                            <li><strong>2024</strong>: Research Scholarship for Master's Students, National Research Foundation of Korea (2024 석사과정생 연구장려금 지원사업; RS-2024-00465)</li>
+                            <li><strong>2024</strong>: <span data-i18n="about.grant1">Research Scholarship for Master's Students, National Research Foundation of Korea</span> (<span data-i18n="about.grant1Ko">2024 석사과정생 연구장려금 지원사업; RS-2024-00465</span>)</li>
                         </ul>
                     </div>
                 </div>

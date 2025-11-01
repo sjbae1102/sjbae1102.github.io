@@ -15,17 +15,24 @@
         <div class="container">
             <div class="nav-brand">SEJEONG BAE</div>
             <ul class="nav-menu">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="/news/" class="nav-link">News</a></li>
-                <li><a href="/publications/" class="nav-link active">Publications</a></li>
-                <li><a href="/research/" class="nav-link">Conference</a></li>
-                <li><a href="/about/" class="nav-link">About</a></li>
-                <li><a href="/contact/" class="nav-link">Contact</a></li>
+                <li><a href="/" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="/about/" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="/news/" class="nav-link" data-i18n="nav.news">News</a></li>
+                <li><a href="/publications/" class="nav-link active" data-i18n="nav.publications">Publications</a></li>
+                <li><a href="/research/" class="nav-link" data-i18n="nav.conference">Conference</a></li>
+                <li><a href="/contact/" class="nav-link" data-i18n="nav.others">Others</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="navbar-right">
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">Eng</button>
+                    <span class="lang-separator">/</span>
+                    <button class="lang-btn" data-lang="ko">Kor</button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -35,17 +42,17 @@
         <div class="container">
             <!-- Publications Section -->
             <section id="publications-section" class="content-section">
-                <h2 class="section-title">Publications</h2>
+                <h2 class="section-title" data-i18n="publications.title">Publications</h2>
                 <div class="publications-list">
                     <div class="publication-item">
-                        <h3 style="font-size: 0.9em; opacity: 0.7; font-weight: normal; margin-bottom: 1rem;">In progress publications</h3>
+                        <h3 style="font-size: 0.9em; opacity: 0.7; font-weight: normal; margin-bottom: 1rem;" data-i18n="publications.inProgress">In progress publications</h3>
                         <ul style="margin-bottom: 2rem;">
                             <li><b>1.</b> <u>Bae, S</u>., Son, B., Sung, T., Kim, Y., Kim., Y., & Im, J, 2025: All-sky hourly estimation over East Asia using Himawari-8 AHI and multi-source data: Investigating the main climatic drivers of afternoon depression and intraday variability in gross primary productivity. <em>Remote Sensing of Environment</em>. [<i>Under Review</i>]</li>
                         </ul>
                     </div>
                     
                     <div class="publication-item">
-                        <h3>International Journal Articles</h3>
+                        <h3 data-i18n="publications.international">International Journal Articles</h3>
                         <ul>
                             <li style="display: flex; gap: 1.5rem; align-items: flex-start;">
                                 <a href="https://doi.org/10.1016/j.rse.2025.114735" target="_blank" rel="noopener noreferrer" style="display: flex; gap: 1.5rem; align-items: flex-start; width: 100%; text-decoration: none; color: inherit;">
@@ -62,7 +69,7 @@
                     </div>
                     
                     <div class="publication-item">
-                        <h3>Domestic Journal Articles</h3>
+                        <h3 data-i18n="publications.domestic">Domestic Journal Articles</h3>
                         <ul>
                             <li style="display: flex; gap: 1.5rem; align-items: flex-start;">
                                 <div style="flex-shrink: 0;">
