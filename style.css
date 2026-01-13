@@ -55,8 +55,7 @@ body {
 
 .container.home-container {
     max-width: 1400px;
-    margin-left: auto;
-    margin-right: 5%;
+    margin: 0 auto;
     padding: 0 20px;
 }
 

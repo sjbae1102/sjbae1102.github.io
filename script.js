@@ -62,6 +62,7 @@ const translations = {
             award3: 'Korea Aerospace Administration (KASA) Administrator\'s Award (Grand Prize), 2024 Satellite Information Application Contest - [Division 2] Development of a Change Detection Algorithm Based on Multi-temporal Images',
             award3Ko: '우주항공청장상, 2024 위성정보활용 경진대회 - [부문2] 다시기 영상 기반 변화탐지 알고리즘 개발',
             award4: 'Outstanding Paper Presentation Award, Korean Association of Geographic Information Studies',
+            award5: 'Encouragement Award, 2021 Agricultural and Forestry Satellite Idea Challenge',
             grants: 'Grants',
             grant1: 'Research Scholarship for Master\'s Students, National Research Foundation of Korea',
             grant1Ko: '2024 석사과정생 연구장려금 지원사업; RS-2024-00465'
@@ -143,6 +144,7 @@ const translations = {
             award2: '우수논문상, 한국지리정보학회',
             award3: '우주항공청장상 (대상), 2024 위성정보활용 경진대회 - [부문2] 다시기 영상 기반 변화탐지 알고리즘 개발',
             award4: '우수논문상, 한국지리정보학회',
+            award5: '2021 농림위성 활용 아이디어 경진대회 장려상',
             grants: '장학',
             grant1: '석사과정생 연구장려금 지원사업 2024, 한국연구재단',
             grant1Ko: 'RS-2024-00465'

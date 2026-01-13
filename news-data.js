@@ -28,6 +28,38 @@
 // 객체 형식의 News (더 많은 옵션 사용 가능)
 const newsDataObjects = [
     {
+        date: "Dec 29, 2025",
+        content: "Our new paper entitled '**All-sky hourly estimation over East Asia using Himawari-8 AHI and multi-source data: investigating the main climatic drivers of afternoon depression and intraday variability in gross primary productivity**' has been published in **GIScience & Remote Sensing**, 63(1), 2609352.",
+        link: "#",
+        linkText: "All-sky hourly estimation over East Asia using Himawari-8 AHI and multi-source data: investigating the main climatic drivers of afternoon depression and intraday variability in gross primary productivity",
+        image: "news/gisrs.png"
+    },
+
+    {
+        date: "Dec 15, 2025",
+        content: "I attended the **25th American Geophysical Union (AGU) Fall Meeting** international conference.",
+        image: "news/agu2025.jpg"
+    },
+
+    {
+        date: "Dec 03, 2025",
+        content: "I attended the **The Korean Society of Climate Change Research** Autumn Conference.",
+        image: "news/climatechange2025.jpg"
+    },
+
+    {
+        date: "Nov 06, 2025",
+        content: "I attended the **2025 GeoAI Data Autumn Conference**.",
+        image: "news/geoai2025.jpg"
+    },
+
+    {
+        date: "Nov 05, 2025",
+        content: "I attended the **Korean Association of Geographic Information Studies (KAGIS) Autumn Conference**.",
+        image: "news/kagis_fall2025.jpg"
+    },
+
+    {
         date: "Oct 23, 2025",
         content: "I was honored to receive the Best Presentation Award🏆 at the Autumn Conference of the **Korean Society of Remote Sensing (KSRS) 2025**.",
         link: "#",
