@@ -28,6 +28,7 @@ const translations = {
             research2: 'Terrestrial Carbon Flux',
             research3: 'Artificial Intelligence',
             research4: 'Machine Learning / Deep Learning',
+            research5: 'Disaster Monitoring',
             externalNews: 'External News'
         },
         tabs: {
@@ -111,6 +112,7 @@ const translations = {
             research2: '육상 탄소 모니터링',
             research3: '인공지능',
             research4: '머신러닝/딥러닝',
+            research5: '재난 모니터링',
             externalNews: '외부 소식'
         },
         tabs: {
@@ -220,14 +222,18 @@ function setLanguage(lang) {
     
     // Update research interests list items
     const researchItems = document.querySelectorAll('.research-list li');
-    if (researchItems.length >= 4) {
+    if (researchItems.length >= 5) {
         if (translations[lang] && translations[lang].home) {
             researchItems[0].textContent = translations[lang].home.research1 || researchItems[0].textContent;
             researchItems[1].textContent = translations[lang].home.research2 || researchItems[1].textContent;
             researchItems[2].textContent = translations[lang].home.research3 || researchItems[2].textContent;
             researchItems[3].textContent = translations[lang].home.research4 || researchItems[3].textContent;
+            researchItems[4].textContent = translations[lang].home.research5 || researchItems[4].textContent;
         }
     }
+
+    renderNews();
+    window.setTimeout(renderNews, 0);
 }
 
 // Initialize language from localStorage or default to 'en'
@@ -459,15 +465,34 @@ function parseDate(dateString) {
     return new Date(0); // 파싱 실패 시 최소 날짜 반환
 }
 
+function formatNewsDate(dateString) {
+    if (currentLang !== 'ko') {
+        return dateString;
+    }
+
+    const date = parseDate(dateString);
+    if (date.getTime() === 0) {
+        return dateString;
+    }
+
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}.${month}.${day}`;
+}
+
 // Render News from news-data.js
 function renderNews() {
     const newsTimeline = document.getElementById('news-timeline');
-    if (!newsTimeline || !window.newsData) return;
+    const sourceNews = window.newsData || (typeof newsData !== 'undefined' ? newsData : null);
+    if (!newsTimeline || !sourceNews) return;
+
+    window.newsData = sourceNews;
     
     newsTimeline.innerHTML = '';
     
     // 날짜순으로 정렬 (최신순 - 내림차순)
-    const sortedNews = [...window.newsData].sort((a, b) => {
+    const sortedNews = [...sourceNews].sort((a, b) => {
         const dateA = parseDate(a.date);
         const dateB = parseDate(b.date);
         return dateB - dateA;
@@ -479,7 +504,7 @@ function renderNews() {
         
         const dateDiv = document.createElement('div');
         dateDiv.className = 'news-date';
-        dateDiv.textContent = item.date;
+        dateDiv.textContent = formatNewsDate(item.date);
         
         const contentDiv = document.createElement('div');
         contentDiv.className = 'news-content';
@@ -559,7 +584,10 @@ function renderNews() {
             }
         }
         
-        processContent(item.content, item.link, item.linkText);
+        const localizedContent = currentLang === 'ko' && item.contentKo ? item.contentKo : item.content;
+        const localizedLinkText = currentLang === 'ko' && item.linkTextKo ? item.linkTextKo : item.linkText;
+
+        processContent(localizedContent, item.link, localizedLinkText);
         
         textContainer.appendChild(paragraph);
         contentDiv.appendChild(textContainer);
@@ -578,7 +606,7 @@ function renderNews() {
             }
             
             image.src = imagePath;
-            image.alt = item.content.substring(0, 50) + '...';
+            image.alt = localizedContent.replace(/\*\*/g, '').substring(0, 50) + '...';
             image.className = 'news-image';
             imageContainer.appendChild(image);
             contentDiv.appendChild(imageContainer);
