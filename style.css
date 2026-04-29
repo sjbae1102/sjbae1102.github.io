@@ -1177,6 +1177,87 @@ body {
     border-color: #b8e2c6;
 }
 
+.metric-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-left: 0.45rem;
+    color: #0b4d50;
+    background: linear-gradient(135deg, #e8fbfb 0%, #dbf2f4 100%);
+    border-color: #b7dde0;
+    box-shadow: 0 1px 6px rgba(11, 77, 80, 0.12);
+}
+
+.metric-label {
+    padding: 0.04rem 0.38rem;
+    border-radius: 999px;
+    background: rgba(11, 77, 80, 0.12);
+    color: #0b4d50;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+}
+
+.metric-dot {
+    opacity: 0.55;
+}
+
+.published-paper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.28rem;
+    padding-right: 2.3rem;
+}
+
+.publication-authors {
+    color: var(--text-light);
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.38;
+}
+
+.publication-index {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-right: 0.2rem;
+}
+
+.publication-title-text {
+    color: var(--text-color);
+    font-size: 0.92rem;
+    font-weight: 650;
+    line-height: 1.38;
+    letter-spacing: -0.01em;
+}
+
+.publication-venue {
+    color: var(--text-light);
+    font-size: 0.83rem;
+    line-height: 1.38;
+}
+
+.publication-venue em {
+    color: var(--primary-color);
+    font-weight: 650;
+}
+
+.publication-date {
+    color: var(--text-light);
+    opacity: 0.78;
+}
+
+.publication-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 0 0 0.1rem;
+}
+
+.publication-metrics .metric-badge {
+    margin-left: 0;
+}
+
 .publication-item li[style*="display: flex"] {
     display: flex !important;
     gap: 1.5rem;
