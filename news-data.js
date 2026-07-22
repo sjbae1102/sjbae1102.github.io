@@ -28,6 +28,11 @@
 // 객체 형식의 News (더 많은 옵션 사용 가능)
 const newsDataObjects = [
     {
+        date: "Jul 22, 2026",
+        content: "I was featured in a **UNIST graduate newsletter interview**, where I talked about my research on carbon flux using remote sensing and artificial intelligence.",
+        contentKo: "**UNIST 대학원 뉴스레터**에서 진행한 대학원생 인터뷰에 참여해, 원격탐사와 인공지능을 활용한 탄소 플럭스 연구에 대해 이야기했습니다."
+    },
+    {
         date: "Dec 29, 2025",
         content: "Our new paper entitled '**All-sky hourly estimation over East Asia using Himawari-8 AHI and multi-source data: investigating the main climatic drivers of afternoon depression and intraday variability in gross primary productivity**' has been published in **GIScience & Remote Sensing**, 63(1), 2609352.",
         contentKo: "새 논문 '**All-sky hourly estimation over East Asia using Himawari-8 AHI and multi-source data: investigating the main climatic drivers of afternoon depression and intraday variability in gross primary productivity**'이 **GIScience & Remote Sensing**, 63(1), 2609352에 게재되었습니다.",
