@@ -10,10 +10,13 @@ const SITE_DATA = {
   /** Home hero (index.html, rendered by js/home.js) */
   profile: {
     overline: 'Environmental Remote Sensing · Artificial Intelligence',
+    overlineKo: '환경 원격탐사 · 인공지능',
     bio: 'I develop remote sensing and AI-driven approaches for quantifying terrestrial carbon flux and disaster monitoring.',
+    // DRAFT (세정님 확인 필요)
+    bioKo: '원격탐사와 인공지능을 활용해 육상 탄소 플럭스를 정량화하고 재난을 모니터링하는 방법을 연구합니다.',
     education: [
-      { period: '2023 – Now', degree: 'Combined M.S. & Ph.D.', detail: 'Civil, Urban, Earth, and Environmental Engineering · UNIST' },
-      { period: '2019 – 2023', degree: 'B.Eng. in Civil Engineering', detail: 'Seoul National University of Science and Technology' },
+      { period: '2023 – Now', periodKo: '2023 – 현재', degree: 'Combined M.S. & Ph.D.', degreeKo: '석·박사통합과정', detail: 'Civil, Urban, Earth, and Environmental Engineering · UNIST', detailKo: 'UNIST 지구환경도시건설공학과' },
+      { period: '2019 – 2023', degree: 'B.Eng. in Civil Engineering', degreeKo: '건설시스템공학 학사', detail: 'Seoul National University of Science and Technology', detailKo: '서울과학기술대학교' },
     ],
   },
 
@@ -253,8 +256,8 @@ const SITE_DATA = {
       {
         id: 'conf-ksgpc-2021',
         date: 'Nov 05, 2021',
-        textEn: 'Korean Society of Surveying, Geodesy, Photogrammetry and Cartography (KSGPC)🏆',
-        textKo: 'Korean Society of Surveying, Geodesy, Photogrammetry and Cartography (KSGPC)🏆',
+        textEn: 'Korean Society of Surveying, Geodesy, Photogrammetry and Cartography (KSGPC)',
+        textKo: 'Korean Society of Surveying, Geodesy, Photogrammetry and Cartography (KSGPC)',
       },
     ],
   },

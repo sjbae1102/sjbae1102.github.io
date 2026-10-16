@@ -33,7 +33,7 @@
 | 단계 | Eng | Kor | 데이터/파일 |
 | --- | --- | --- | --- |
 | In progress 목록 | Publications 상단 | 동일 | `publications.inProgress[]` — `html`에 `status-under-review` + **Under review** |
-| Biography | Publications와 동일 3건 | 동일 | **자동** (`inProgress` 렌더) |
+| Biography | **표시 안 함** (Under review는 Publications 페이지 In progress 섹션에만) | 동일 | `npm run validate`가 Biography에 `inProgress`가 렌더되면 실패 |
 
 현재 Under review 예: TGRS landslide, RSE ADAPT-TL(전지구-지역 전이), Science Advances ENSO.
 
@@ -167,3 +167,10 @@ node scripts/screenshot-pages.mjs
 | Awards | `about.awards` 앞 4개, Grants는 `about.grants` |
 
 **주의:** 새 국제 논문에는 `metricsHtml`에 `JCR x.x%`를 넣어야 Q1 통계가 맞습니다. 학력이 바뀌면 `profile.education`과 Biography 페이지(about/index.html) 둘 다 수정.
+
+## 디자인 시스템 (v4)
+
+- 홈 `css/home.css`, 서브페이지 `css/pages.css` (body `.page-v4`), 공통 토큰은 `css/pages.css`의 `:root` / `html[data-theme='dark']`.
+- 다크 모드: `localStorage['site-theme']`, 각 페이지 `<head>` 인라인 스크립트로 깜빡임 없이 적용.
+- 홈 한국어: `profile.overlineKo`, `profile.bioKo` (초안, 세정님 확인 필요), `profile.education[].*Ko`. 수상·학회·소식은 `textKo`/`contentKo` 사용.
+- Conference 페이지 연도 그룹은 `js/pages.js`가 자동 생성 (날짜순 정렬).
