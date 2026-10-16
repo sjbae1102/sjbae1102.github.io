@@ -69,3 +69,14 @@ section{padding-top:64px}.sh{margin-bottom:24px;flex-wrap:wrap;row-gap:8px}h2{fo
 .home-v3-main{padding-top:64px}
 .home-v3 .pv a{color:var(--c)}
 @media(max-width:860px){.home-v3-main{padding-top:56px}}
+/* v11 hero: smaller photo + name, refined shadow */
+.home-v3 .hero .in.top{grid-template-columns:248px 1fr}
+.home-v3 .hero img{width:248px;height:298px;border-radius:18px;box-shadow:var(--photo-shadow)}
+.home-v3 .hero h1{font-size:49px}
+.home-v3 .btns{margin-top:28px}
+@media(max-width:860px){
+.home-v3 .hero .in.top{grid-template-columns:104px 1fr}
+.home-v3 .btns{margin-top:16px}
+.home-v3 .hero img{width:104px;height:132px;border-radius:11px}
+.home-v3 .hero h1{font-size:26px}
+}

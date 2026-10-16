@@ -157,9 +157,9 @@
 
   function publicationToCvHtml(pub) {
     const C = window.SITE_CITE;
-    const badge = pub.metrics ? `<div class="cv-badge">${C.badge(pub)}</div>` : '';
-    return `<div class="cv-cite">${C.citation(pub)}</div>${badge}`;
+    return `<div class="cv-cite">${C.citation(pub, { noDoi: true })}${C.subtle(pub)}</div>`;
   }
+
 
 
   function listCvPublications(data) {
