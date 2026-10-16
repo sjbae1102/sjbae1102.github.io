@@ -46,13 +46,14 @@ const SITE_DATA = {
         imageAlt: 'ADAPT ISPRS Journal article',
         doi: 'https://doi.org/10.1016/j.isprsjprs.2026.09.024',
         authorsHtml:
-          '<u>Bae, S</u>., Lee, G., Chung, I., Kim, Y., Kim, Y., Im, J., Hwang, S., Son, B., & Sung, T. (2026)',
+          '<u>Bae, S</u>., Lee, G., Chung, I., Kim, Y., Kim, Y., Im, J., Hwang, S., Son, B., & Sung, T.',
         title:
-          'An Adaptive Dynamic AI-driven ParameTerization (ADAPT) framework for global hourly gross primary productivity estimation.',
-        venueHtml:
-          '<em>ISPRS Journal of Photogrammetry and Remote Sensing</em>, 242, 648–664. <a href="https://doi.org/10.57760/sciencedb.37163" target="_blank" rel="noopener noreferrer" class="publication-inline-link" onclick="event.stopPropagation();">[Dataset]</a>',
-        metricsHtml:
-          '<span class="status-badge metric-badge"><span class="metric-label">IF</span>12.9 (2025) <span class="metric-dot">•</span> JCR 3.0%</span>',
+          'An Adaptive Dynamic AI-driven ParameTerization (ADAPT) framework for global hourly gross primary productivity estimation',
+        journal: 'ISPRS Journal of Photogrammetry and Remote Sensing',
+        volume: '242',
+        pages: '648–664',
+        datasetUrl: 'https://doi.org/10.57760/sciencedb.37163',
+        metrics: { value: '12.9', year: 2025, rank: '2/66', top: '3.0' },
       },
       {
         id: 'pub-helios-isprs-2026',
@@ -61,12 +62,13 @@ const SITE_DATA = {
         imageAlt: 'HELIOS-Net ISPRS Journal article',
         doi: 'https://doi.org/10.1016/j.isprsjprs.2026.09.028',
         authorsHtml:
-          'Kim, Y., Cho, D., Bae, D., Lee, Y., Lee, S., <u>Bae, S</u>., & Im, J. (2026)',
+          'Kim, Y., Cho, D., Bae, D., Lee, Y., Lee, S., <u>Bae, S</u>., & Im, J.',
         title:
-          'HELIOS-Net: Hourly daytime estimation of land surface temperature with integration of observational solar-cloud-satellite geometry and deep neural network.',
-        venueHtml: '<em>ISPRS Journal of Photogrammetry and Remote Sensing</em>, 242, 760–777.',
-        metricsHtml:
-          '<span class="status-badge metric-badge"><span class="metric-label">IF</span>12.9 (2025) <span class="metric-dot">•</span> JCR 3.0%</span>',
+          'HELIOS-Net: Hourly daytime estimation of land surface temperature with integration of observational solar-cloud-satellite geometry and deep neural network',
+        journal: 'ISPRS Journal of Photogrammetry and Remote Sensing',
+        volume: '242',
+        pages: '760–777',
+        metrics: { value: '12.9', year: 2025, rank: '2/66', top: '3.0' },
       },
       {
         id: 'pub-unique-rse-2026',
@@ -75,11 +77,12 @@ const SITE_DATA = {
         imageAlt: 'UNIQUE Remote Sensing of Environment article',
         doi: 'https://doi.org/10.1016/j.rse.2026.115636',
         authorsHtml:
-          'Son, B., Sung, T., <u>Bae, S</u>., Choo, M., Im, J., Lee, Y., Rana, S. M. S., Cho, D., Yoo, C., Hong, J., Lee, H., & Kim, H. S. (2026)',
-        title: 'UNIQUE: UNified, high-resolution Intelligent carbon QUantification and Explanation.',
-        venueHtml: '<em>Remote Sensing of Environment</em>, 346, 115636.',
-        metricsHtml:
-          '<span class="status-badge metric-badge"><span class="metric-label">IF</span>11.4 (2025) <span class="metric-dot">•</span> JCR 2.4%</span>',
+          'Son, B., Sung, T., <u>Bae, S</u>., Choo, M., Im, J., Lee, Y., Rana, S. M. S., Cho, D., Yoo, C., Hong, J., Lee, H., & Kim, H. S.',
+        title: 'UNIQUE: UNified, high-resolution Intelligent carbon QUantification and Explanation',
+        journal: 'Remote Sensing of Environment',
+        volume: '346',
+        pages: '115636',
+        metrics: { value: '12.3', year: 2025, rank: '4/66', top: '6.1' },
       },
       {
         id: 'pub-gisrs-2026',
@@ -87,12 +90,14 @@ const SITE_DATA = {
         image: 'news/gisrs.png',
         imageAlt: 'GIScience and Remote Sensing paper',
         doi: 'https://doi.org/10.1080/15481603.2025.2609352',
-        authorsHtml: '<u>Bae, S</u>., Son, B., Sung, T., Kim, Y., Kim, Y., & Im, J. (2026)',
+        authorsHtml: '<u>Bae, S</u>., Son, B., Sung, T., Kim, Y., Kim, Y., & Im, J.',
         title:
-          'All-sky hourly estimation over East Asia using Himawari-8 AHI and multi-source data: investigating the main climatic drivers of afternoon depression and intraday variability in gross primary productivity.',
-        venueHtml: '<em>GIScience & Remote Sensing</em>, 63(1), 2609352.',
-        metricsHtml:
-          '<span class="status-badge metric-badge"><span class="metric-label">IF</span>6.9 <span class="metric-dot">•</span> JCR 10.0%</span>',
+          'All-sky hourly estimation over East Asia using Himawari-8 AHI and multi-source data: investigating the main climatic drivers of afternoon depression and intraday variability in gross primary productivity',
+        journal: 'GIScience & Remote Sensing',
+        volume: '63',
+        issue: '1',
+        pages: '2609352',
+        metrics: { value: '6.8', year: 2025, rank: '11/66', top: '16.7' },
       },
       {
         id: 'pub-rse-gpp-2025',
@@ -100,14 +105,13 @@ const SITE_DATA = {
         image: 'news/rse1.png',
         imageAlt: 'Remote Sensing of Environment GPP paper',
         doi: 'https://doi.org/10.1016/j.rse.2025.114735',
-        authorsHtml: '<u>Bae, S</u>., Son, B., Sung, T., Kang, Y., & Im, J. (2025)',
+        authorsHtml: '<u>Bae, S</u>., Son, B., Sung, T., Kang, Y., & Im, J.',
         title:
-          'Advancing hourly gross primary productivity mapping over East Asia using Himawari-8 AHI and artificial intelligence: Unveiling the impact of aerosol-induced radiation dynamics.',
-        venueHtml:
-          '<em>Remote Sensing of Environment</em>, 323, 114735. <span class="publication-date">(2025.06.01)</span>',
-        metricsHtml:
-          '<span class="status-badge metric-badge"><span class="metric-label">IF</span>11.4 (2025) <span class="metric-dot">•</span> JCR 2.4%</span>',
-        showPublicationDateOnHome: true,
+          'Advancing hourly gross primary productivity mapping over East Asia using Himawari-8 AHI and artificial intelligence: Unveiling the impact of aerosol-induced radiation dynamics',
+        journal: 'Remote Sensing of Environment',
+        volume: '323',
+        pages: '114735',
+        metrics: { value: '12.3', year: 2025, rank: '4/66', top: '6.1' },
       },
     ],
     domestic: [
@@ -116,32 +120,39 @@ const SITE_DATA = {
         year: 2024,
         image: 'news/kjrs2.png',
         imageAlt: 'SAMBA change detection paper',
-        authorsHtml: 'Tobias, R. R., <u>Bae, S</u>., Cho, H., & Im, J. (2024)',
-        title: 'SAMBA: Synthetic Data-Augmented Mamba-Based Change Detection Algorithm Using KOMPSAT-3A Imagery.',
-        venueHtml:
-          '<em>Korean Journal of Remote Sensing</em>, 40(6_3), 1505-1521. <span class="publication-date">(2024.12.31)</span>',
+        authorsHtml: 'Tobias, R. R., <u>Bae, S</u>., Cho, H., & Im, J.',
+        title: 'SAMBA: Synthetic Data-Augmented Mamba-Based Change Detection Algorithm Using KOMPSAT-3A Imagery',
+        doi: 'https://doi.org/10.7780/kjrs.2024.40.6.3.11',
+        journal: 'Korean Journal of Remote Sensing',
+        volume: '40',
+        issue: '6-3',
+        pages: '1505–1521',
       },
       {
         id: 'pub-urban-tree-kjrs-2023',
         year: 2023,
         image: 'news/kjrs1.png',
         imageAlt: 'Urban tree canopy paper',
-        authorsHtml: '<u>Bae, S</u>., Son, B., Sung, T., Lee, Y., Im, J., & Kang, Y. (2023)',
+        authorsHtml: '<u>Bae, S</u>., Son, B., Sung, T., Lee, Y., Im, J., & Kang, Y.',
         title:
-          'Estimation of Fractional Urban Tree Canopy Cover through Machine Learning Using Optical Satellite Images. 기계학습을 이용한 광학 위성 영상 기반의 도시 내 수목 피복률 추정.',
-        venueHtml:
-          '<em>Korean Journal of Remote Sensing</em>, 39(5), 1009-1029. <span class="publication-date">(2023.10.31)</span>',
+          'Estimation of Fractional Urban Tree Canopy Cover through Machine Learning Using Optical Satellite Images. 기계학습을 이용한 광학 위성 영상 기반의 도시 내 수목 피복률 추정',
+        journal: 'Korean Journal of Remote Sensing',
+        volume: '39',
+        issue: '5',
+        pages: '1009–1029',
       },
       {
         id: 'pub-dl-review-ksgpc-2021',
         year: 2021,
         image: 'news/ksgpc1.png',
         imageAlt: 'Deep learning remote sensing review paper',
-        authorsHtml: 'Lee, C., Yun, Y., <u>Bae, S</u>., Eo, Y. D., Kim, C., Shin, S., ... & Han, Y. (2021)',
+        authorsHtml: 'Lee, C., Yun, Y., <u>Bae, S</u>., Eo, Y. D., Kim, C., Shin, S., ... & Han, Y.',
         title:
-          'Analysis of deep learning research trends applied to remote sensing through paper review of Korean domestic journals. 국내학회지 논문 리뷰를 통한 원격탐사 분야 딥러닝 연구 동향 분석.',
-        venueHtml:
-          '<em>Journal of the Korean Society of Surveying, Geodesy, Photogrammetry and Cartography</em>, 39(6), 437-456. <span class="publication-date">(2021.12.31)</span>',
+          'Analysis of deep learning research trends applied to remote sensing through paper review of Korean domestic journals. 국내학회지 논문 리뷰를 통한 원격탐사 분야 딥러닝 연구 동향 분석',
+        journal: 'Journal of the Korean Society of Surveying, Geodesy, Photogrammetry and Cartography',
+        volume: '39',
+        issue: '6',
+        pages: '437–456',
       },
     ],
   },
@@ -209,7 +220,7 @@ const SITE_DATA = {
         id: 'conf-kcc-autumn-2025',
         date: 'Dec 03, 2025',
         textEn: 'The Korean Society of Climate Change Research Autumn Conference',
-        textKo: 'The Korean Society of Climate Change Research 추계학술대회',
+        textKo: '한국기후변화학회 추계학술대회',
       },
       {
         id: 'conf-geoai-2025',
@@ -221,43 +232,43 @@ const SITE_DATA = {
         id: 'conf-kagis-fall-2025',
         date: 'Nov 05, 2025',
         textEn: 'Korean Association of Geographic Information Studies (KAGIS) Autumn Conference',
-        textKo: 'Korean Association of Geographic Information Studies (KAGIS) Autumn Conference',
+        textKo: '한국지리정보학회 추계학술대회',
       },
       {
         id: 'conf-ksrs-fall-2025',
         date: 'Oct 23, 2025',
         textEn: 'Korean Society of Remote Sensing (KSRS) Autumn Conference🏆',
-        textKo: 'Korean Society of Remote Sensing (KSRS) Autumn Conference🏆',
+        textKo: '대한원격탐사학회 추계학술대회🏆',
       },
       {
         id: 'conf-ksrs-fall-2024',
         date: 'Oct 17, 2024',
         textEn: 'Korean Society of Remote Sensing (KSRS) Autumn Conference',
-        textKo: 'Korean Society of Remote Sensing (KSRS) Autumn Conference',
+        textKo: '대한원격탐사학회 추계학술대회',
       },
       {
         id: 'conf-kagis-spring-2025',
         date: 'May 30, 2025',
         textEn: 'Korean Association of Geographic Information Studies (KAGIS) Spring Conference🏆',
-        textKo: 'Korean Association of Geographic Information Studies (KAGIS) Spring Conference🏆',
+        textKo: '한국지리정보학회 춘계학술대회🏆',
       },
       {
         id: 'conf-kagis-spring-2024',
         date: 'Apr 26, 2024',
         textEn: 'Korean Association of Geographic Information Studies (KAGIS) Spring Conference🏆',
-        textKo: 'Korean Association of Geographic Information Studies (KAGIS) Spring Conference🏆',
+        textKo: '한국지리정보학회 춘계학술대회🏆',
       },
       {
         id: 'conf-ksrs-fall-2023',
         date: 'Nov 15, 2023',
         textEn: 'Korean Society of Remote Sensing (KSRS) Autumn Conference',
-        textKo: 'Korean Society of Remote Sensing (KSRS) Autumn Conference',
+        textKo: '대한원격탐사학회 추계학술대회',
       },
       {
         id: 'conf-ksgpc-2021',
         date: 'Nov 05, 2021',
         textEn: 'Korean Society of Surveying, Geodesy, Photogrammetry and Cartography (KSGPC)',
-        textKo: 'Korean Society of Surveying, Geodesy, Photogrammetry and Cartography (KSGPC)',
+        textKo: '한국측량학회 학술대회',
       },
     ],
   },
@@ -311,8 +322,9 @@ const SITE_DATA = {
         year: '2024',
         textEn:
           "Research Scholarship for Master's Students, National Research Foundation of Korea",
-        textKo: '석사과정생 연구장려금 지원사업 2024, 한국연구재단',
-        detailKo: '2024 석사과정생 연구장려금 지원사업; RS-2024-00465',
+        textKo: '2024 석사과정생 연구장려금 지원사업, 한국연구재단',
+        detailKo: 'RS-2024-00465',
+        detailEn: '2024 석사과정생 연구장려금 지원사업; RS-2024-00465',
       },
     ],
   },
@@ -555,3 +567,26 @@ const SITE_DATA = {
 };
 
 window.SITE_DATA = SITE_DATA;
+
+/* Single citation format for every page: authors (year). title. journal, volume(issue), pages. DOI */
+window.SITE_CITE = {
+  citation(p) {
+    const vi = [p.volume ? `${p.volume}${p.issue ? `(${p.issue})` : ''}` : '', p.pages].filter(Boolean).join(', ');
+    const doi = p.doi
+      ? ` <a class="pub-doi" href="${p.doi}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">${p.doi.replace(/^https?:\/\//, '')}</a>`
+      : '';
+    const au = p.authorsHtml.replace(/<u>(.*?)<\/u>\.?/g, '<b class="me">$1.</b>');
+    return `<span class="pub-au">${au}</span> (${p.year}). <span class="pub-title">${p.title}.</span> <em>${p.journal}</em>${vi ? `, ${vi}` : ''}.${doi}`;
+  },
+  dataset(p) {
+    return p.datasetUrl
+      ? `<a class="publication-inline-link" href="${p.datasetUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">Dataset: ${p.datasetUrl.replace(/^https?:\/\//, '')}</a>`
+      : '';
+  },
+  badge(p) {
+    const m = p.metrics;
+    return m
+      ? `<span class="if-badge"><b>IF ${m.value}</b><i>·</i>JCR ${m.year}<i>·</i>Remote Sensing ${m.rank}<i>·</i>top ${m.top}%</span>`
+      : '';
+  },
+};

@@ -89,8 +89,10 @@ const translations = {
             title: 'Contact',
             description: 'Please contact me using the information below.',
             office: 'Office:',
+            officeValue: 'Room 1003-1, Building 110, UNIST',
             email: 'Email:',
-            address: 'Address:'
+            address: 'Address:',
+            addressValue: '50 UNIST-gil, Eonyang-eup, Ulju-gun, Ulsan 44919, Republic of Korea'
         },
         news: {
             title: 'News'
@@ -152,7 +154,7 @@ const translations = {
             title: '소개',
             name: 'SEJEONG BAE',
             university: 'UNIST',
-            email: '메일:',
+            email: '이메일:',
             status: '학위:',
             studentStatus: '석박사통합과정',
             major: '전공:',
@@ -183,8 +185,10 @@ const translations = {
             title: '연락처',
             description: '연락을 원하시면 아래 정보를 통해 문의해주세요.',
             office: '사무실:',
+            officeValue: 'UNIST 110동 1003-1호',
             email: '이메일:',
-            address: '주소:'
+            address: '주소:',
+            addressValue: '(44919) 울산광역시 울주군 언양읍 유니스트길 50'
         },
         news: {
             title: '소식'
