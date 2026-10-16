@@ -1242,17 +1242,6 @@ body {
     font-weight: 650;
 }
 
-.publication-venue .publication-inline-link {
-    color: var(--link-color);
-    font-weight: 600;
-    text-decoration: none;
-    margin-left: 0.15rem;
-}
-
-.publication-venue .publication-inline-link:hover {
-    text-decoration: underline;
-}
-
 .publication-date {
     color: var(--text-light);
     opacity: 0.78;
