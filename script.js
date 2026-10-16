@@ -267,7 +267,7 @@ function setLanguage(lang) {
         });
         applyDataI18n(lang);
     }
-    if (window.DesignRefresh) {
+    if (window.DesignRefresh && DesignRefresh.renderResearchCards) {
         DesignRefresh.renderResearchCards();
     }
 }
