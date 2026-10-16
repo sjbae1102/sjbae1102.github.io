@@ -568,11 +568,12 @@ const SITE_DATA = {
 
 window.SITE_DATA = SITE_DATA;
 
+
 /* Single citation format for every page: authors (year). title. journal, volume(issue), pages. DOI */
 window.SITE_CITE = {
-  citation(p) {
+  citation(p, opts = {}) {
     const vi = [p.volume ? `${p.volume}${p.issue ? `(${p.issue})` : ''}` : '', p.pages].filter(Boolean).join(', ');
-    const doi = p.doi
+    const doi = p.doi && !opts.noDoi
       ? ` <a class="pub-doi" href="${p.doi}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">${p.doi.replace(/^https?:\/\//, '')}</a>`
       : '';
     const au = p.authorsHtml.replace(/<u>(.*?)<\/u>\.?/g, '<b class="me">$1.</b>');
@@ -585,8 +586,11 @@ window.SITE_CITE = {
   },
   badge(p) {
     const m = p.metrics;
-    return m
-      ? `<span class="if-badge"><b>IF ${m.value}</b><i>·</i>JCR ${m.year}<i>·</i>Remote Sensing ${m.rank}<i>·</i>top ${m.top}%</span>`
-      : '';
+    if (!m) return '';
+    const tip = `Journal Impact Factor ${m.value} (JCR ${m.year}) · Remote Sensing ${m.rank}`;
+    return `<span class="ifm ifm-b" title="${tip}"><span><b>${m.value}</b> Impact Factor</span><span><b>Top ${m.top}%</b> Remote Sensing</span><span>JCR ${m.year}</span></span>`;
+  },
+  subtle(p) {
+    return p.metrics ? ` <span class="if-subtle" title="JCR ${p.metrics.year}">Impact Factor ${p.metrics.value}</span>` : '';
   },
 };
