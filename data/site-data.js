@@ -298,46 +298,14 @@ const SITE_DATA = {
         textKo: '2021 농림위성 활용 아이디어 경진대회 장려상',
       },
     ],
-    cvPublications: [
+    grants: [
       {
-        year: '2026',
-        html:
-          '<u>Bae, S</u>., Lee, G., Chung, I., Kim, Y., Kim, Y., Im, J., Hwang, S., Son, B., & Sung, T. (2026). An Adaptive Dynamic AI-driven ParameTerization (ADAPT) framework for global hourly gross primary productivity estimation. <em>ISPRS Journal of Photogrammetry and Remote Sensing</em>, 242, 648–664.',
-      },
-      {
-        year: '2026',
-        html:
-          'Kim, Y., Cho, D., Bae, D., Lee, Y., Lee, S., <u>Bae, S</u>., & Im, J. (2026). HELIOS-Net: Hourly daytime estimation of land surface temperature with integration of observational solar-cloud-satellite geometry and deep neural network. <em>ISPRS Journal of Photogrammetry and Remote Sensing</em>, 242, 760–777.',
-      },
-      {
-        year: '2026',
-        html:
-          'Son, B., Sung, T., <u>Bae, S</u>., Choo, M., Im, J., Lee, Y., Rana, S. M. S., Cho, D., Yoo, C., Hong, J., Lee, H., & Kim, H. S. (2026). UNIQUE: UNified, high-resolution Intelligent carbon QUantification and Explanation. <em>Remote Sensing of Environment</em>, 346, 115636. <b>(Impact Factor: 11.4, JCR: 2.4%)</b>',
-      },
-      {
-        year: '2026',
-        html:
-          '<u>Bae, S</u>., Son, B., Sung, T., Kim, Y., Kim, Y., & Im, J. (2026). All-sky hourly estimation over East Asia using Himawari-8 AHI and multi-source data: investigating the main climatic drivers of afternoon depression and intraday variability in gross primary productivity. <em>GIScience & Remote Sensing</em>, 63(1), 2609352. <b>(Impact Factor: 6.9, JCR: 10.0%)</b>',
-      },
-      {
-        year: '2025',
-        html:
-          '<u>Bae, S</u>., Son, B., Sung, T., Kang, Y., & Im, J. (2025). Advancing hourly gross primary productivity mapping over East Asia using Himawari-8 AHI and artificial intelligence: Unveiling the impact of aerosol-induced radiation dynamics. <em>Remote Sensing of Environment</em>, 323, 114735. <b>(Impact Factor: 11.4, JCR: 2.4%)</b>',
-      },
-      {
+        id: 'grant-nrf-ms-2024',
         year: '2024',
-        html:
-          'Tobias, R. R., <u>Bae, S</u>., Cho, H., & Im, J. (2024). SAMBA: Synthetic Data-Augmented Mamba-Based Change Detection Algorithm Using KOMPSAT-3A Imagery. <em>Korean Journal of Remote Sensing</em>, 40(6_3), 1505-1521.',
-      },
-      {
-        year: '2023',
-        html:
-          '<u>Bae, S</u>., Son, B., Sung, T., Lee, Y., Im, J., & Kang, Y. (2023). Estimation of Fractional Urban Tree Canopy Cover through Machine Learning Using Optical Satellite Images. 기계학습을 이용한 광학 위성 영상 기반의 도시 내 수목 피복률 추정. <em>Korean Journal of Remote Sensing</em>, 39(5), 1009-1029.',
-      },
-      {
-        year: '2021',
-        html:
-          'Lee, C., Yun, Y., <u>Bae, S</u>., Eo, Y. D., Kim, C., Shin, S., ... & Han, Y. (2021). Analysis of deep learning research trends applied to remote sensing through paper review of Korean domestic journals. 국내학회지 논문 리뷰를 통한 원격탐사 분야 딥러닝 연구 동향 분석. <em>Journal of the Korean Society of Surveying, Geodesy, Photogrammetry and Cartography</em>, 39(6), 437-456.',
+        textEn:
+          "Research Scholarship for Master's Students, National Research Foundation of Korea",
+        textKo: '석사과정생 연구장려금 지원사업 2024, 한국연구재단',
+        detailKo: '2024 석사과정생 연구장려금 지원사업; RS-2024-00465',
       },
     ],
   },

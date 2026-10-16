@@ -65,6 +65,7 @@ const translations = {
             award4: 'Outstanding Paper Presentation Award, Korean Association of Geographic Information Studies',
             award5: 'Encouragement Award, 2021 Agricultural and Forestry Satellite Idea Challenge',
             grants: 'Grants',
+            conferences: 'Conference Presentations',
             grant1: 'Research Scholarship for Master\'s Students, National Research Foundation of Korea',
             grant1Ko: '2024 석사과정생 연구장려금 지원사업; RS-2024-00465'
         },
@@ -148,6 +149,7 @@ const translations = {
             award4: '우수논문상, 한국지리정보학회',
             award5: '2021 농림위성 활용 아이디어 경진대회 장려상',
             grants: '장학',
+            conferences: '학회 발표',
             grant1: '석사과정생 연구장려금 지원사업 2024, 한국연구재단',
             grant1Ko: 'RS-2024-00465'
         },
@@ -171,6 +173,31 @@ const translations = {
 
 // Language switching functionality
 let currentLang = 'en';
+
+function applyDataI18n(lang) {
+    document.querySelectorAll('[data-i18n]').forEach((element) => {
+        const key = element.getAttribute('data-i18n');
+        const keys = key.split('.');
+        let translation = translations[lang];
+
+        for (let i = 0; i < keys.length; i++) {
+            if (translation && translation[keys[i]]) {
+                translation = translation[keys[i]];
+            } else {
+                translation = null;
+                break;
+            }
+        }
+
+        if (translation) {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                element.value = translation;
+            } else {
+                element.textContent = translation;
+            }
+        }
+    });
+}
 
 function setLanguage(lang) {
     currentLang = lang;
@@ -196,29 +223,7 @@ function setLanguage(lang) {
     // Update social links (skip as requested)
     // Social links remain unchanged
     
-    // Update all elements with data-i18n attribute
-    document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        const keys = key.split('.');
-        let translation = translations[lang];
-        
-        for (let i = 0; i < keys.length; i++) {
-            if (translation && translation[keys[i]]) {
-                translation = translation[keys[i]];
-            } else {
-                translation = null;
-                break;
-            }
-        }
-        
-        if (translation) {
-            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                element.value = translation;
-            } else {
-                element.textContent = translation;
-            }
-        }
-    });
+    applyDataI18n(lang);
     
     // Update research interests list items
     const researchItems = document.querySelectorAll('.research-list li');
@@ -239,6 +244,7 @@ function setLanguage(lang) {
         document.querySelectorAll('[data-site-render="conferences"]').forEach((el) => {
             SiteRender.renderConferences(el);
         });
+        applyDataI18n(lang);
     }
 }
 
@@ -430,21 +436,6 @@ function updateActiveNav() {
 }
 
 window.addEventListener('scroll', updateActiveNav);
-
-// Update current year in footer
-const currentYearElement = document.getElementById('current-year');
-if (currentYearElement) {
-    currentYearElement.textContent = new Date().getFullYear();
-}
-
-// Update last updated date
-const lastUpdatedElement = document.getElementById('last-updated');
-if (lastUpdatedElement) {
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 
-                   'July', 'August', 'September', 'October', 'November', 'December'];
-    const now = new Date();
-    lastUpdatedElement.textContent = `${months[now.getMonth()]} ${now.getFullYear()}`;
-}
 
 // Initialize active nav on page load
 updateActiveNav();

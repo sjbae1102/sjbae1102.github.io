@@ -5,6 +5,7 @@
   "main": "external-news-data.js",
   "scripts": {
     "validate": "node scripts/validate-site-data.js",
+    "screenshot": "node scripts/screenshot-pages.mjs",
     "test": "npm run validate"
   },
   "repository": {
@@ -17,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/sjbae1102/sjbae1102.github.io/issues"
   },
-  "homepage": "https://github.com/sjbae1102/sjbae1102.github.io#readme"
+  "homepage": "https://github.com/sjbae1102/sjbae1102.github.io#readme",
+  "devDependencies": {
+    "playwright": "^1.49.1"
+  }
 }

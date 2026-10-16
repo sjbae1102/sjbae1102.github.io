@@ -13,7 +13,8 @@ Also update **`lastUpdated`** and **`copyrightYear`** at the top of `site-data.j
 | Published papers | `publications.international`, `publications.domestic` |
 | Under-review papers | `publications.inProgress` |
 | Conferences | `conferences.international`, `conferences.domestic` |
-| Biography CV papers | `about.cvPublications` |
+| Biography CV papers | Auto-generated from `publications.*` in `js/site-render.js` (do not edit a separate list) |
+| Biography grants | `about.grants` |
 | Awards | `about.awards` |
 | Home profile / i18n labels | `script.js` (`translations`) + static HTML on `index.html` |
 
@@ -23,7 +24,7 @@ External news sidebar: `external-news-data.js` (unchanged).
 
 1. Add an object to `publications.international` or `publications.domestic` with a unique `id`.
 2. Set **`image`** to a path under `news/` when you have a cover thumbnail (optional; text-only cards use the same layout without a thumbnail).
-3. Add a matching row to `about.cvPublications` if it should appear on the Biography page.
+3. Biography updates automatically when published lists change (run `npm run validate`).
 4. Optional: add a `news[]` item when you announce it.
 
 ## In-progress / under review
@@ -62,7 +63,9 @@ This resizes into `news/` (max width 1600px, target &lt;500KB).
 npm run validate
 ```
 
-Checks schema, duplicate `id`s, required publication images, and that referenced files exist.
+Checks schema, duplicate `id`s, required publication images, Biography ↔ Publications sync, footer fallbacks, and that referenced files exist.
+
+For a step-by-step checklist (Korean), see **[docs/UPDATE-CHECKLIST.md](docs/UPDATE-CHECKLIST.md)**.
 
 ## Conventions
 

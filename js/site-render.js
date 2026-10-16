@@ -162,6 +162,34 @@
     });
   }
 
+  function metricsToCvBold(metricsHtml) {
+    if (!metricsHtml) return '';
+    const ifMatch = metricsHtml.match(/<\/span>([\d.]+(?:\s*\(\d{4}\))?)\s*<span class="metric-dot">/);
+    const jcrMatch = metricsHtml.match(/JCR\s*([\d.]+%)/);
+    if (ifMatch && jcrMatch) {
+      return ` <b>(Impact Factor: ${ifMatch[1]}, JCR: ${jcrMatch[1]})</b>`;
+    }
+    return '';
+  }
+
+  function publicationToCvHtml(pub) {
+    const venue = (pub.venueHtml || '').replace(/\s*<a[^>]*>\[Dataset\]<\/a>/, '');
+    return `${pub.authorsHtml}. ${pub.title}. ${venue}${metricsToCvBold(pub.metricsHtml)}`;
+  }
+
+  function listCvPublications(data) {
+    const rows = [];
+    ['international', 'domestic'].forEach((section) => {
+      (data.publications[section] || []).forEach((pub) => {
+        rows.push({
+          year: String(pub.year),
+          html: publicationToCvHtml(pub),
+        });
+      });
+    });
+    return rows;
+  }
+
   function conferenceText(item, lang) {
     const base = lang === 'ko' && item.textKo ? item.textKo : item.textEn;
     if (item.presentationType) {
@@ -229,7 +257,28 @@
 
     if (pubsRoot) {
       pubsRoot.innerHTML = '';
-      window.SITE_DATA.about.cvPublications.forEach((row) => {
+      const inProgress = window.SITE_DATA.publications.inProgress || [];
+      if (inProgress.length) {
+        const sub = document.createElement('div');
+        sub.className = 'cv-subsection';
+        const heading = document.createElement('h4');
+        heading.className = 'cv-subheading';
+        heading.setAttribute('data-i18n', 'publications.inProgress');
+        heading.textContent = 'In progress publications';
+        sub.appendChild(heading);
+        inProgress.forEach((item) => {
+          const entry = document.createElement('div');
+          entry.className = 'cv-entry cv-entry-inprogress';
+          const detail = document.createElement('div');
+          detail.className = 'cv-detail cv-detail-full';
+          detail.innerHTML = item.html;
+          entry.appendChild(detail);
+          sub.appendChild(entry);
+        });
+        pubsRoot.appendChild(sub);
+      }
+
+      listCvPublications(window.SITE_DATA).forEach((row) => {
         const entry = document.createElement('div');
         entry.className = 'cv-entry';
         const date = document.createElement('div');
@@ -243,6 +292,75 @@
         pubsRoot.appendChild(entry);
       });
     }
+
+    const grantsRoot = document.getElementById('about-grants');
+    if (grantsRoot && window.SITE_DATA.about.grants) {
+      grantsRoot.innerHTML = '';
+      window.SITE_DATA.about.grants.forEach((grant) => {
+        const entry = document.createElement('div');
+        entry.className = 'cv-entry';
+        const date = document.createElement('div');
+        date.className = 'cv-date';
+        date.textContent = grant.year;
+        const detail = document.createElement('div');
+        detail.className = 'cv-detail';
+        if (lang === 'ko' && grant.textKo) {
+          detail.textContent = `${grant.textKo}${grant.detailKo ? ` (${grant.detailKo})` : ''}`;
+        } else {
+          detail.textContent = grant.textEn;
+          if (grant.detailKo && lang !== 'ko') {
+            detail.textContent += ` (${grant.detailKo})`;
+          }
+        }
+        entry.appendChild(date);
+        entry.appendChild(detail);
+        grantsRoot.appendChild(entry);
+      });
+    }
+
+    renderAboutConferences();
+  }
+
+  function renderAboutConferences() {
+    const root = document.getElementById('about-conferences');
+    if (!root || !window.SITE_DATA) return;
+    const data = window.SITE_DATA.conferences;
+    const lang =
+      typeof currentLang !== 'undefined'
+        ? currentLang
+        : localStorage.getItem('language') || 'en';
+
+    root.innerHTML = '';
+    const sections = [
+      { key: 'international', i18n: 'conference.international', title: 'International' },
+      { key: 'domestic', i18n: 'conference.domestic', title: 'Domestic' },
+    ];
+
+    sections.forEach((section) => {
+      const items = data[section.key] || [];
+      if (!items.length) return;
+      const block = document.createElement('div');
+      block.className = 'cv-subsection';
+      const heading = document.createElement('h4');
+      heading.className = 'cv-subheading';
+      heading.setAttribute('data-i18n', section.i18n);
+      heading.textContent = section.title;
+      block.appendChild(heading);
+      items.forEach((item) => {
+        const entry = document.createElement('div');
+        entry.className = 'cv-entry';
+        const date = document.createElement('div');
+        date.className = 'cv-date';
+        date.textContent = item.date;
+        const detail = document.createElement('div');
+        detail.className = 'cv-detail';
+        detail.innerHTML = conferenceText(item, lang);
+        entry.appendChild(date);
+        entry.appendChild(detail);
+        block.appendChild(entry);
+      });
+      root.appendChild(block);
+    });
   }
 
   function applySiteMeta() {
@@ -278,7 +396,10 @@
     renderPublicationsList,
     renderConferences,
     renderAboutSections,
+    renderAboutConferences,
     applySiteMeta,
+    publicationToCvHtml,
+    listCvPublications,
   };
 
   document.addEventListener('DOMContentLoaded', initSiteRender);
