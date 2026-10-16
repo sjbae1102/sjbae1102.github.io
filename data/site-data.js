@@ -387,6 +387,14 @@ const SITE_DATA = {
       image: 'news/igarss2026_poster_photo.jpg',
     },
     {
+      id: 'news-kcc-spring-2026',
+      date: 'Jun 25, 2026',
+      content:
+        'I attended the **2026 Korean Society of Climate Change (한국기후변화학회) Spring Conference** at Sejong University (세종대학교).',
+      contentKo: '**2026 한국기후변화학회 상반기학술대회**(세종대학교)에 참석했습니다.',
+      image: 'news/climatechange2026.jpg',
+    },
+    {
       id: 'news-molit-award-2026',
       date: 'Jun 24, 2026',
       content:
