@@ -61,6 +61,23 @@
 
 **규칙:** 실제 참석(또는 확정된 일정) 후에만 추가.
 
+### 학회 목록 문구 형식 (`textEn` / `textKo`)
+
+Conference·홈 Conference 탭·Biography 학회 섹션은 **한 줄 = 개최일(`date`) + 공식 학회명**만 표시합니다.
+
+| 허용 | 금지 |
+| --- | --- |
+| `2026 IEEE International Geoscience and Remote Sensing Symposium (IGARSS)` | 장소·국가·개최 기간 `(Aug 9–14, 2026)` |
+| `5th Asian Conference on Meteorology (ACM2026)` | 따옴표 발표 제목 `"Hourly all-sky GPP..."` |
+| `2026 Korean Society of Climate Change Spring Conference` | `, Sejong University`, 괄호 안 개최 기간·venue |
+| 국제: `presentationType` → Oral/Poster 배지 | News에 쓰는 장황한 문장을 목록에 복사 |
+
+**예시 (국문):** `2026 한국기후변화학회 춘계학술대회` — 국내는 영문·국문 각각 기존 항목 톤에 맞춤.
+
+발표 제목·장소·사진·수상은 **`news[]`** 에만 작성합니다.
+
+`npm run validate`가 학회 `textEn`/`textKo`에 따옴표·괄호 안 개최 기간·장소/발표 제목 흔적(예: `HICO`, `Sejong University`, `). "` )이 있으면 실패합니다. (학회 정식 명칭 안의 쉼표, 예: Surveying, Geodesy, … 는 허용)
+
 ---
 
 ## 5. 수상 (Award)
