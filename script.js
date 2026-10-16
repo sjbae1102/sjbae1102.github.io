@@ -29,7 +29,16 @@ const translations = {
             research3: 'Artificial Intelligence',
             research4: 'Machine Learning / Deep Learning',
             research5: 'Disaster Monitoring',
-            externalNews: 'External News'
+            externalNews: 'External News',
+            tagline:
+                'Remote sensing, GPP, landslide, and AI with satellite data for environmental science.',
+            researchCardGppTitle: 'Terrestrial carbon flux & GPP',
+            researchCardGppDesc: 'Hourly gross primary productivity from geostationary satellites and machine learning.',
+            researchCardDisasterTitle: 'Disaster monitoring & landslide',
+            researchCardDisasterDesc: 'Change detection and semantic segmentation for geohazards.',
+            researchCardAiTitle: 'AI for remote sensing',
+            researchCardAiDesc: 'Deep learning that fuses multi-source Earth observation data.',
+            researchCardCta: 'View related publications →'
         },
         tabs: {
             publications: 'Publications',
@@ -114,7 +123,15 @@ const translations = {
             research3: '인공지능',
             research4: '머신러닝/딥러닝',
             research5: '재난 모니터링',
-            externalNews: '외부 소식'
+            externalNews: '외부 소식',
+            tagline: '위성 데이터 기반 원격탐사, GPP, 산사태, 환경 AI 연구',
+            researchCardGppTitle: '육상 탄소 플럭스 · GPP',
+            researchCardGppDesc: '정지궤도 위성과 머신러닝을 활용한 시간별 총일차생산량 추정',
+            researchCardDisasterTitle: '재난 모니터링 · 산사태',
+            researchCardDisasterDesc: '변화탐지와 지질재해 의미론적 분할',
+            researchCardAiTitle: '원격탐사 AI',
+            researchCardAiDesc: '다중 위성·관측 데이터를 결합하는 딥러닝',
+            researchCardCta: '관련 논문 보기 →'
         },
         tabs: {
             publications: '논문',
@@ -245,6 +262,10 @@ function setLanguage(lang) {
             SiteRender.renderConferences(el);
         });
         applyDataI18n(lang);
+    }
+    if (window.DesignRefresh) {
+        DesignRefresh.renderResearchCards();
+        DesignRefresh.observeReveals();
     }
 }
 
@@ -500,7 +521,9 @@ function renderNews() {
     
     sortedNews.forEach(item => {
         const newsItem = document.createElement('div');
-        newsItem.className = item.image ? 'news-item' : 'news-item news-item--no-image';
+        newsItem.className = item.image
+            ? 'news-item reveal-on-scroll'
+            : 'news-item news-item--no-image reveal-on-scroll';
         
         const dateDiv = document.createElement('div');
         dateDiv.className = 'news-date';
@@ -617,6 +640,10 @@ function renderNews() {
         newsItem.appendChild(contentDiv);
         newsTimeline.appendChild(newsItem);
     });
+
+    if (window.DesignRefresh) {
+        DesignRefresh.observeReveals();
+    }
 }
 
 // News 데이터를 전역 변수로 설정
