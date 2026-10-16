@@ -138,19 +138,15 @@ const SITE_DATA = {
       {
         id: 'conf-acm2026',
         date: 'Oct 13, 2026',
-        textEn:
-          '5th Asian Conference on Meteorology (ACM2026), HICO, Gyeongju, Korea (Oct 11–14, 2026). "Hourly all-sky GPP across East Asia from Himawari-8 and multi-source observations: identifying the dominant climatic controls on afternoon decline and sub-daily variation".',
-        textKo:
-          '5th Asian Conference on Meteorology (ACM2026), 경주 HICO (2026.10.11–14). "Hourly all-sky GPP across East Asia from Himawari-8 and multi-source observations: identifying the dominant climatic controls on afternoon decline and sub-daily variation".',
+        textEn: '5th Asian Conference on Meteorology (ACM2026)',
+        textKo: '5th Asian Conference on Meteorology (ACM2026)',
         presentationType: 'Oral',
       },
       {
         id: 'conf-igarss2026',
         date: 'Aug 11, 2026',
-        textEn:
-          '2026 IEEE IGARSS, Washington, D.C., USA (Aug 9–14, 2026). "All-sky hourly estimation over East Asia using Himawari-8 AHI and multi-source data: investigating the main climatic drivers of afternoon depression and intraday variability in gross primary productivity".',
-        textKo:
-          '2026 IEEE IGARSS, 미국 워싱턴 D.C. (2026.08.09–14). "All-sky hourly estimation over East Asia using Himawari-8 AHI and multi-source data: investigating the main climatic drivers of afternoon depression and intraday variability in gross primary productivity".',
+        textEn: '2026 IEEE International Geoscience and Remote Sensing Symposium (IGARSS)',
+        textKo: '2026 IEEE International Geoscience and Remote Sensing Symposium (IGARSS)',
         presentationType: 'Poster',
       },
       {
@@ -193,10 +189,8 @@ const SITE_DATA = {
       {
         id: 'conf-kcc-spring-2026',
         date: 'Jun 25, 2026',
-        textEn:
-          '2026 Korean Society of Climate Change (한국기후변화학회) Spring Conference, Sejong University (세종대학교 대양AI센터) (Jun 25–26, 2026)',
-        textKo:
-          '2026 한국기후변화학회 춘계학술대회, 세종대학교 대양AI센터 (2026.06.25–26)',
+        textEn: '2026 Korean Society of Climate Change Spring Conference',
+        textKo: '2026 한국기후변화학회 춘계학술대회',
       },
       {
         id: 'conf-kcc-autumn-2025',

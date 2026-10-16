@@ -57,6 +57,48 @@ function checkFooterFallbacks(data, errors) {
   });
 }
 
+function checkConferenceListFormat(data, errors) {
+  const quotePattern = /["'‘’「」]/;
+  const dateRangeInParens =
+    /\(\s*(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d|\d{4}\.\d{2}\.\d{2}/;
+  const venueOrTalkHints = [
+    /\.\s*"/,
+    /\)\s*,\s*(?:HICO|Washington|Sejong|경주|미국)/,
+    /Sejong University/i,
+    /대양AI센터/,
+    / entitled /i,
+  ];
+
+  ['international', 'domestic'].forEach((kind) => {
+    (data.conferences[kind] || []).forEach((item) => {
+      ['textEn', 'textKo'].forEach((field) => {
+        const text = item[field];
+        if (!text) {
+          errors.push(`conference ${item.id}: ${field} is required`);
+          return;
+        }
+        if (quotePattern.test(text)) {
+          errors.push(
+            `conference ${item.id} ${field}: must not contain quotes (official conference name only; put talk titles in news[])`
+          );
+        }
+        if (dateRangeInParens.test(text)) {
+          errors.push(
+            `conference ${item.id} ${field}: must not include date ranges in the title (use the \`date\` field only)`
+          );
+        }
+        venueOrTalkHints.forEach((pattern) => {
+          if (pattern.test(text)) {
+            errors.push(
+              `conference ${item.id} ${field}: looks like a venue or talk title (use official conference name only; see docs/UPDATE-CHECKLIST.md)`
+            );
+          }
+        });
+      });
+    });
+  });
+}
+
 function checkBiographyPublicationSync(data, errors) {
   if (data.about?.cvPublications?.length) {
     errors.push(
@@ -128,6 +170,7 @@ function main() {
   (data.about?.grants || []).forEach((g) => remember(g.id, 'grant'));
 
   checkBiographyPublicationSync(data, errors);
+  checkConferenceListFormat(data, errors);
   checkFooterFallbacks(data, errors);
 
   if (errors.length) {
