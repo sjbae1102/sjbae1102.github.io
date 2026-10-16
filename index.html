@@ -9,9 +9,15 @@ git push -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Welcome to sjbae's homepage">
     <title>Sejeong Bae - Homepage</title>
+    <script>
+      (function () {
+        var t = new URLSearchParams(location.search).get('theme');
+        if (t === 'a' || t === 'b' || t === 'c') document.documentElement.setAttribute('data-palette', t);
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="stylesheet" href="style.css?v=20260427j">
-    <link rel="stylesheet" href="css/design-refresh.css?v=20261016j">
+    <link rel="stylesheet" href="css/design-refresh.css?v=20261016k">
 </head>
 <body>
     <script src="data/site-data.js?v=20261016a"></script>
@@ -169,6 +175,6 @@ git push -->
 
     <script src="js/site-render.js?v=20261016a"></script>
     <script src="script.js?v=20261016j"></script>
-    <script src="js/design-refresh.js?v=20261016j"></script>
+    <script src="js/design-refresh.js?v=20261016k"></script>
 </body>
 </html>

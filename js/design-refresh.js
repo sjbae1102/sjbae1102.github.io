@@ -5,6 +5,19 @@
   'use strict';
 
   const THEME_KEY = 'site-theme';
+  const PALETTE_PARAM = 'theme';
+
+  function initPaletteFromQuery() {
+    const raw = new URLSearchParams(window.location.search).get(PALETTE_PARAM);
+    const id = raw ? String(raw).toLowerCase() : '';
+    if (id === 'a' || id === 'b' || id === 'c') {
+      document.documentElement.setAttribute('data-palette', id);
+    } else {
+      document.documentElement.removeAttribute('data-palette');
+    }
+  }
+
+  initPaletteFromQuery();
 
   const RESEARCH_IMAGES = {
     gpp: {
@@ -152,6 +165,7 @@
     init,
     renderResearchCards,
     applyTheme,
+    initPaletteFromQuery,
   };
 
   document.addEventListener('DOMContentLoaded', init);
