@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 /**
- * Validates data/site-data.js schema, duplicate ids, publication images, and asset paths.
+ * Validates data/site-data.js schema, duplicate ids, publication images, asset paths,
+ * and Biography ↔ Publications consistency.
  */
 const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
+const { listCvPublications, listPublishedPublicationIds } = require('./lib/publication-cv');
 
 const ROOT = path.join(__dirname, '..');
 const DATA_PATH = path.join(ROOT, 'data', 'site-data.js');
@@ -26,6 +28,63 @@ function checkImage(relPath, errors) {
   if (!fs.existsSync(full)) {
     errors.push(`Missing image file: ${relPath}`);
   }
+}
+
+function checkFooterFallbacks(data, errors) {
+  const expectedYear = String(data.copyrightYear);
+  const expectedUpdated = data.lastUpdated;
+  const htmlFiles = [
+    'index.html',
+    'about/index.html',
+    'news/index.html',
+    'publications/index.html',
+    'conference/index.html',
+    'others/index.html',
+  ];
+  htmlFiles.forEach((rel) => {
+    const full = path.join(ROOT, rel);
+    const text = fs.readFileSync(full, 'utf8');
+    if (!text.includes(`id="current-year">${expectedYear}`)) {
+      errors.push(
+        `Stale footer copyright fallback in ${rel} (expected ${expectedYear} in #current-year span)`
+      );
+    }
+    if (!text.includes(`id="last-updated">${expectedUpdated}`)) {
+      errors.push(
+        `Stale footer last-updated fallback in ${rel} (expected "${expectedUpdated}" to match site-data.js)`
+      );
+    }
+  });
+}
+
+function checkBiographyPublicationSync(data, errors) {
+  if (data.about?.cvPublications?.length) {
+    errors.push(
+      'about.cvPublications is deprecated; Biography papers are generated from publications.international/domestic'
+    );
+  }
+
+  const publishedIds = listPublishedPublicationIds(data);
+  const cvRows = listCvPublications(data);
+  if (cvRows.length !== publishedIds.length) {
+    errors.push(
+      `Biography CV row count (${cvRows.length}) does not match published papers (${publishedIds.length})`
+    );
+  }
+
+  const cvIds = new Set(cvRows.map((r) => r.id));
+  publishedIds.forEach((id) => {
+    if (!cvIds.has(id)) {
+      errors.push(`Published paper ${id} is missing from generated Biography CV list`);
+    }
+  });
+
+  const inProgress = data.publications.inProgress || [];
+  inProgress.forEach((item) => {
+    if (!item.html || !item.html.includes('status-badge')) {
+      errors.push(`inProgress ${item.id}: html should include a status badge`);
+    }
+  });
 }
 
 function main() {
@@ -66,6 +125,10 @@ function main() {
   });
 
   (data.about?.awards || []).forEach((a) => remember(a.id, 'award'));
+  (data.about?.grants || []).forEach((g) => remember(g.id, 'grant'));
+
+  checkBiographyPublicationSync(data, errors);
+  checkFooterFallbacks(data, errors);
 
   if (errors.length) {
     console.error('Validation failed:\n' + errors.map((e) => ` - ${e}`).join('\n'));

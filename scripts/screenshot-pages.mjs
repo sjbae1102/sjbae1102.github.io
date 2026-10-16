@@ -19,6 +19,7 @@ const pages = [
   { name: 'conference', url: '/conference/' },
   { name: 'news', url: '/news/' },
   { name: 'about', url: '/about/' },
+  { name: 'others', url: '/others/' },
 ];
 
 function resolveFilePath(urlPath) {
