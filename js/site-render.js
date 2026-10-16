@@ -327,6 +327,42 @@
     return match ? match[1] : dateString;
   }
 
+  function parseConferenceDate(dateString) {
+    if (typeof parseDate === 'function') {
+      return parseDate(dateString);
+    }
+    const months = {
+      Jan: 0,
+      Feb: 1,
+      Mar: 2,
+      Apr: 3,
+      May: 4,
+      Jun: 5,
+      Jul: 6,
+      Aug: 7,
+      Sep: 8,
+      Oct: 9,
+      Nov: 10,
+      Dec: 11,
+    };
+    const parts = String(dateString).split(' ');
+    if (parts.length === 3) {
+      const month = months[parts[0]];
+      const day = parseInt(parts[1].replace(',', ''), 10);
+      const year = parseInt(parts[2], 10);
+      if (month !== undefined && !isNaN(day) && !isNaN(year)) {
+        return new Date(year, month, day);
+      }
+    }
+    return new Date(0);
+  }
+
+  function sortConferenceItemsByDate(items) {
+    return [...items].sort(
+      (a, b) => parseConferenceDate(b.date) - parseConferenceDate(a.date)
+    );
+  }
+
   function renderAboutConferences() {
     const root = document.getElementById('about-conferences');
     if (!root || !window.SITE_DATA) return;
@@ -343,7 +379,7 @@
     ];
 
     sections.forEach((section) => {
-      const items = data[section.key] || [];
+      const items = sortConferenceItemsByDate(data[section.key] || []);
       if (!items.length) return;
       const block = document.createElement('div');
       block.className = 'cv-subsection';
@@ -404,6 +440,7 @@
     renderAboutSections,
     renderAboutConferences,
     conferenceDateToCvYear,
+    sortConferenceItemsByDate,
     applySiteMeta,
     publicationToCvHtml,
     listCvPublications,
