@@ -121,7 +121,6 @@ node scripts/screenshot-pages.mjs
 
 | 항목 | 상태 |
 | --- | --- |
-| AOGS 2024 | Oral/Poster **미정** (`presentationType: null`) |
 | 2026.06 한국기후변화학회 | 발표 **제목 미정** (참석 News·Conference 항목만 존재) |
 | 2026.06 한국대기환경학회 | 발표 **제목 미정** (데이터에 아직 없음 — 추가 시 Conference·News·Biography 동시 반영) |
 | UNIST 등 캠퍼스 뉴스 URL | `external-news-data.js` 링크 **사용자 제공 대기** |

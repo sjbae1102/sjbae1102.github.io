@@ -186,7 +186,7 @@ const SITE_DATA = {
         date: 'Jun 24, 2024',
         textEn: 'Asia Oceania Geosciences Society (AOGS)',
         textKo: 'Asia Oceania Geosciences Society (AOGS)',
-        presentationType: null,
+        presentationType: 'Oral',
       },
     ],
     domestic: [

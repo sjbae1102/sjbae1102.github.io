@@ -33,7 +33,7 @@ Add to `publications.inProgress` with HTML in `html`. Use status badge class `st
 
 ## Add a conference
 
-Add to `conferences.international` or `conferences.domestic` after the event. For international talks, set `presentationType` to `Oral` or `Poster` when known; omit or `null` if unknown (e.g. AOGS 2024).
+Add to `conferences.international` or `conferences.domestic` after the event. For international talks, set `presentationType` to `Oral` or `Poster` when known; use `null` only if still unknown.
 
 ## Add news
 
