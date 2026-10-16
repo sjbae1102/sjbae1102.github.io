@@ -29,7 +29,7 @@ const SITE_DATA = {
       {
         id: 'pub-adapt-isprs-2026',
         year: 2026,
-        image: 'news/pub_adapt_isprs2026.png',
+        image: 'news/isprs_adapt.png',
         imageAlt: 'ADAPT ISPRS Journal article',
         doi: 'https://doi.org/10.1016/j.isprsjprs.2026.09.024',
         authorsHtml:
@@ -42,7 +42,7 @@ const SITE_DATA = {
       {
         id: 'pub-helios-isprs-2026',
         year: 2026,
-        image: 'news/pub_helios_isprs2026.png',
+        image: 'news/isprs_helios.png',
         imageAlt: 'HELIOS-Net ISPRS Journal article',
         doi: 'https://doi.org/10.1016/j.isprsjprs.2026.09.028',
         authorsHtml:
@@ -54,7 +54,7 @@ const SITE_DATA = {
       {
         id: 'pub-unique-rse-2026',
         year: 2026,
-        image: 'news/pub_unique_rse2026.png',
+        image: 'news/rse_unique.png',
         imageAlt: 'UNIQUE Remote Sensing of Environment article',
         doi: 'https://doi.org/10.1016/j.rse.2026.115636',
         authorsHtml:
@@ -362,7 +362,7 @@ const SITE_DATA = {
     },
     {
       id: 'news-helios-published',
-      date: 'Sep 19, 2026',
+      date: 'Sep 22, 2026',
       content:
         "Our new paper entitled '**HELIOS-Net: Hourly daytime estimation of land surface temperature with integration of observational solar-cloud-satellite geometry and deep neural network**' has been published in **ISPRS Journal of Photogrammetry and Remote Sensing**, 242, 760–777.",
       contentKo:
