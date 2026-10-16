@@ -21,11 +21,27 @@ const pages = [
   { name: 'about', url: '/about/' },
 ];
 
+function resolveFilePath(urlPath) {
+  let reqPath = decodeURIComponent(urlPath.split('?')[0]);
+  if (!reqPath || reqPath === '/') {
+    return path.join(ROOT, 'index.html');
+  }
+  if (reqPath.endsWith('/')) {
+    reqPath = reqPath.slice(0, -1);
+  }
+  let filePath = path.join(ROOT, reqPath);
+  if (!filePath.startsWith(ROOT)) {
+    return null;
+  }
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+    filePath = path.join(filePath, 'index.html');
+  }
+  return filePath;
+}
+
 function serveStatic(req, res) {
-  let reqPath = decodeURIComponent(req.url.split('?')[0]);
-  if (reqPath === '/') reqPath = '/index.html';
-  const filePath = path.join(ROOT, reqPath);
-  if (!filePath.startsWith(ROOT) || !fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
+  const filePath = resolveFilePath(req.url);
+  if (!filePath || !filePath.startsWith(ROOT) || !fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
     res.writeHead(404);
     res.end('Not found');
     return;

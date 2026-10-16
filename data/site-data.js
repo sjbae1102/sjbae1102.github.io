@@ -29,8 +29,8 @@ const SITE_DATA = {
       {
         id: 'pub-adapt-isprs-2026',
         year: 2026,
-        image: 'news/adapt_gpp_cover.png',
-        imageAlt: 'ADAPT framework for global hourly GPP',
+        image: 'news/pub_adapt_isprs2026.png',
+        imageAlt: 'ADAPT ISPRS Journal article',
         doi: 'https://doi.org/10.1016/j.isprsjprs.2026.09.024',
         authorsHtml:
           '<u>Bae, S</u>., Lee, G., Chung, I., Kim, Y., Kim, Y., Im, J., Hwang, S., Son, B., & Sung, T. (2026)',
@@ -42,6 +42,8 @@ const SITE_DATA = {
       {
         id: 'pub-helios-isprs-2026',
         year: 2026,
+        image: 'news/pub_helios_isprs2026.png',
+        imageAlt: 'HELIOS-Net ISPRS Journal article',
         doi: 'https://doi.org/10.1016/j.isprsjprs.2026.09.028',
         authorsHtml:
           'Kim, Y., Cho, D., Bae, D., Lee, Y., Lee, S., <u>Bae, S</u>., & Im, J. (2026)',
@@ -52,6 +54,8 @@ const SITE_DATA = {
       {
         id: 'pub-unique-rse-2026',
         year: 2026,
+        image: 'news/pub_unique_rse2026.png',
+        imageAlt: 'UNIQUE Remote Sensing of Environment article',
         doi: 'https://doi.org/10.1016/j.rse.2026.115636',
         authorsHtml:
           'Son, B., Sung, T., <u>Bae, S</u>., Choo, M., Im, J., Lee, Y., Rana, S. M. S., Cho, D., Yoo, C., Hong, J., Lee, H., & Kim, H. S. (2026)',

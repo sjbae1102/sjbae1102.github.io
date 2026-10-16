@@ -4,6 +4,16 @@
 (function () {
   'use strict';
 
+  const LI_FLEX = 'display: flex; gap: 1.5rem; align-items: flex-start;';
+  const LINK_FLEX =
+    'display: flex; gap: 1.5rem; align-items: flex-start; width: 100%; text-decoration: none; color: inherit;';
+  const THUMB_WRAP = 'flex-shrink: 0;';
+  const PAPER_STYLE = 'flex: 1; position: relative; min-width: 0;';
+  const IMG_STYLE =
+    'max-width: 200px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);';
+  const FALLBACK_STYLE =
+    'width: 130px; height: 168px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); background: linear-gradient(160deg, #f8fafc 0%, #e2e8f0 100%); border: 1px solid rgba(148, 163, 184, 0.35); display: flex; align-items: center; justify-content: center; text-align: center; padding: 0.5rem; font-size: 0.7rem; line-height: 1.25; color: #64748b; box-sizing: border-box;';
+
   function assetPath(relativePath) {
     if (!relativePath) return '';
     const clean = relativePath.replace(/^\//, '');
@@ -14,40 +24,39 @@
     return '../' + clean;
   }
 
-  function createPublicationThumb(pub) {
+  function createThumbColumn(pub) {
     const wrap = document.createElement('div');
-    wrap.className = 'publication-thumb';
-    const img = document.createElement('img');
-    img.className = 'publication-cover';
-    img.src = assetPath(pub.image);
-    img.alt = pub.imageAlt || pub.title || 'Publication cover';
-    img.loading = 'lazy';
-    img.onerror = function onCoverError() {
-      wrap.classList.add('publication-thumb--fallback');
-      img.remove();
-      const label = document.createElement('span');
-      label.className = 'publication-thumb-fallback-label';
-      label.textContent = pub.imageAlt || 'Cover';
-      wrap.appendChild(label);
-    };
-    wrap.appendChild(img);
+    wrap.style.cssText = THUMB_WRAP;
+    if (pub.image) {
+      const img = document.createElement('img');
+      img.src = assetPath(pub.image);
+      img.alt = pub.imageAlt || pub.title || 'Publication';
+      img.style.cssText = IMG_STYLE;
+      img.loading = 'lazy';
+      img.onerror = function () {
+        img.replaceWith(createFallbackThumb(pub));
+      };
+      wrap.appendChild(img);
+    } else {
+      wrap.appendChild(createFallbackThumb(pub));
+    }
     return wrap;
   }
 
-  function buildPublishedPaper(pub, index, options) {
+  function createFallbackThumb(pub) {
+    const el = document.createElement('div');
+    el.className = 'publication-thumb-fallback';
+    el.style.cssText = FALLBACK_STYLE;
+    el.setAttribute('aria-hidden', 'true');
+    el.textContent = pub.imageAlt || 'Journal article';
+    return el;
+  }
+
+  function buildPaperBody(pub, index, options) {
     const showIndex = options.showIndex !== false;
-    const li = document.createElement('li');
-    li.className = pub.image ? 'publication-card' : 'publication-card publication-card--no-cover';
-
-    const inner = document.createElement('div');
-    inner.className = 'publication-card-inner';
-
-    if (pub.image) {
-      inner.appendChild(createPublicationThumb(pub));
-    }
-
     const body = document.createElement('div');
     body.className = 'published-paper';
+    body.style.cssText = PAPER_STYLE;
 
     if (pub.metricsHtml) {
       const metrics = document.createElement('div');
@@ -77,18 +86,28 @@
     year.textContent = String(pub.year || '');
     body.appendChild(year);
 
-    inner.appendChild(body);
+    return body;
+  }
+
+  function buildPublishedPaper(pub, index, options) {
+    const li = document.createElement('li');
+    li.style.cssText = LI_FLEX;
+
+    const thumb = createThumbColumn(pub);
+    const body = buildPaperBody(pub, index, options);
 
     if (pub.doi) {
       const link = document.createElement('a');
       link.href = pub.doi;
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
-      link.className = 'publication-card-link';
-      link.appendChild(inner);
+      link.style.cssText = LINK_FLEX;
+      link.appendChild(thumb);
+      link.appendChild(body);
       li.appendChild(link);
     } else {
-      li.appendChild(inner);
+      li.appendChild(thumb);
+      li.appendChild(body);
     }
 
     return li;
