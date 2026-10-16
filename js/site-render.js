@@ -58,33 +58,23 @@
     body.className = 'published-paper';
     body.style.cssText = PAPER_STYLE;
 
-    if (pub.metricsHtml) {
+    const C = window.SITE_CITE;
+    if (pub.metrics) {
       const metrics = document.createElement('div');
       metrics.className = 'publication-metrics';
-      metrics.innerHTML = pub.metricsHtml;
+      metrics.innerHTML = C.badge(pub);
       body.appendChild(metrics);
     }
-
-    const authors = document.createElement('div');
-    authors.className = 'publication-authors';
-    authors.innerHTML =
-      (showIndex ? `<span class="publication-index">${index}.</span> ` : '') + (pub.authorsHtml || '');
-    body.appendChild(authors);
-
-    const title = document.createElement('div');
-    title.className = 'publication-title-text';
-    title.textContent = pub.title || '';
-    body.appendChild(title);
-
-    const venue = document.createElement('div');
-    venue.className = 'publication-venue';
-    venue.innerHTML = pub.venueHtml || '';
-    body.appendChild(venue);
-
-    const year = document.createElement('span');
-    year.className = 'publication-year';
-    year.textContent = String(pub.year || '');
-    body.appendChild(year);
+    const cite = document.createElement('div');
+    cite.className = 'publication-citation';
+    cite.innerHTML = (showIndex ? `<span class="publication-index">${index}.</span> ` : '') + C.citation(pub);
+    body.appendChild(cite);
+    if (pub.datasetUrl) {
+      const ds = document.createElement('div');
+      ds.className = 'publication-dataset';
+      ds.innerHTML = C.dataset(pub);
+      body.appendChild(ds);
+    }
 
     return body;
   }
@@ -151,7 +141,7 @@
       const list = data[section.key];
       if (!list || !list.length) return;
       const block = document.createElement('div');
-      block.className = 'publication-item';
+      block.className = `publication-item pub-${section.key}`;
       const heading = document.createElement('h3');
       heading.setAttribute('data-i18n', section.i18n);
       heading.textContent = section.title;
@@ -165,20 +155,12 @@
     });
   }
 
-  function metricsToCvBold(metricsHtml) {
-    if (!metricsHtml) return '';
-    const ifMatch = metricsHtml.match(/<\/span>([\d.]+(?:\s*\(\d{4}\))?)\s*<span class="metric-dot">/);
-    const jcrMatch = metricsHtml.match(/JCR\s*([\d.]+%)/);
-    if (ifMatch && jcrMatch) {
-      return ` <b>(Impact Factor: ${ifMatch[1]}, JCR: ${jcrMatch[1]})</b>`;
-    }
-    return '';
+  function publicationToCvHtml(pub) {
+    const C = window.SITE_CITE;
+    const badge = pub.metrics ? `<div class="cv-badge">${C.badge(pub)}</div>` : '';
+    return `<div class="cv-cite">${C.citation(pub)}</div>${badge}`;
   }
 
-  function publicationToCvHtml(pub) {
-    const venue = (pub.venueHtml || '').replace(/\s*<a[^>]*>\[Dataset\]<\/a>/, '');
-    return `${pub.authorsHtml}. ${pub.title}. ${venue}${metricsToCvBold(pub.metricsHtml)}`;
-  }
 
   function listCvPublications(data) {
     const rows = [];
@@ -292,8 +274,9 @@
           detail.textContent = `${grant.textKo}${grant.detailKo ? ` (${grant.detailKo})` : ''}`;
         } else {
           detail.textContent = grant.textEn;
-          if (grant.detailKo && lang !== 'ko') {
-            detail.textContent += ` (${grant.detailKo})`;
+          const d = grant.detailEn || grant.detailKo;
+          if (d) {
+            detail.textContent += ` (${d})`;
           }
         }
         entry.appendChild(date);
