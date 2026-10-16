@@ -1,5 +1,5 @@
 /**
- * Design refresh proposal: theme toggle, research cards, scroll reveal hooks.
+ * Design refresh proposal: theme toggle and research cards.
  */
 (function () {
   'use strict';
@@ -120,67 +120,16 @@
     });
   }
 
-  function isInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return rect.top < window.innerHeight * 0.92 && rect.bottom > 0;
-  }
-
-  let revealObserver;
-
-  function observeReveals() {
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const items = document.querySelectorAll('.reveal-on-scroll');
-
-    items.forEach((el) => {
-      el.classList.add('is-visible');
-    });
-
-    if (reduceMotion) return;
-
-    items.forEach((el) => {
-      if (isInViewport(el)) {
-        return;
-      }
-      el.classList.remove('is-visible');
-    });
-
-    if (!revealObserver) {
-      revealObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { rootMargin: '0px 0px -5% 0px', threshold: 0.05 }
-      );
-    }
-
-    document.querySelectorAll('.reveal-on-scroll:not(.is-visible)').forEach((el) => {
-      revealObserver.observe(el);
-    });
-
-    window.setTimeout(() => {
-      document.querySelectorAll('.reveal-on-scroll:not(.is-visible)').forEach((el) => {
-        el.classList.add('is-visible');
-      });
-    }, 800);
-  }
-
   function init() {
     initThemeToggle();
     if (document.getElementById('research-cards-grid')) {
       renderResearchCards();
     }
-    observeReveals();
   }
 
   window.DesignRefresh = {
     init,
     renderResearchCards,
-    observeReveals,
     applyTheme,
   };
 

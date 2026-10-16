@@ -265,7 +265,6 @@ function setLanguage(lang) {
     }
     if (window.DesignRefresh) {
         DesignRefresh.renderResearchCards();
-        DesignRefresh.observeReveals();
     }
 }
 
@@ -521,9 +520,7 @@ function renderNews() {
     
     sortedNews.forEach(item => {
         const newsItem = document.createElement('div');
-        newsItem.className = item.image
-            ? 'news-item reveal-on-scroll'
-            : 'news-item news-item--no-image reveal-on-scroll';
+        newsItem.className = item.image ? 'news-item' : 'news-item news-item--no-image';
         
         const dateDiv = document.createElement('div');
         dateDiv.className = 'news-date';
@@ -644,9 +641,6 @@ function renderNews() {
         newsTimeline.appendChild(newsItem);
     });
 
-    if (window.DesignRefresh) {
-        DesignRefresh.observeReveals();
-    }
 }
 
 // News 데이터를 전역 변수로 설정
