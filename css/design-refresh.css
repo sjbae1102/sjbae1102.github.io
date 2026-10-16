@@ -318,12 +318,35 @@ html[data-theme='dark'] .hero-backdrop {
   color: var(--primary-color);
 }
 
-/* Home tabs: keep main column from collapsing beside External News */
-.tabs-main .tabs-content {
-  flex: 1 1 0%;
-  min-width: 0;
-  width: 0;
-  max-width: 100%;
+/* Home tabs: desktop — grow beside External News without shrinking to zero on mobile */
+@media (min-width: 1101px) {
+  .tabs-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    align-items: start;
+    gap: 1rem;
+  }
+
+  .tabs-main .tabs-content {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .tabs-main .external-news-sidebar {
+    width: 280px;
+    max-width: 280px;
+    min-width: 280px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .tabs-main .tabs-content {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
 }
 
 .tabs-main #news-tab.tab-panel.active {
