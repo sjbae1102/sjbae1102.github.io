@@ -1,0 +1,21 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "external-news-data.js",
+  "scripts": {
+    "validate": "node scripts/validate-site-data.js",
+    "test": "npm run validate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sjbae1102/sjbae1102.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sjbae1102/sjbae1102.github.io/issues"
+  },
+  "homepage": "https://github.com/sjbae1102/sjbae1102.github.io#readme"
+}

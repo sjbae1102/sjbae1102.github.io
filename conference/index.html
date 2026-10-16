@@ -6,7 +6,6 @@
     <meta name="description" content="Conference - Sejeong Bae">
     <title>Conference - Sejeong Bae</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="../style.css?v=20260427j">
 </head>
 <body>
@@ -43,73 +42,14 @@
             <!-- Conference Section -->
             <section id="conference-section" class="content-section">
                 <h2 class="section-title" data-i18n="conference.title">Conference</h2>
-                <div class="conference-content">
+                <div class="conference-content" data-site-render="conferences">
                     <div class="conference-category">
                         <h3 data-i18n="conference.international">International</h3>
-                        <ul class="conference-list">
-                            <li>
-                                <span class="conference-date">Dec 15, 2025</span>
-                                <span class="conference-text">25th American Geophysical Union (AGU) Fall Meeting</span>
-                            </li>
-                            <li>
-                                <span class="conference-date">Aug 07, 2025</span>
-                                <span class="conference-text">2025 IEEE International Geoscience and Remote Sensing Symposium (IGARSS)</span>
-                            </li>
-                            <li>
-                                <span class="conference-date">Jul 02, 2025</span>
-                                <span class="conference-text">2025 CMAS-Asia-Pacific and Regional IUAPPA Conference</span>
-                            </li>
-                            <li>
-                                <span class="conference-date">May 15, 2025</span>
-                                <span class="conference-text">International Symposium on Remote Sensing (ISRS)</span>
-                            </li>
-                            <li>
-                                <span class="conference-date">Jun 24, 2024</span>
-                                <span class="conference-text">Asia Oceania Geosciences Society (AOGS)</span>
-                            </li>
-                        </ul>
+                        <ul class="conference-list" data-conference-list="international"></ul>
                     </div>
-                    
                     <div class="conference-category">
                         <h3 data-i18n="conference.domestic">Domestic</h3>
-                        <ul class="conference-list">
-                            <li>
-                                <span class="conference-date">Dec 03, 2025</span>
-                                <span class="conference-text">The Korean Society of Climate Change Research Autumn Conference</span>
-                            </li>
-                            <li>
-                                <span class="conference-date">Nov 06, 2025</span>
-                                <span class="conference-text">2025 GeoAI Data Autumn Conference</span>
-                            </li>
-                            <li>
-                                <span class="conference-date">Nov 05, 2025</span>
-                                <span class="conference-text">Korean Association of Geographic Information Studies (KAGIS) Autumn Conference</span>
-                            </li>
-                            <li>
-                                <span class="conference-date">Oct 23, 2025</span>
-                                <span class="conference-text">Korean Society of Remote Sensing (KSRS) Autumn Conference🏆</span>
-                            </li>
-                            <li>
-                                <span class="conference-date">Oct 17, 2024</span>
-                                <span class="conference-text">Korean Society of Remote Sensing (KSRS) Autumn Conference</span>
-                            </li>
-                            <li>
-                                <span class="conference-date">May 30, 2025</span>
-                                <span class="conference-text">Korean Association of Geographic Information Studies (KAGIS) Spring Conference🏆</span>
-                            </li>
-                            <li>
-                                <span class="conference-date">Apr 26, 2024</span>
-                                <span class="conference-text">Korean Association of Geographic Information Studies (KAGIS) Spring Conference🏆</span>
-                            </li>
-                            <li>
-                                <span class="conference-date">Nov 15, 2023</span>
-                                <span class="conference-text">Korean Society of Remote Sensing (KSRS) Autumn Conference</span>
-                            </li>
-                            <li>
-                                <span class="conference-date">Nov 05, 2021</span>
-                                <span class="conference-text">Korean Society of Surveying, Geodesy, Photogrammetry and Cartography (KSGPC)🏆</span>
-                            </li>
-                        </ul>
+                        <ul class="conference-list" data-conference-list="domestic"></ul>
                     </div>
                 </div>
             </section>
@@ -123,7 +63,9 @@
         </div>
     </footer>
 
-    <script src="../script.js?v=20260427b"></script>
+    <script src="../data/site-data.js?v=20261016a"></script>
+    <script src="../js/site-render.js?v=20261016a"></script>
+    <script src="../script.js?v=20261016a"></script>
 </body>
 </html>
 

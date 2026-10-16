@@ -234,6 +234,12 @@ function setLanguage(lang) {
 
     renderNews();
     window.setTimeout(renderNews, 0);
+    if (window.SiteRender) {
+        SiteRender.renderAboutSections();
+        document.querySelectorAll('[data-site-render="conferences"]').forEach((el) => {
+            SiteRender.renderConferences(el);
+        });
+    }
 }
 
 // Initialize language from localStorage or default to 'en'
@@ -484,7 +490,10 @@ function formatNewsDate(dateString) {
 // Render News from news-data.js
 function renderNews() {
     const newsTimeline = document.getElementById('news-timeline');
-    const sourceNews = window.newsData || (typeof newsData !== 'undefined' ? newsData : null);
+    const sourceNews =
+        (window.SITE_DATA && window.SITE_DATA.news) ||
+        window.newsData ||
+        (typeof newsData !== 'undefined' ? newsData : null);
     if (!newsTimeline || !sourceNews) return;
 
     window.newsData = sourceNews;
@@ -500,7 +509,7 @@ function renderNews() {
     
     sortedNews.forEach(item => {
         const newsItem = document.createElement('div');
-        newsItem.className = 'news-item';
+        newsItem.className = item.image ? 'news-item' : 'news-item news-item--no-image';
         
         const dateDiv = document.createElement('div');
         dateDiv.className = 'news-date';
@@ -599,15 +608,16 @@ function renderNews() {
             const image = document.createElement('img');
             
             // 이미지 경로 조정: 현재 페이지가 news/ 디렉토리에 있으면 상대 경로 조정
-            let imagePath = item.image;
-            if (window.location.pathname.includes('/news/')) {
-                // news/ 디렉토리 안에 있으면 ../ 제거하고 파일명만 사용
-                imagePath = item.image.replace('news/', '');
-            }
-            
+            const imagePath = window.SiteRender
+                ? SiteRender.assetPath(item.image)
+                : item.image;
             image.src = imagePath;
             image.alt = localizedContent.replace(/\*\*/g, '').substring(0, 50) + '...';
             image.className = 'news-image';
+            image.onerror = function () {
+                imageContainer.remove();
+                newsItem.classList.add('news-item--no-image');
+            };
             imageContainer.appendChild(image);
             contentDiv.appendChild(imageContainer);
         }
@@ -619,7 +629,9 @@ function renderNews() {
 }
 
 // News 데이터를 전역 변수로 설정
-if (typeof newsData !== 'undefined') {
+if (window.SITE_DATA && window.SITE_DATA.news) {
+    window.newsData = window.SITE_DATA.news;
+} else if (typeof newsData !== 'undefined') {
     window.newsData = newsData;
 }
 
@@ -748,72 +760,3 @@ function sortConferenceLists() {
         items.forEach(item => list.appendChild(item));
     });
 }
-
-// Initialize language from localStorage or default to 'en'
-document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('language') || 'en';
-    setLanguage(savedLang);
-    
-    // Add event listeners to language buttons
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const lang = btn.getAttribute('data-lang');
-            setLanguage(lang);
-        });
-    });
-    
-    // News 렌더링 및 Conference 정렬
-    renderNews();
-    sortConferenceLists();
-    
-    // External news 렌더링
-    if (typeof externalNewsData !== 'undefined') {
-        renderExternalNews();
-    }
-    
-    // Check URL parameters for tab
-    const urlParams = new URLSearchParams(window.location.search);
-    const tabParam = urlParams.get('tab');
-    
-    // Check hash
-    const hash = window.location.hash;
-    
-    if (tabParam) {
-        const tabButton = document.querySelector(`.tab-button[data-tab="${tabParam}"]`);
-        if (tabButton) {
-            setTimeout(() => {
-                tabButton.click();
-                const target = document.querySelector('#tabs-section');
-                if (target) {
-                    const offsetTop = target.offsetTop - 70;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            }, 300);
-        }
-    } else if (hash === '#home') {
-        const target = document.querySelector('#home');
-        if (target) {
-            setTimeout(() => {
-                const offsetTop = target.offsetTop - 70;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }, 300);
-        }
-    } else if (hash === '#tabs-section') {
-        const target = document.querySelector('#tabs-section');
-        if (target) {
-            setTimeout(() => {
-                const offsetTop = target.offsetTop - 70;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }, 300);
-        }
-    }
-});
