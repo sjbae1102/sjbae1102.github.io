@@ -28,10 +28,53 @@
 // 객체 형식의 News (더 많은 옵션 사용 가능)
 const newsDataObjects = [
     {
+        date: "Oct 13, 2026",
+        content: "I delivered an oral presentation at the **5th Asian Conference on Meteorology (ACM2026)** in Gyeongju, Korea entitled '**Hourly all-sky GPP across East Asia from Himawari-8 and multi-source observations: identifying the dominant climatic controls on afternoon decline and sub-daily variation**'.",
+        contentKo: "경주에서 열린 **5th Asian Conference on Meteorology (ACM2026)**에서 '**Hourly all-sky GPP across East Asia from Himawari-8 and multi-source observations: identifying the dominant climatic controls on afternoon decline and sub-daily variation**' 제목으로 구두 발표를 진행했습니다.",
+    },
+
+    {
+        date: "Sep 19, 2026",
+        content: "Our new paper entitled '**An Adaptive Dynamic AI-driven ParameTerization (ADAPT) framework for global hourly gross primary productivity estimation**' has been published in **ISPRS Journal of Photogrammetry and Remote Sensing**, 242, 648–664.",
+        contentKo: "새 논문 '**An Adaptive Dynamic AI-driven ParameTerization (ADAPT) framework for global hourly gross primary productivity estimation**'이 **ISPRS Journal of Photogrammetry and Remote Sensing**, 242, 648–664에 게재되었습니다.",
+        link: "https://doi.org/10.1016/j.isprsjprs.2026.09.024",
+        linkText: "An Adaptive Dynamic AI-driven ParameTerization (ADAPT) framework for global hourly gross primary productivity estimation",
+    },
+
+    {
+        date: "Sep 19, 2026",
+        content: "Our new paper entitled '**HELIOS-Net: Hourly daytime estimation of land surface temperature with integration of observational solar-cloud-satellite geometry and deep neural network**' has been published in **ISPRS Journal of Photogrammetry and Remote Sensing**, 242, 760–777.",
+        contentKo: "새 논문 '**HELIOS-Net: Hourly daytime estimation of land surface temperature with integration of observational solar-cloud-satellite geometry and deep neural network**'이 **ISPRS Journal of Photogrammetry and Remote Sensing**, 242, 760–777에 게재되었습니다.",
+        link: "https://doi.org/10.1016/j.isprsjprs.2026.09.028",
+        linkText: "HELIOS-Net: Hourly daytime estimation of land surface temperature with integration of observational solar-cloud-satellite geometry and deep neural network",
+    },
+
+    {
+        date: "Aug 28, 2026",
+        content: "Our new paper entitled '**UNIQUE: UNified, high-resolution Intelligent carbon QUantification and Explanation**' has been published in **Remote Sensing of Environment**, 346, 115636.",
+        contentKo: "새 논문 '**UNIQUE: UNified, high-resolution Intelligent carbon QUantification and Explanation**'이 **Remote Sensing of Environment**, 346, 115636에 게재되었습니다.",
+        link: "https://doi.org/10.1016/j.rse.2026.115636",
+        linkText: "UNIQUE: UNified, high-resolution Intelligent carbon QUantification and Explanation",
+        image: "news/rse1.png"
+    },
+
+    {
+        date: "Aug 11, 2026",
+        content: "I presented a poster at **2026 IEEE IGARSS** in Washington, D.C., USA entitled '**All-sky hourly estimation over East Asia using Himawari-8 AHI and multi-source data: investigating the main climatic drivers of afternoon depression and intraday variability in gross primary productivity**'.",
+        contentKo: "미국 워싱턴 D.C.에서 열린 **2026 IEEE IGARSS**에서 '**All-sky hourly estimation over East Asia using Himawari-8 AHI and multi-source data: investigating the main climatic drivers of afternoon depression and intraday variability in gross primary productivity**' 제목으로 포스터를 발표했습니다.",
+    },
+
+    {
+        date: "Jun 24, 2026",
+        content: "I was honored to receive the **Encouragement Award (장려상)** for '**Top 20 Excellent Papers in National Land, Infrastructure and Transport R&D**' (국토교통R&D 우수논문 20선) at the **2026 Land, Infrastructure and Transport Technology Fair** (2026 국토교통기술대전) for the paper '**AI와 Himawari-8 정지궤도위성을 활용한 시간별 총일차생산량(GPP) 추정: 에어로졸의 영향 분석**'.",
+        contentKo: "**2026 국토교통기술대전**에서 논문 '**AI와 Himawari-8 정지궤도위성을 활용한 시간별 총일차생산량(GPP) 추정: 에어로졸의 영향 분석**'이 **국토교통R&D 우수논문 20선**에 선정되어 **장려상**을 수상했습니다.",
+    },
+
+    {
         date: "Dec 29, 2025",
         content: "Our new paper entitled '**All-sky hourly estimation over East Asia using Himawari-8 AHI and multi-source data: investigating the main climatic drivers of afternoon depression and intraday variability in gross primary productivity**' has been published in **GIScience & Remote Sensing**, 63(1), 2609352.",
         contentKo: "새 논문 '**All-sky hourly estimation over East Asia using Himawari-8 AHI and multi-source data: investigating the main climatic drivers of afternoon depression and intraday variability in gross primary productivity**'이 **GIScience & Remote Sensing**, 63(1), 2609352에 게재되었습니다.",
-        link: "#",
+        link: "https://doi.org/10.1080/15481603.2025.2609352",
         linkText: "All-sky hourly estimation over East Asia using Himawari-8 AHI and multi-source data: investigating the main climatic drivers of afternoon depression and intraday variability in gross primary productivity",
         image: "news/gisrs.png"
     },

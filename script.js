@@ -425,21 +425,6 @@ function updateActiveNav() {
 
 window.addEventListener('scroll', updateActiveNav);
 
-// Update current year in footer
-const currentYearElement = document.getElementById('current-year');
-if (currentYearElement) {
-    currentYearElement.textContent = new Date().getFullYear();
-}
-
-// Update last updated date
-const lastUpdatedElement = document.getElementById('last-updated');
-if (lastUpdatedElement) {
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 
-                   'July', 'August', 'September', 'October', 'November', 'December'];
-    const now = new Date();
-    lastUpdatedElement.textContent = `${months[now.getMonth()]} ${now.getFullYear()}`;
-}
-
 // Initialize active nav on page load
 updateActiveNav();
 
@@ -459,6 +444,13 @@ function parseDate(dateString) {
         
         if (month !== undefined && !isNaN(day) && !isNaN(year)) {
             return new Date(year, month, day);
+        }
+    }
+    if (parts.length === 2) {
+        const month = months[parts[0]];
+        const year = parseInt(parts[1]);
+        if (month !== undefined && !isNaN(year)) {
+            return new Date(year, month, 1);
         }
     }
     
