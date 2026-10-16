@@ -94,14 +94,13 @@
       link.href = pub.doi;
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
-      link.style.cssText = LINK_FLEX;
-      link.appendChild(thumb);
-      link.appendChild(body);
-      li.appendChild(link);
-    } else {
-      li.appendChild(thumb);
-      li.appendChild(body);
+      link.className = 'pub-thumb-link';
+      link.setAttribute('aria-label', `Open ${pub.title || 'article'} (DOI)`);
+      while (thumb.firstChild) link.appendChild(thumb.firstChild);
+      thumb.appendChild(link);
     }
+    li.appendChild(thumb);
+    li.appendChild(body);
 
     return li;
   }
