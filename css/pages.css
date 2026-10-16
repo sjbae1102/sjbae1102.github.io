@@ -295,3 +295,5 @@ html[data-theme='dark'] .page-v4 #news-section .news-image{filter:brightness(.88
 .pub-doi,.publication-dataset a,.publication-inline-link,.home-v3 .pv a.pub-doi{color:inherit !important;text-decoration:underline !important;text-decoration-thickness:1px !important;text-underline-offset:3px;text-decoration-color:color-mix(in srgb,currentColor 35%,transparent) !important;cursor:pointer}
 .pub-doi:hover,.publication-dataset a:hover,.publication-inline-link:hover{text-decoration-color:currentColor !important}
 .home-v3 .pub .th .pub-thumb-link,.home-v3 .pub .th .pub-thumb-link img{width:100%;height:100%;display:block}
+/* v19: no hover effect on publication sections (style.css .publication-item:hover lifted -2px) */
+.page-v4 .publication-item,.page-v4 .publication-item:hover{transform:none !important;transition:none !important}
