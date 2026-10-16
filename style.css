@@ -1258,6 +1258,26 @@ body {
     margin-left: 0;
 }
 
+.publication-thumb-fallback {
+    flex-shrink: 0;
+}
+
+.conference-type-badge {
+    display: inline-block;
+    margin-left: 0.35rem;
+    padding: 0.1rem 0.45rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 999px;
+    background: rgba(37, 99, 235, 0.1);
+    color: #1d4ed8;
+    vertical-align: middle;
+}
+
+.news-item--no-image .news-content {
+    width: 100%;
+}
+
 .publication-item li[style*="display: flex"] {
     display: flex !important;
     gap: 1.5rem;
@@ -1762,7 +1782,7 @@ a:hover {
         flex-direction: column;
         gap: 0.75rem;
     }
-    
+
     .publication-item li > div:first-child,
     .publication-item li > a > div:first-child {
         width: 100%;
