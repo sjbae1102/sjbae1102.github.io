@@ -38,7 +38,9 @@ const translations = {
             researchCardDisasterDesc: 'Change detection and semantic segmentation for geohazards.',
             researchCardAiTitle: 'AI for remote sensing',
             researchCardAiDesc: 'Deep learning that fuses multi-source Earth observation data.',
-            researchCardCta: 'View related publications →'
+            researchCardCta: 'View related publications →',
+            newsMore: 'More',
+            newsLess: 'Less'
         },
         tabs: {
             publications: 'Publications',
@@ -131,7 +133,9 @@ const translations = {
             researchCardDisasterDesc: '변화탐지와 지질재해 의미론적 분할',
             researchCardAiTitle: '원격탐사 AI',
             researchCardAiDesc: '다중 위성·관측 데이터를 결합하는 딥러닝',
-            researchCardCta: '관련 논문 보기 →'
+            researchCardCta: '관련 논문 보기 →',
+            newsMore: '더보기',
+            newsLess: '접기'
         },
         tabs: {
             publications: '논문',
@@ -508,7 +512,8 @@ function renderNews() {
     if (!newsTimeline || !sourceNews) return;
 
     window.newsData = sourceNews;
-    
+    const isHomeNewsGrid = Boolean(newsTimeline.closest('#news-tab'));
+
     newsTimeline.innerHTML = '';
     
     // 날짜순으로 정렬 (최신순 - 내림차순)
@@ -521,6 +526,7 @@ function renderNews() {
     sortedNews.forEach(item => {
         const newsItem = document.createElement('div');
         newsItem.className = item.image ? 'news-item' : 'news-item news-item--no-image';
+        if (isHomeNewsGrid) newsItem.classList.add('news-item--home');
         
         const dateDiv = document.createElement('div');
         dateDiv.className = 'news-date';
@@ -611,6 +617,29 @@ function renderNews() {
         
         textContainer.appendChild(paragraph);
 
+        let moreBtn = null;
+        if (isHomeNewsGrid) {
+          moreBtn = document.createElement('button');
+          moreBtn.type = 'button';
+          moreBtn.className = 'news-more-btn';
+          moreBtn.setAttribute('aria-expanded', 'false');
+          const moreLabel =
+            translations[currentLang]?.home?.newsMore ||
+            translations.en?.home?.newsMore ||
+            'More';
+          const lessLabel =
+            translations[currentLang]?.home?.newsLess ||
+            translations.en?.home?.newsLess ||
+            'Less';
+          moreBtn.textContent = moreLabel;
+          moreBtn.addEventListener('click', () => {
+            const expanded = newsItem.classList.toggle('news-item--expanded');
+            moreBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+            moreBtn.textContent = expanded ? lessLabel : moreLabel;
+          });
+          textContainer.appendChild(moreBtn);
+        }
+
         const cardBody = document.createElement('div');
         cardBody.className = 'news-card-body';
         cardBody.appendChild(dateDiv);
@@ -639,6 +668,13 @@ function renderNews() {
         }
 
         newsTimeline.appendChild(newsItem);
+
+        if (isHomeNewsGrid && moreBtn) {
+          window.requestAnimationFrame(() => {
+            const needsMore = paragraph.scrollHeight > paragraph.clientHeight + 2;
+            if (!needsMore) moreBtn.remove();
+          });
+        }
     });
 
 }

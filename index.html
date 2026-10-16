@@ -11,7 +11,7 @@ git push -->
     <title>Sejeong Bae - Homepage</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="stylesheet" href="style.css?v=20260427j">
-    <link rel="stylesheet" href="css/design-refresh.css?v=20261016i">
+    <link rel="stylesheet" href="css/design-refresh.css?v=20261016j">
 </head>
 <body>
     <script src="data/site-data.js?v=20261016a"></script>
@@ -51,23 +51,28 @@ git push -->
         <div class="container home-container">
             <div class="home-main-wrapper">
                 <!-- Home Section -->
-                <section id="home" class="content-section home-hero-section">
-                <div class="hero-backdrop" aria-hidden="true"><div class="hero-orbit"></div></div>
-                <div class="hero-inner">
+                <section id="home" class="home-editorial" aria-label="Profile">
+                <div class="hero-editorial">
                     <div class="hero-photo-wrap">
-                        <img src="profile.jpg" alt="Sejeong Bae" class="hero-photo">
+                        <img src="profile.jpg" alt="Sejeong Bae" class="hero-photo" width="144" height="144">
                     </div>
                     <div class="hero-body">
-                        <h1 class="main-title">Sejeong Bae</h1>
-                        <p class="hero-names subtitle"><strong>배세정, 裵勢正</strong></p>
+                        <h1 class="main-title hero-title">Sejeong Bae</h1>
+                        <p class="hero-names"><span>배세정, 裵勢正</span></p>
                         <p class="hero-tagline" data-i18n="home.tagline">Remote sensing, GPP, landslide, and AI with satellite data for environmental science.</p>
-                        <div class="hero-meta">
+                        <p class="hero-meta-line">
                             <span data-i18n="home.studentStatus">Combined M.S. & Ph.D. Student</span>
-                            <span aria-hidden="true">·</span>
+                            <span class="meta-sep" aria-hidden="true">·</span>
                             <span data-i18n="home.university">UNIST, Ulsan National Institute of Science and Technology</span>
-                            <span aria-hidden="true">·</span>
+                            <span class="meta-sep" aria-hidden="true">·</span>
                             <span data-i18n="home.southKorea">South Korea</span>
-                        </div>
+                        </p>
+                        <p class="hero-affiliation-line">
+                            <span data-i18n="home.instructor">Instructor: Prof. Jungho Im</span>
+                            <span class="meta-sep" aria-hidden="true">·</span>
+                            <span data-i18n="home.labMember">Member of the Intelligent Remote sensing and geospatial Information Science (IRIS) Lab</span>
+                            <a href="https://iris.unist.ac.kr/" target="_blank" rel="noopener noreferrer" class="hero-affiliation-link" data-i18n="home.link">[Link]</a>
+                        </p>
                         <div class="social-links hero-social">
                                 <a href="https://scholar.google.com/citations?user=F5TRe0oAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="social-link scholar">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -96,16 +101,13 @@ git push -->
                         </div>
                     </div>
                 </div>
-                <div class="hero-affiliation-panel">
-                    <h2 data-i18n="home.affiliation">Affiliation</h2>
-                    <p><span data-i18n="home.instructor">Instructor: Prof. Jungho Im</span></p>
-                    <p><span data-i18n="home.labMember">Member of the Intelligent Remote sensing and geospatial Information Science (IRIS) Lab</span> <a href="https://iris.unist.ac.kr/" target="_blank" rel="noopener noreferrer" data-i18n="home.link">[Link]</a></p>
-                </div>
-                <div class="research-cards-section">
-                    <h2 data-i18n="home.researchInterests">Research Interests</h2>
-                    <div class="research-cards-grid" id="research-cards-grid"></div>
-                </div>
             </section>
+
+                <section class="home-research-section" aria-labelledby="research-heading">
+                    <div class="home-section-divider" aria-hidden="true"></div>
+                    <h2 id="research-heading" class="home-section-title" data-i18n="home.researchInterests">Research Interests</h2>
+                    <div class="research-cards-grid research-cards-grid--showcase" id="research-cards-grid"></div>
+                </section>
 
             <!-- Tabs Section -->
             <section id="tabs-section" class="content-section">
@@ -166,7 +168,7 @@ git push -->
     </footer>
 
     <script src="js/site-render.js?v=20261016a"></script>
-    <script src="script.js?v=20261016f"></script>
-    <script src="js/design-refresh.js?v=20261016i"></script>
+    <script src="script.js?v=20261016j"></script>
+    <script src="js/design-refresh.js?v=20261016j"></script>
 </body>
 </html>

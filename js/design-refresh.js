@@ -1,15 +1,27 @@
 /**
- * Design refresh proposal: theme toggle and research cards.
+ * Design refresh proposal: theme toggle and research showcase cards.
  */
 (function () {
   'use strict';
 
   const THEME_KEY = 'site-theme';
 
-  const INFOGRAPHIC_SRC = {
-    gpp: 'assets/research/gpp.svg',
-    disaster: 'assets/research/disaster.svg',
-    ai: 'assets/research/ai-remote-sensing.svg',
+  const RESEARCH_IMAGES = {
+    gpp: {
+      jpg: 'assets/research/gpp.jpg',
+      webp: 'assets/research/gpp.webp',
+      alt: 'Geostationary satellite observing vegetation and carbon flux',
+    },
+    disaster: {
+      jpg: 'assets/research/landslide.jpg',
+      webp: 'assets/research/landslide.webp',
+      alt: 'Satellite monitoring of landslide on forested terrain',
+    },
+    ai: {
+      jpg: 'assets/research/ai.jpg',
+      webp: 'assets/research/ai.webp',
+      alt: 'Geospatial foundation model fusing Earth observation inputs',
+    },
   };
 
   const RESEARCH_CARDS = [
@@ -18,6 +30,7 @@
       descKey: 'home.researchCardGppDesc',
       linkPubId: 'pub-adapt-isprs-2026',
       theme: 'gpp',
+      featured: true,
     },
     {
       titleKey: 'home.researchCardDisasterTitle',
@@ -54,6 +67,23 @@
     return node || key;
   }
 
+  function createResearchPicture(theme) {
+    const assets = RESEARCH_IMAGES[theme];
+    const picture = document.createElement('picture');
+    const source = document.createElement('source');
+    source.type = 'image/webp';
+    source.srcset = assets.webp;
+    const img = document.createElement('img');
+    img.className = 'research-card-image';
+    img.src = assets.jpg;
+    img.alt = assets.alt;
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    picture.appendChild(source);
+    picture.appendChild(img);
+    return picture;
+  }
+
   function renderResearchCards() {
     const grid = document.getElementById('research-cards-grid');
     if (!grid) return;
@@ -64,17 +94,11 @@
       const href = pub ? `/publications/#pub-${pub.id}` : '/publications/';
       const link = document.createElement('a');
       link.className = 'research-card';
-      link.href = href;
+      if (card.featured) link.classList.add('research-card--featured');
 
       const thumb = document.createElement('div');
       thumb.className = `research-card-thumb research-card-thumb--${card.theme}`;
-      const img = document.createElement('img');
-      img.className = 'research-infographic';
-      img.src = INFOGRAPHIC_SRC[card.theme];
-      img.alt = '';
-      img.loading = 'lazy';
-      img.decoding = 'async';
-      thumb.appendChild(img);
+      thumb.appendChild(createResearchPicture(card.theme));
 
       const body = document.createElement('div');
       body.className = 'research-card-body';
@@ -82,14 +106,9 @@
       h3.textContent = getTranslation(card.titleKey);
       const p = document.createElement('p');
       p.textContent = getTranslation(card.descKey);
-      const cta = document.createElement('div');
-      cta.className = 'research-card-cta';
-      cta.setAttribute('data-i18n', 'home.researchCardCta');
-      cta.textContent = getTranslation('home.researchCardCta');
 
       body.appendChild(h3);
       body.appendChild(p);
-      body.appendChild(cta);
       link.appendChild(thumb);
       link.appendChild(body);
       grid.appendChild(link);
