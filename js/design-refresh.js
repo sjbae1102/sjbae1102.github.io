@@ -6,6 +6,12 @@
 
   const THEME_KEY = 'site-theme';
 
+  const INFOGRAPHIC_SRC = {
+    gpp: 'assets/research/gpp.svg',
+    disaster: 'assets/research/disaster.svg',
+    ai: 'assets/research/ai-remote-sensing.svg',
+  };
+
   const RESEARCH_CARDS = [
     {
       titleKey: 'home.researchCardGppTitle',
@@ -48,16 +54,6 @@
     return node || key;
   }
 
-  function iconSvg(theme) {
-    if (theme === 'gpp') {
-      return `<svg class="research-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/><path d="M8 14c1.5-2 4.5-2 6 0"/></svg>`;
-    }
-    if (theme === 'disaster') {
-      return `<svg class="research-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 20h18M5 18l5-10 4 6 3-4 4 8"/><path d="M14 6l2-2 2 2"/></svg>`;
-    }
-    return `<svg class="research-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7l7-4z"/><circle cx="12" cy="11" r="2"/><path d="M8 15h8"/></svg>`;
-  }
-
   function renderResearchCards() {
     const grid = document.getElementById('research-cards-grid');
     if (!grid) return;
@@ -72,7 +68,13 @@
 
       const thumb = document.createElement('div');
       thumb.className = `research-card-thumb research-card-thumb--${card.theme}`;
-      thumb.innerHTML = iconSvg(card.theme);
+      const img = document.createElement('img');
+      img.className = 'research-infographic';
+      img.src = INFOGRAPHIC_SRC[card.theme];
+      img.alt = '';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      thumb.appendChild(img);
 
       const body = document.createElement('div');
       body.className = 'research-card-body';

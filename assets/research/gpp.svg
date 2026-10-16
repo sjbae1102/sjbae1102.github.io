@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-label="Conceptual diagram: geostationary satellite and hourly GPP">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8ecf4"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <linearGradient id="canopy" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#64748b"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#sky)"/>
+  <!-- Sun -->
+  <circle cx="52" cy="48" r="22" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.25"/>
+  <g stroke="#cbd5e1" stroke-width="1" opacity="0.9">
+    <line x1="52" y1="18" x2="52" y2="8"/><line x1="52" y1="78" x2="52" y2="88"/>
+    <line x1="22" y1="48" x2="12" y2="48"/><line x1="82" y1="48" x2="92" y2="48"/>
+    <line x1="30" y1="26" x2="23" y2="19"/><line x1="74" y1="70" x2="81" y2="77"/>
+    <line x1="74" y1="26" x2="81" y2="19"/><line x1="30" y1="70" x2="23" y2="77"/>
+  </g>
+  <!-- Sunlight -->
+  <g stroke="#5b6eae" stroke-width="1.25" opacity="0.55" fill="none">
+    <path d="M74 55 L200 120"/><path d="M68 62 L195 125"/><path d="M62 68 L188 128"/>
+  </g>
+  <!-- Geostationary satellite (conceptual) -->
+  <g transform="translate(248, 28)">
+    <rect x="0" y="18" width="36" height="22" rx="3" fill="#f1f5f9" stroke="#334155" stroke-width="1.25"/>
+    <rect x="-28" y="24" width="24" height="10" fill="#cbd5e1" stroke="#334155" stroke-width="1"/>
+    <rect x="40" y="24" width="24" height="10" fill="#cbd5e1" stroke="#334155" stroke-width="1"/>
+    <circle cx="18" cy="10" r="6" fill="#5b6eae" opacity="0.35" stroke="#334155" stroke-width="1"/>
+    <path d="M18 16 L18 18" stroke="#334155" stroke-width="1.25"/>
+  </g>
+  <text x="248" y="78" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#64748b">GEO / Himawari-8 (concept)</text>
+  <!-- Earth arc / atmosphere -->
+  <path d="M0 200 Q200 140 400 200 L400 250 L0 250 Z" fill="#e2e8f0" opacity="0.5"/>
+  <!-- Vegetation canopy -->
+  <path d="M0 195 Q60 175 120 188 T240 182 T360 190 L400 195 L400 250 L0 250 Z" fill="url(#canopy)" opacity="0.35"/>
+  <g fill="#475569" opacity="0.7">
+    <ellipse cx="80" cy="188" rx="28" ry="14"/><ellipse cx="160" cy="182" rx="34" ry="16"/>
+    <ellipse cx="260" cy="186" rx="30" ry="15"/><ellipse cx="340" cy="190" rx="26" ry="13"/>
+  </g>
+  <!-- CO2 uptake arrows -->
+  <g fill="none" stroke="#5b6eae" stroke-width="1.5" stroke-linecap="round">
+    <path d="M120 155 L120 175"/>
+    <path d="M200 148 L200 168"/>
+    <path d="M280 152 L280 172"/>
+  </g>
+  <g fill="#5b6eae" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">
+    <text x="108" y="150">CO2</text><text x="188" y="143">CO2</text><text x="268" y="147">CO2</text>
+  </g>
+  <!-- Hourly GPP concept -->
+  <rect x="118" y="98" width="164" height="36" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.25"/>
+  <text x="200" y="122" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#1e293b">hourly GPP</text>
+  <g stroke="#94a3b8" stroke-width="1" fill="none">
+    <path d="M132 128 L168 128 L176 118 L192 132 L208 114 L224 130 L240 122 L256 128 L292 128"/>
+  </g>
+</svg>
