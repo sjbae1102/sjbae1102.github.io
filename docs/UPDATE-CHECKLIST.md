@@ -52,10 +52,10 @@
 
 | 단계 | Eng | Kor | 데이터/파일 |
 | --- | --- | --- | --- |
-| Conference 페이지 | 국제·국내 목록 | `textKo` | `conferences.international` / `conferences.domestic` |
-| Biography | Conference와 동일 | `textKo` | **자동** (`#about-conferences`) |
+| Conference 페이지 | 국제·국내 목록, **전체 날짜** (`Oct 13, 2026`) | `textKo` | `conferences.international` / `conferences.domestic` |
+| Biography | 학회명·배지 동일, 왼쪽 열은 **연도만** (`2026`) — Publications·Awards와 동일 | `textKo` | **자동** (`#about-conferences`, `date`에서 연도 추출) |
 | 국제 Oral/Poster | 배지 | — | `presentationType`: `Oral` 또는 `Poster` (미정이면 `null`) |
-| 홈 Conference 탭 | 동일 데이터 | — | `data-site-render="conferences"` |
+| 홈 Conference 탭 | Conference 페이지와 동일 **전체 날짜** | — | `data-site-render="conferences"` |
 | News | 참석/발표 소식 | `contentKo` | `news[]` |
 | 사진 | News 카드 | — | `news/` 또는 `news-photos/` → `import-news-photos.py` |
 
@@ -63,7 +63,7 @@
 
 ### 학회 목록 문구 형식 (`textEn` / `textKo`)
 
-Conference·홈 Conference 탭·Biography 학회 섹션은 **한 줄 = 개최일(`date`) + 공식 학회명**만 표시합니다.
+Conference·홈 Conference 탭은 **한 줄 = `date` 전체 + 공식 학회명**만 표시합니다. Biography 학회 섹션은 **연도 + 학회명**만 표시합니다(Eng/Kor 모두 연도는 `2026` 형식, 월·일 없음).
 
 | 허용 | 금지 |
 | --- | --- |
