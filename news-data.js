@@ -34,19 +34,19 @@ const newsDataObjects = [
     },
 
     {
-        date: "Oct 2026",
-        content: "Our new paper entitled '**HELIOS-Net: Hourly daytime estimation of land surface temperature with integration of observational solar-cloud-satellite geometry and deep neural network**' has been published in **ISPRS Journal of Photogrammetry and Remote Sensing**, 242, 760–777.",
-        contentKo: "새 논문 '**HELIOS-Net: Hourly daytime estimation of land surface temperature with integration of observational solar-cloud-satellite geometry and deep neural network**'이 **ISPRS Journal of Photogrammetry and Remote Sensing**, 242, 760–777에 게재되었습니다.",
-        link: "https://doi.org/10.1016/j.isprsjprs.2026.09.028",
-        linkText: "HELIOS-Net: Hourly daytime estimation of land surface temperature with integration of observational solar-cloud-satellite geometry and deep neural network",
-    },
-
-    {
         date: "Sep 19, 2026",
         content: "Our new paper entitled '**An Adaptive Dynamic AI-driven ParameTerization (ADAPT) framework for global hourly gross primary productivity estimation**' has been published in **ISPRS Journal of Photogrammetry and Remote Sensing**, 242, 648–664.",
         contentKo: "새 논문 '**An Adaptive Dynamic AI-driven ParameTerization (ADAPT) framework for global hourly gross primary productivity estimation**'이 **ISPRS Journal of Photogrammetry and Remote Sensing**, 242, 648–664에 게재되었습니다.",
         link: "https://doi.org/10.1016/j.isprsjprs.2026.09.024",
         linkText: "An Adaptive Dynamic AI-driven ParameTerization (ADAPT) framework for global hourly gross primary productivity estimation",
+    },
+
+    {
+        date: "Sep 19, 2026",
+        content: "Our new paper entitled '**HELIOS-Net: Hourly daytime estimation of land surface temperature with integration of observational solar-cloud-satellite geometry and deep neural network**' has been published in **ISPRS Journal of Photogrammetry and Remote Sensing**, 242, 760–777.",
+        contentKo: "새 논문 '**HELIOS-Net: Hourly daytime estimation of land surface temperature with integration of observational solar-cloud-satellite geometry and deep neural network**'이 **ISPRS Journal of Photogrammetry and Remote Sensing**, 242, 760–777에 게재되었습니다.",
+        link: "https://doi.org/10.1016/j.isprsjprs.2026.09.028",
+        linkText: "HELIOS-Net: Hourly daytime estimation of land surface temperature with integration of observational solar-cloud-satellite geometry and deep neural network",
     },
 
     {
