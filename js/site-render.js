@@ -321,6 +321,12 @@
     renderAboutConferences();
   }
 
+  function conferenceDateToCvYear(dateString) {
+    if (!dateString) return '';
+    const match = String(dateString).match(/\b(20\d{2})\b/);
+    return match ? match[1] : dateString;
+  }
+
   function renderAboutConferences() {
     const root = document.getElementById('about-conferences');
     if (!root || !window.SITE_DATA) return;
@@ -351,7 +357,7 @@
         entry.className = 'cv-entry';
         const date = document.createElement('div');
         date.className = 'cv-date';
-        date.textContent = item.date;
+        date.textContent = conferenceDateToCvYear(item.date);
         const detail = document.createElement('div');
         detail.className = 'cv-detail';
         detail.innerHTML = conferenceText(item, lang);
@@ -397,6 +403,7 @@
     renderConferences,
     renderAboutSections,
     renderAboutConferences,
+    conferenceDateToCvYear,
     applySiteMeta,
     publicationToCvHtml,
     listCvPublications,
