@@ -28,7 +28,7 @@ def placeholder(label: str, path: Path, size=(1200, 900), color=(41, 98, 255)) -
 
 
 def main() -> None:
-    placeholder("ACM2026 presentation", NEWS / "acm2026_slide1-01.png")
+    placeholder("ACM2026 presentation", NEWS / "acm2026.jpg")
     placeholder("IGARSS 2026 poster", NEWS / "igarss2026_poster_photo.jpg")
     placeholder("ADAPT-GPP flowchart", NEWS / "adapt_gpp_flowchart.png", color=(22, 101, 52))
 

@@ -342,7 +342,7 @@ const SITE_DATA = {
         "I delivered an oral presentation at the **5th Asian Conference on Meteorology (ACM2026)** in Gyeongju, Korea entitled '**Hourly all-sky GPP across East Asia from Himawari-8 and multi-source observations: identifying the dominant climatic controls on afternoon decline and sub-daily variation**'.",
       contentKo:
         "경주에서 열린 **5th Asian Conference on Meteorology (ACM2026)**에서 '**Hourly all-sky GPP across East Asia from Himawari-8 and multi-source observations: identifying the dominant climatic controls on afternoon decline and sub-daily variation**' 제목으로 구두 발표를 진행했습니다.",
-      image: 'news/acm2026_slide1-01.png',
+      image: 'news/acm2026.jpg',
     },
     {
       id: 'news-adapt-published',
@@ -401,6 +401,7 @@ const SITE_DATA = {
         "I was honored to receive the **Encouragement Award (장려상)** for '**Top 20 Excellent Papers in National Land, Infrastructure and Transport R&D**' (국토교통R&D 우수논문 20선) at the **2026 Land, Infrastructure and Transport Technology Fair** (2026 국토교통기술대전) for the paper '**AI와 Himawari-8 정지궤도위성을 활용한 시간별 총일차생산량(GPP) 추정: 에어로졸의 영향 분석**'.",
       contentKo:
         "**2026 국토교통기술대전**에서 논문 '**AI와 Himawari-8 정지궤도위성을 활용한 시간별 총일차생산량(GPP) 추정: 에어로졸의 영향 분석**'이 **국토교통R&D 우수논문 20선**에 선정되어 **장려상**을 수상했습니다.",
+      image: 'news/molit2026_award.jpg',
     },
     {
       id: 'news-gisrs-published',

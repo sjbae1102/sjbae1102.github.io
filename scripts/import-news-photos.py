@@ -18,7 +18,7 @@ MAX_BYTES = 500_000
 
 MAPPING = {
     "igarss2026_poster_photo.jpg": "igarss2026_poster_photo.jpg",
-    "acm2026_slide1-01.png": "acm2026_slide1-01.png",
+    "acm2026_photo.png": "acm2026.jpg",
     "adapt_gpp_flowchart.png": "adapt_gpp_flowchart.png",
     "adapt_gpp_cover.png": "adapt_gpp_cover.png",
 }
