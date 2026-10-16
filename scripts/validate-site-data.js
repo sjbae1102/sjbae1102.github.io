@@ -99,6 +99,19 @@ function checkConferenceListFormat(data, errors) {
   });
 }
 
+function checkBiographyNoInProgress(errors) {
+  const rel = 'js/site-render.js';
+  const text = fs.readFileSync(path.join(ROOT, rel), 'utf8');
+  const fn = text.slice(text.indexOf('function renderAboutSections'), text.indexOf('function conferenceDateToCvYear'));
+  if (/inProgress/.test(fn)) {
+    errors.push('Biography must not render publications.inProgress (Under review papers belong on the Publications page only)');
+  }
+  const pub = fs.readFileSync(path.join(ROOT, 'publications/index.html'), 'utf8');
+  if (!pub.includes('data-show-in-progress="true"')) {
+    errors.push('publications/index.html must keep data-show-in-progress="true"');
+  }
+}
+
 function checkBiographyPublicationSync(data, errors) {
   if (data.about?.cvPublications?.length) {
     errors.push(
@@ -170,6 +183,7 @@ function main() {
   (data.about?.grants || []).forEach((g) => remember(g.id, 'grant'));
 
   checkBiographyPublicationSync(data, errors);
+  checkBiographyNoInProgress(errors);
   checkConferenceListFormat(data, errors);
   checkFooterFallbacks(data, errors);
 

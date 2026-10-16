@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Conference - Sejeong Bae">
     <title>Conference - Sejeong Bae</title>
+    <script>(function(){try{var q=new URLSearchParams(location.search),qt=q.get("theme"),ql=q.get("lang");if(qt==="dark"||qt==="light")localStorage.setItem("site-theme",qt);if(ql==="ko"||ql==="en")localStorage.setItem("language",ql);var t=localStorage.getItem("site-theme");if(!t&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)t="dark";document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light");}catch(e){}})();</script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="stylesheet" href="../style.css?v=20260427j">
     <link rel="stylesheet" href="../css/design-refresh.css?v=20261016v3">
+    <link rel="stylesheet" href="../css/pages.css?v=20261017a">
 </head>
-<body>
+<body class="page-v4">
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -24,7 +26,7 @@
             </ul>
             <div class="navbar-right">
                 <button type="button" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Dark mode">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
                 </button>
                 <div class="language-switcher">
                     <button class="lang-btn active" data-lang="en">Eng</button>
@@ -71,6 +73,7 @@
     <script src="../js/site-render.js?v=20261016a"></script>
     <script src="../script.js?v=20261016f"></script>
     <script src="../js/design-refresh.js?v=20261016v3"></script>
+    <script src="../js/pages.js?v=20261017a"></script>
 </body>
 </html>
 

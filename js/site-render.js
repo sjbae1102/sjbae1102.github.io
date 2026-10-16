@@ -260,26 +260,7 @@
 
     if (pubsRoot) {
       pubsRoot.innerHTML = '';
-      const inProgress = window.SITE_DATA.publications.inProgress || [];
-      if (inProgress.length) {
-        const sub = document.createElement('div');
-        sub.className = 'cv-subsection';
-        const heading = document.createElement('h4');
-        heading.className = 'cv-subheading';
-        heading.setAttribute('data-i18n', 'publications.inProgress');
-        heading.textContent = 'In progress publications';
-        sub.appendChild(heading);
-        inProgress.forEach((item) => {
-          const entry = document.createElement('div');
-          entry.className = 'cv-entry cv-entry-inprogress';
-          const detail = document.createElement('div');
-          detail.className = 'cv-detail cv-detail-full';
-          detail.innerHTML = item.html;
-          entry.appendChild(detail);
-          sub.appendChild(entry);
-        });
-        pubsRoot.appendChild(sub);
-      }
+      // In progress / Under review papers are shown on the Publications page only (not Biography).
 
       listCvPublications(window.SITE_DATA).forEach((row) => {
         const entry = document.createElement('div');
