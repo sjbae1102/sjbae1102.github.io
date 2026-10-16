@@ -7,6 +7,16 @@ const SITE_DATA = {
   lastUpdated: 'October 2026',
   copyrightYear: 2026,
 
+  /** Home hero (index.html, rendered by js/home.js) */
+  profile: {
+    overline: 'Environmental Remote Sensing · Artificial Intelligence',
+    bio: 'I develop remote sensing and AI-driven approaches for quantifying terrestrial carbon flux and disaster monitoring.',
+    education: [
+      { period: '2023 – Now', degree: 'Combined M.S. & Ph.D.', detail: 'Civil, Urban, Earth, and Environmental Engineering · UNIST' },
+      { period: '2019 – 2023', degree: 'B.Eng. in Civil Engineering', detail: 'Seoul National University of Science and Technology' },
+    ],
+  },
+
   publications: {
     inProgress: [
       {

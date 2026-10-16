@@ -91,6 +91,9 @@
 
   function buildPublishedPaper(pub, index, options) {
     const li = document.createElement('li');
+    if (pub.id) {
+      li.id = `pub-${pub.id}`;
+    }
     li.style.cssText = LI_FLEX;
 
     const thumb = createThumbColumn(pub);

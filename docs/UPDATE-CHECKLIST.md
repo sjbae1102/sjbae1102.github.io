@@ -149,3 +149,21 @@ node scripts/screenshot-pages.mjs
 - 국제 저널: Publications `metricsHtml` + Biography 자동 `(Impact Factor: …, JCR: …)` 변환.
 - 연도가 있는 IF는 괄호에 표기: **12.9 (2025)**, **11.4 (2025)**.
 - 국내 학술지: IF/JCR 생략.
+
+---
+
+## 홈 화면 (index.html, 3b6 디자인)
+
+홈은 `js/home.js`가 `data/site-data.js`에서 자동으로 그립니다. 별도 수정 불필요한 항목:
+
+| 영역 | 데이터 |
+| --- | --- |
+| Hero overline·bio·학력 | `profile.overline`, `profile.bio`, `profile.education` |
+| 통계 4개 | 자동 계산: 논문 수(international+domestic), Q1(international 중 `metricsHtml`의 JCR ≤ 25%), 학회 수, `about.awards` 수 |
+| News 3개 | `news[]` 최신 3개 (날짜순 자동) |
+| External News | `external-news-data.js` |
+| Selected Publications | `publications.international` 앞 3개 |
+| Conferences | 국제/국내 최신 4개씩, 국제는 `presentationType` 표시 |
+| Awards | `about.awards` 앞 4개, Grants는 `about.grants` |
+
+**주의:** 새 국제 논문에는 `metricsHtml`에 `JCR x.x%`를 넣어야 Q1 통계가 맞습니다. 학력이 바뀌면 `profile.education`과 Biography 페이지(about/index.html) 둘 다 수정.

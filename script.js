@@ -29,7 +29,18 @@ const translations = {
             research3: 'Artificial Intelligence',
             research4: 'Machine Learning / Deep Learning',
             research5: 'Disaster Monitoring',
-            externalNews: 'External News'
+            externalNews: 'External News',
+            tagline:
+                'Remote sensing, GPP, landslide, and AI with satellite data for environmental science.',
+            researchCardGppTitle: 'Terrestrial carbon flux & GPP',
+            researchCardGppDesc: 'Hourly gross primary productivity from geostationary satellites and machine learning.',
+            researchCardDisasterTitle: 'Disaster monitoring & landslide',
+            researchCardDisasterDesc: 'Change detection and semantic segmentation for geohazards.',
+            researchCardAiTitle: 'AI for remote sensing',
+            researchCardAiDesc: 'Deep learning that fuses multi-source Earth observation data.',
+            researchCardCta: 'View related publications →',
+            newsMore: 'More',
+            newsLess: 'Less'
         },
         tabs: {
             publications: 'Publications',
@@ -114,7 +125,17 @@ const translations = {
             research3: '인공지능',
             research4: '머신러닝/딥러닝',
             research5: '재난 모니터링',
-            externalNews: '외부 소식'
+            externalNews: '외부 소식',
+            tagline: '위성 데이터 기반 원격탐사, GPP, 산사태, 환경 AI 연구',
+            researchCardGppTitle: '육상 탄소 플럭스 · GPP',
+            researchCardGppDesc: '정지궤도 위성과 머신러닝을 활용한 시간별 총일차생산량 추정',
+            researchCardDisasterTitle: '재난 모니터링 · 산사태',
+            researchCardDisasterDesc: '변화탐지와 지질재해 의미론적 분할',
+            researchCardAiTitle: '원격탐사 AI',
+            researchCardAiDesc: '다중 위성·관측 데이터를 결합하는 딥러닝',
+            researchCardCta: '관련 논문 보기 →',
+            newsMore: '더보기',
+            newsLess: '접기'
         },
         tabs: {
             publications: '논문',
@@ -245,6 +266,9 @@ function setLanguage(lang) {
             SiteRender.renderConferences(el);
         });
         applyDataI18n(lang);
+    }
+    if (window.DesignRefresh && DesignRefresh.renderResearchCards) {
+        DesignRefresh.renderResearchCards();
     }
 }
 
@@ -488,7 +512,8 @@ function renderNews() {
     if (!newsTimeline || !sourceNews) return;
 
     window.newsData = sourceNews;
-    
+    const isHomeNewsGrid = Boolean(newsTimeline.closest('#news-tab'));
+
     newsTimeline.innerHTML = '';
     
     // 날짜순으로 정렬 (최신순 - 내림차순)
@@ -501,6 +526,7 @@ function renderNews() {
     sortedNews.forEach(item => {
         const newsItem = document.createElement('div');
         newsItem.className = item.image ? 'news-item' : 'news-item news-item--no-image';
+        if (isHomeNewsGrid) newsItem.classList.add('news-item--home');
         
         const dateDiv = document.createElement('div');
         dateDiv.className = 'news-date';
@@ -590,33 +616,67 @@ function renderNews() {
         processContent(localizedContent, item.link, localizedLinkText);
         
         textContainer.appendChild(paragraph);
-        contentDiv.appendChild(textContainer);
-        
-        // 이미지가 있으면 오른쪽에 추가
+
+        let moreBtn = null;
+        if (isHomeNewsGrid) {
+          moreBtn = document.createElement('button');
+          moreBtn.type = 'button';
+          moreBtn.className = 'news-more-btn';
+          moreBtn.setAttribute('aria-expanded', 'false');
+          const moreLabel =
+            translations[currentLang]?.home?.newsMore ||
+            translations.en?.home?.newsMore ||
+            'More';
+          const lessLabel =
+            translations[currentLang]?.home?.newsLess ||
+            translations.en?.home?.newsLess ||
+            'Less';
+          moreBtn.textContent = moreLabel;
+          moreBtn.addEventListener('click', () => {
+            const expanded = newsItem.classList.toggle('news-item--expanded');
+            moreBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+            moreBtn.textContent = expanded ? lessLabel : moreLabel;
+          });
+          textContainer.appendChild(moreBtn);
+        }
+
+        const cardBody = document.createElement('div');
+        cardBody.className = 'news-card-body';
+        cardBody.appendChild(dateDiv);
+        cardBody.appendChild(textContainer);
+
         if (item.image) {
             const imageContainer = document.createElement('div');
             imageContainer.className = 'news-image-container';
             const image = document.createElement('img');
-            
-            // 이미지 경로 조정: 현재 페이지가 news/ 디렉토리에 있으면 상대 경로 조정
             const imagePath = window.SiteRender
                 ? SiteRender.assetPath(item.image)
                 : item.image;
             image.src = imagePath;
-            image.alt = localizedContent.replace(/\*\*/g, '').substring(0, 50) + '...';
+            image.alt = '';
             image.className = 'news-image';
+            image.loading = 'lazy';
             image.onerror = function () {
                 imageContainer.remove();
                 newsItem.classList.add('news-item--no-image');
             };
             imageContainer.appendChild(image);
-            contentDiv.appendChild(imageContainer);
+            newsItem.appendChild(imageContainer);
+            newsItem.appendChild(cardBody);
+        } else {
+            newsItem.appendChild(cardBody);
         }
-        
-        newsItem.appendChild(dateDiv);
-        newsItem.appendChild(contentDiv);
+
         newsTimeline.appendChild(newsItem);
+
+        if (isHomeNewsGrid && moreBtn) {
+          window.requestAnimationFrame(() => {
+            const needsMore = paragraph.scrollHeight > paragraph.clientHeight + 2;
+            if (!needsMore) moreBtn.remove();
+          });
+        }
     });
+
 }
 
 // News 데이터를 전역 변수로 설정
