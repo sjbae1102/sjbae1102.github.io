@@ -42,8 +42,6 @@ const SITE_DATA = {
       {
         id: 'pub-helios-isprs-2026',
         year: 2026,
-        image: 'news/isprs_helios_cover.png',
-        imageAlt: 'HELIOS-Net land surface temperature paper',
         doi: 'https://doi.org/10.1016/j.isprsjprs.2026.09.028',
         authorsHtml:
           'Kim, Y., Cho, D., Bae, D., Lee, Y., Lee, S., <u>Bae, S</u>., & Im, J. (2026)',
@@ -54,8 +52,6 @@ const SITE_DATA = {
       {
         id: 'pub-unique-rse-2026',
         year: 2026,
-        image: 'news/rse_unique346_cover.png',
-        imageAlt: 'UNIQUE carbon quantification paper',
         doi: 'https://doi.org/10.1016/j.rse.2026.115636',
         authorsHtml:
           'Son, B., Sung, T., <u>Bae, S</u>., Choo, M., Im, J., Lee, Y., Rana, S. M. S., Cho, D., Yoo, C., Hong, J., Lee, H., & Kim, H. S. (2026)',

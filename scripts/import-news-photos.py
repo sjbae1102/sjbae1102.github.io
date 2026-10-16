@@ -7,6 +7,9 @@ from pathlib import Path
 
 from PIL import Image
 
+# Scientific figures/photos may exceed PIL's default decompression bomb threshold.
+Image.MAX_IMAGE_PIXELS = None
+
 ROOT = Path(__file__).resolve().parents[1]
 SRC_DIR = ROOT / "news-photos"
 DEST_DIR = ROOT / "news"
@@ -35,7 +38,19 @@ def save_optimized(img: Image.Image, dest: Path) -> None:
 
 
 def process(src: Path, dest: Path) -> None:
-    img = Image.open(src).convert("RGB")
+    img = Image.open(src)
+    if dest.suffix.lower() == ".png" and img.mode in ("RGBA", "LA", "P"):
+        if img.mode == "P":
+            img = img.convert("RGBA")
+        w, h = img.size
+        if w > MAX_WIDTH:
+            nh = int(h * (MAX_WIDTH / w))
+            img = img.resize((MAX_WIDTH, nh), Image.Resampling.LANCZOS)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        img.save(dest, "PNG", optimize=True)
+        print(f"Wrote {dest} ({dest.stat().st_size} bytes)")
+        return
+    img = img.convert("RGB")
     w, h = img.size
     if w > MAX_WIDTH:
         nh = int(h * (MAX_WIDTH / w))

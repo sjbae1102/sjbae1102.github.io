@@ -37,7 +37,7 @@
   function buildPublishedPaper(pub, index, options) {
     const showIndex = options.showIndex !== false;
     const li = document.createElement('li');
-    li.className = 'publication-card';
+    li.className = pub.image ? 'publication-card' : 'publication-card publication-card--no-cover';
 
     const inner = document.createElement('div');
     inner.className = 'publication-card-inner';

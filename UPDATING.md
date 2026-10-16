@@ -22,7 +22,7 @@ External news sidebar: `external-news-data.js` (unchanged).
 ## Add a published paper
 
 1. Add an object to `publications.international` or `publications.domestic` with a unique `id`.
-2. Set **`image`** to a path under `news/` (required for published entries).
+2. Set **`image`** to a path under `news/` when you have a cover thumbnail (optional; text-only cards use the same layout without a thumbnail).
 3. Add a matching row to `about.cvPublications` if it should appear on the Biography page.
 4. Optional: add a `news[]` item when you announce it.
 
@@ -53,12 +53,8 @@ This resizes into `news/` (max width 1600px, target &lt;500KB).
 ## Publication cover images
 
 - Put thumbnails in `news/` (e.g. `news/adapt_gpp_cover.png`).
-- Every **published** paper must have `image` set.
-- Regenerate placeholder ISPRS/RSE covers if needed:
-
-```bash
-python3 scripts/generate-publication-covers.py
-```
+- If `image` is set, the file must exist under the repo root (usually `news/`).
+- Do not commit generated placeholder art for missing journal covers; omit `image` instead.
 
 ## Validate before commit
 

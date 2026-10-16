@@ -50,9 +50,8 @@ function main() {
   ['international', 'domestic'].forEach((section) => {
     (data.publications[section] || []).forEach((p) => {
       remember(p.id, section);
-      assert(p.image, `${p.id}: published paper must have image`);
       assert(p.title, `${p.id}: title required`);
-      checkImage(p.image, errors);
+      if (p.image) checkImage(p.image, errors);
     });
   });
 

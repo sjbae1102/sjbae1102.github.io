@@ -60,21 +60,8 @@ def adapt_cover(path: Path) -> None:
 
 
 def main() -> None:
-    adapt_path = NEWS / "adapt_gpp_cover.png"
-    if not adapt_path.is_file():
-        adapt_cover(adapt_path)
-    cover(
-        "HELIOS-Net: Hourly daytime LST estimation",
-        "ISPRS J. Photogramm. Remote Sens.",
-        (0, 102, 153),
-        NEWS / "isprs_helios_cover.png",
-    )
-    cover(
-        "UNIQUE: Intelligent carbon quantification",
-        "Remote Sensing of Environment",
-        (0, 82, 147),
-        NEWS / "rse_unique346_cover.png",
-    )
+    print("No-op: add real images via news-photos/ and scripts/import-news-photos.py")
+    print("Omit publication image in site-data.js when no cover is available.")
 
 
 if __name__ == "__main__":

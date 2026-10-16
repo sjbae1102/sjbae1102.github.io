@@ -1278,6 +1278,14 @@ body {
     color: inherit;
 }
 
+.publication-card--no-cover .publication-card-inner {
+    gap: 0;
+}
+
+.publication-card--no-cover .published-paper {
+    width: 100%;
+}
+
 .publication-thumb {
     flex-shrink: 0;
     width: 200px;
