@@ -11,20 +11,19 @@
       titleKey: 'home.researchCardGppTitle',
       descKey: 'home.researchCardGppDesc',
       linkPubId: 'pub-adapt-isprs-2026',
-      fallbackPubId: 'pub-gisrs-2026',
+      theme: 'gpp',
     },
     {
       titleKey: 'home.researchCardDisasterTitle',
       descKey: 'home.researchCardDisasterDesc',
       linkPubId: 'pub-samba-kjrs-2024',
-      fallbackPubId: 'pub-samba-kjrs-2024',
-      useIcon: 'landslide',
+      theme: 'disaster',
     },
     {
       titleKey: 'home.researchCardAiTitle',
       descKey: 'home.researchCardAiDesc',
       linkPubId: 'pub-helios-isprs-2026',
-      fallbackPubId: 'pub-adapt-isprs-2026',
+      theme: 'ai',
     },
   ];
 
@@ -35,14 +34,6 @@
       if (hit) return hit;
     }
     return null;
-  }
-
-  function publicationImagePath(pub) {
-    if (!pub?.image) return null;
-    if (window.SiteRender && typeof SiteRender.assetPath === 'function') {
-      return SiteRender.assetPath(pub.image);
-    }
-    return pub.image;
   }
 
   function getTranslation(key) {
@@ -57,11 +48,14 @@
     return node || key;
   }
 
-  function iconSvg(type) {
-    if (type === 'landslide') {
-      return `<svg class="research-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 20h18M6 17l4-8 3 5 2-3 3 6"/><circle cx="17" cy="7" r="2"/></svg>`;
+  function iconSvg(theme) {
+    if (theme === 'gpp') {
+      return `<svg class="research-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/><path d="M8 14c1.5-2 4.5-2 6 0"/></svg>`;
     }
-    return `<svg class="research-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3l2.2 6.8H21l-5.5 4 2.1 6.7L12 16.8 6.4 20.5l2.1-6.7L3 9.8h6.8L12 3z"/></svg>`;
+    if (theme === 'disaster') {
+      return `<svg class="research-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 20h18M5 18l5-10 4 6 3-4 4 8"/><path d="M14 6l2-2 2 2"/></svg>`;
+    }
+    return `<svg class="research-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7l7-4z"/><circle cx="12" cy="11" r="2"/><path d="M8 15h8"/></svg>`;
   }
 
   function renderResearchCards() {
@@ -70,24 +64,15 @@
     grid.innerHTML = '';
 
     RESEARCH_CARDS.forEach((card) => {
-      const pub = findPublication(card.linkPubId) || findPublication(card.fallbackPubId);
+      const pub = findPublication(card.linkPubId);
       const href = pub ? `/publications/#pub-${pub.id}` : '/publications/';
       const link = document.createElement('a');
       link.className = 'research-card';
       link.href = href;
 
       const thumb = document.createElement('div');
-      thumb.className = 'research-card-thumb';
-      const imgPath = publicationImagePath(pub);
-      if (imgPath && !card.useIcon) {
-        const img = document.createElement('img');
-        img.src = imgPath;
-        img.alt = pub.imageAlt || pub.title || '';
-        img.loading = 'lazy';
-        thumb.appendChild(img);
-      } else {
-        thumb.innerHTML = iconSvg(card.useIcon);
-      }
+      thumb.className = `research-card-thumb research-card-thumb--${card.theme}`;
+      thumb.innerHTML = iconSvg(card.theme);
 
       const body = document.createElement('div');
       body.className = 'research-card-body';
@@ -135,10 +120,29 @@
     });
   }
 
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top < window.innerHeight * 0.92 && rect.bottom > 0;
+  }
+
   let revealObserver;
 
   function observeReveals() {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const items = document.querySelectorAll('.reveal-on-scroll');
+
+    items.forEach((el) => {
+      el.classList.add('is-visible');
+    });
+
+    if (reduceMotion) return;
+
+    items.forEach((el) => {
+      if (isInViewport(el)) {
+        return;
+      }
+      el.classList.remove('is-visible');
+    });
 
     if (!revealObserver) {
       revealObserver = new IntersectionObserver(
@@ -150,13 +154,19 @@
             }
           });
         },
-        { rootMargin: '0px 0px -8% 0px', threshold: 0.12 }
+        { rootMargin: '0px 0px -5% 0px', threshold: 0.05 }
       );
     }
 
     document.querySelectorAll('.reveal-on-scroll:not(.is-visible)').forEach((el) => {
       revealObserver.observe(el);
     });
+
+    window.setTimeout(() => {
+      document.querySelectorAll('.reveal-on-scroll:not(.is-visible)').forEach((el) => {
+        el.classList.add('is-visible');
+      });
+    }, 800);
   }
 
   function init() {

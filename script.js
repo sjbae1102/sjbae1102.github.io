@@ -613,31 +613,34 @@ function renderNews() {
         processContent(localizedContent, item.link, localizedLinkText);
         
         textContainer.appendChild(paragraph);
-        contentDiv.appendChild(textContainer);
-        
-        // 이미지가 있으면 오른쪽에 추가
+
+        const cardBody = document.createElement('div');
+        cardBody.className = 'news-card-body';
+        cardBody.appendChild(dateDiv);
+        cardBody.appendChild(textContainer);
+
         if (item.image) {
             const imageContainer = document.createElement('div');
             imageContainer.className = 'news-image-container';
             const image = document.createElement('img');
-            
-            // 이미지 경로 조정: 현재 페이지가 news/ 디렉토리에 있으면 상대 경로 조정
             const imagePath = window.SiteRender
                 ? SiteRender.assetPath(item.image)
                 : item.image;
             image.src = imagePath;
-            image.alt = localizedContent.replace(/\*\*/g, '').substring(0, 50) + '...';
+            image.alt = '';
             image.className = 'news-image';
+            image.loading = 'lazy';
             image.onerror = function () {
                 imageContainer.remove();
                 newsItem.classList.add('news-item--no-image');
             };
             imageContainer.appendChild(image);
-            contentDiv.appendChild(imageContainer);
+            newsItem.appendChild(imageContainer);
+            newsItem.appendChild(cardBody);
+        } else {
+            newsItem.appendChild(cardBody);
         }
-        
-        newsItem.appendChild(dateDiv);
-        newsItem.appendChild(contentDiv);
+
         newsTimeline.appendChild(newsItem);
     });
 
