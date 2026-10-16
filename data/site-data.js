@@ -38,6 +38,8 @@ const SITE_DATA = {
           'An Adaptive Dynamic AI-driven ParameTerization (ADAPT) framework for global hourly gross primary productivity estimation.',
         venueHtml:
           '<em>ISPRS Journal of Photogrammetry and Remote Sensing</em>, 242, 648–664. <a href="https://doi.org/10.57760/sciencedb.37163" target="_blank" rel="noopener noreferrer" class="publication-inline-link" onclick="event.stopPropagation();">[Dataset]</a>',
+        metricsHtml:
+          '<span class="status-badge metric-badge"><span class="metric-label">IF</span>12.9 (2025) <span class="metric-dot">•</span> JCR 3.0%</span>',
       },
       {
         id: 'pub-helios-isprs-2026',
@@ -50,6 +52,8 @@ const SITE_DATA = {
         title:
           'HELIOS-Net: Hourly daytime estimation of land surface temperature with integration of observational solar-cloud-satellite geometry and deep neural network.',
         venueHtml: '<em>ISPRS Journal of Photogrammetry and Remote Sensing</em>, 242, 760–777.',
+        metricsHtml:
+          '<span class="status-badge metric-badge"><span class="metric-label">IF</span>12.9 (2025) <span class="metric-dot">•</span> JCR 3.0%</span>',
       },
       {
         id: 'pub-unique-rse-2026',
@@ -358,7 +362,7 @@ const SITE_DATA = {
       link: 'https://doi.org/10.1016/j.isprsjprs.2026.09.024',
       linkText:
         'An Adaptive Dynamic AI-driven ParameTerization (ADAPT) framework for global hourly gross primary productivity estimation',
-      image: 'news/adapt_gpp_flowchart.png',
+      image: 'news/isprs_adapt.png',
     },
     {
       id: 'news-helios-published',
@@ -370,6 +374,7 @@ const SITE_DATA = {
       link: 'https://doi.org/10.1016/j.isprsjprs.2026.09.028',
       linkText:
         'HELIOS-Net: Hourly daytime estimation of land surface temperature with integration of observational solar-cloud-satellite geometry and deep neural network',
+      image: 'news/isprs_helios.png',
     },
     {
       id: 'news-unique-published',
@@ -380,6 +385,7 @@ const SITE_DATA = {
         "새 논문 '**UNIQUE: UNified, high-resolution Intelligent carbon QUantification and Explanation**'이 **Remote Sensing of Environment**, 346, 115636에 게재되었습니다.",
       link: 'https://doi.org/10.1016/j.rse.2026.115636',
       linkText: 'UNIQUE: UNified, high-resolution Intelligent carbon QUantification and Explanation',
+      image: 'news/rse_unique.png',
     },
     {
       id: 'news-igarss2026-poster',
