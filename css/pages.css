@@ -282,3 +282,6 @@ html[data-theme='dark'] .page-v4 #news-section .news-image{filter:brightness(.88
 .publication-dataset{color:var(--t3)}
 .pub-doi:hover,.publication-dataset a:hover,.publication-inline-link:hover{text-decoration:underline !important;text-underline-offset:2px}
 .home-v3 .pv a.pub-doi{color:inherit !important}
+/* v17: In progress — plain gray italic */
+.page-v4 .publication-item:first-child>ul>li,.page-v4 .publication-item:first-child>ul>li *{font-style:italic !important;font-weight:400 !important;color:var(--t3) !important}
+.page-v4 .publication-item:first-child>ul>li .status-badge{font-style:normal !important}
