@@ -291,6 +291,24 @@
     }
 
     renderAboutConferences();
+    groupCvYears();
+  }
+
+  /* Show each year once per list: later entries of the same year get an empty year cell. */
+  function groupCvYears() {
+    const parents = new Set();
+    document.querySelectorAll('.cv-entry').forEach((e) => parents.add(e.parentElement));
+    parents.forEach((parent) => {
+      let prev = null;
+      Array.from(parent.children).forEach((el) => {
+        if (!el.classList.contains('cv-entry')) { prev = null; return; }
+        const d = el.querySelector('.cv-date');
+        const y = d ? d.textContent.trim() : '';
+        el.classList.toggle('cv-same-year', !!y && y === prev);
+        el.classList.toggle('cv-year-start', !!y && y !== prev);
+        prev = y;
+      });
+    });
   }
 
   function conferenceDateToCvYear(dateString) {

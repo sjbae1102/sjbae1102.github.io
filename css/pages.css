@@ -308,3 +308,15 @@ html[data-theme='dark'] .page-v4 #news-section .news-image{filter:brightness(.88
 .page-v4 .pub-international>ul>li:has(.published-paper):not(:has(>a)){grid-template-columns:88px minmax(0,1fr) !important}
 .page-v4 .pub-international .pub-year-big{position:static;order:9;margin-top:10px;font-size:28px}
 }
+/* v23: Biography — year shown once per group */
+.page-v4 .cv-entry.cv-same-year .cv-date{visibility:hidden}
+.page-v4 .cv-entry:has(+ .cv-same-year){border-bottom-color:transparent !important;padding-bottom:5px !important}
+.page-v4 .cv-entry.cv-same-year{padding-top:5px !important}
+@media(max-width:860px){
+.page-v4 .cv-entry.cv-same-year .cv-date{display:none}
+}
+/* v24: short divider inside a year group (starts at text column) */
+.page-v4 .cv-section .cv-entry.cv-same-year{background:linear-gradient(var(--line),var(--line)) no-repeat 152px 0/calc(100% - 152px) 1px !important}
+.page-v4 .cv-entry:has(+ .cv-same-year){padding-bottom:8px !important}
+.page-v4 .cv-entry.cv-same-year{padding-top:8px !important}
+@media(max-width:860px){.page-v4 .cv-section .cv-entry.cv-same-year{background-position:0 0 !important;background-size:100% 1px !important}}
