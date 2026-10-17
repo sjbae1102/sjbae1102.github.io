@@ -76,6 +76,12 @@
       body.appendChild(ds);
     }
 
+    const yr = document.createElement('span');
+    yr.className = 'pub-year-big';
+    yr.setAttribute('aria-hidden', 'true');
+    yr.textContent = String(pub.year || '');
+    body.appendChild(yr);
+
     return body;
   }
 
