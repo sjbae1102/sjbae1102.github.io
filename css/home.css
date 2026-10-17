@@ -96,3 +96,25 @@ section{padding-top:64px}.sh{margin-bottom:24px;flex-wrap:wrap;row-gap:8px}h2{fo
 }
 @media(max-width:420px){.home-v3 .btns{gap:4px;justify-content:space-between}.home-v3 .btn{padding:0 6px;font-size:10px}}
 @media(max-width:374px){.home-v3 .btn{padding:0 5px;font-size:9.5px}}
+/* v26: compact mobile home sections (<=420px) */
+@media(max-width:420px){
+.home-v3 h2{font-size:20px}
+.home-v3 .all{font-size:12px;white-space:nowrap;margin-left:10px}
+.home-v3 .date{font-size:10.5px;letter-spacing:.08em}
+.home-v3 .row{grid-template-columns:54px 1fr;gap:12px;padding:13px 0}
+.home-v3 .row .th{width:54px;height:54px;border-radius:8px}
+.home-v3 .row h3{font-size:14px;line-height:1.4}
+.home-v3 .row p{font-size:12px}
+.home-v3 .pc{grid-template-columns:78px 1fr;gap:12px;padding:12px 0}
+.home-v3 .pc .im{width:78px;height:52px}
+.home-v3 .pc h3{font-size:13px;line-height:1.4}
+.home-v3 .pub{gap:12px;padding:18px 0}
+.home-v3 .pub .th{width:54px}
+.home-v3 .pub .pv.cite{font-size:12.5px;line-height:1.55}
+.home-v3 .pub .pv.cite .pub-title{font-size:13px}
+.home-v3 .pub .ifm-b{font-size:11px}.home-v3 .pub .ifm-b b{font-size:12px}.home-v3 .pub .ifm-b>span{padding:0 7px}.home-v3 .pub .ifm-b>span:first-child{padding-left:0}
+.home-v3 .sub2{font-size:16px;margin-bottom:10px}
+.home-v3 .ce{padding:13px 0}
+.home-v3 .ce h3{font-size:14px;line-height:1.4}
+.home-v3 .ce p{font-size:12px}
+}
