@@ -320,3 +320,51 @@ html[data-theme='dark'] .page-v4 #news-section .news-image{filter:brightness(.88
 .page-v4 .cv-entry:has(+ .cv-same-year){padding-bottom:8px !important}
 .page-v4 .cv-entry.cv-same-year{padding-top:8px !important}
 @media(max-width:860px){.page-v4 .cv-section .cv-entry.cv-same-year{background-position:0 0 !important;background-size:100% 1px !important}}
+/* v33: compact mobile Publications page (<=420px, same breakpoint as the home shrink).
+   International sits between the old mobile sizes and the mobile home publications;
+   In progress + Domestic are deliberately smaller still. Desktop unchanged. */
+@media(max-width:420px){
+.page-v4 .publication-item>h3{font-size:17px !important;line-height:1.5 !important;margin-bottom:12px !important}
+.page-v4 .publication-item .published-paper{padding-right:0 !important}
+/* International */
+.page-v4 .pub-international>ul>li:has(.published-paper):not(:has(>a)),.page-v4 .pub-international>ul>li>a{grid-template-columns:60px minmax(0,1fr) !important;gap:12px !important;padding:15px 0 !important}
+.page-v4 .pub-international li>a>div:first-child,.page-v4 .pub-international li>div:first-child{width:60px !important;flex:0 0 60px !important}
+.page-v4 .pub-international li div:first-child>img,.page-v4 .pub-international li div:first-child>a>img{width:60px !important;height:80px !important;border-radius:5px}
+.page-v4 .pub-international .publication-citation{font-size:12px !important;line-height:1.6 !important}
+.page-v4 .pub-international .publication-citation .pub-title{font-size:12.75px !important;line-height:1.42 !important;margin:3px 0 3px !important}
+.page-v4 .pub-international .publication-citation .pub-doi{font-size:11.25px !important}
+.page-v4 .pub-international .publication-dataset,.page-v4 .pub-international .publication-dataset a{font-size:11px !important;line-height:1.5 !important}
+.page-v4 .pub-international .publication-metrics{margin-top:7px !important}
+.page-v4 .pub-international .ifm-b,.page-v4 .pub-international .ifm-b span,.page-v4 .pub-international .ifm-b b{font-size:11.25px !important}
+.page-v4 .pub-international .pub-year-big{font-size:20px !important;margin-top:7px !important}
+.page-v4 .pub-international .pub-year-big::before{font-size:8px !important;margin-bottom:3px !important}
+/* Domestic: much smaller */
+.page-v4 .pub-domestic>ul>li:has(.published-paper):not(:has(>a)),.page-v4 .pub-domestic>ul>li>a{grid-template-columns:42px minmax(0,1fr) !important;gap:11px !important;padding:12px 0 !important}
+.page-v4 .pub-domestic li>a>div:first-child,.page-v4 .pub-domestic li>div:first-child{width:42px !important;flex:0 0 42px !important}
+.page-v4 .pub-domestic li div:first-child>img,.page-v4 .pub-domestic li div:first-child>a>img{width:42px !important;height:56px !important;border-radius:4px}
+.page-v4 .pub-domestic .publication-citation,.page-v4 .pub-domestic .publication-citation .pub-title{font-size:11px !important;line-height:1.6 !important}
+.page-v4 .pub-domestic .publication-citation .pub-doi{font-size:10.5px !important}
+/* In progress: much smaller, still plain gray italic */
+.page-v4 .publication-item:not(.pub-international):not(.pub-domestic)>ul>li{font-size:11px !important;line-height:1.6 !important;padding:9px 0 !important}
+.page-v4 .publication-item:not(.pub-international):not(.pub-domestic)>ul>li *{font-size:inherit !important}
+.page-v4 .publication-item:not(.pub-international):not(.pub-domestic)>ul>li .status-badge{font-size:9.5px !important;padding:1px 7px !important}
+}
+/* v33: compact mobile Biography + Conference (<=420px), scaled like Publications (~0.85). Year grouping/dividers untouched. */
+@media(max-width:420px){
+.page-v4 .cv-section>h3{font-size:15.75px !important;line-height:1.5 !important}
+.page-v4 .conference-category>h3{font-size:17px !important;line-height:1.5 !important}
+.page-v4 .cv-name>span:not(.cv-affiliation){font-size:17.5px !important}
+.page-v4 .cv-name .cv-affiliation{font-size:12px !important}
+.page-v4 .cv-info-grid dt{font-size:9.75px !important}
+.page-v4 .cv-info-grid dd,.page-v4 .cv-info-grid dd a{font-size:12px !important}
+.page-v4 .cv-entry .cv-date,.page-v4 .cv-entry .cv-date span{font-size:9.75px !important}
+.page-v4 .cv-entry .cv-detail{font-size:12px !important;line-height:1.6 !important}
+.page-v4 .cv-detail .cv-cite,.page-v4 .cv-detail .cv-cite *{font-size:11.5px !important;line-height:1.6 !important}
+.page-v4 .cv-detail .cv-cite .if-subtle{font-size:9.75px !important}
+.page-v4 .cv-subsection .cv-subheading{font-size:10.5px !important}
+.page-v4 .cv-detail .conference-type-badge{font-size:9.75px !important}
+.page-v4 .conference-text .conference-type-badge{font-size:10.5px !important}
+.page-v4 .conference-list>li.conf-year{font-size:12.5px !important}
+.page-v4 .conference-list .conference-date{font-size:10.5px !important}
+.page-v4 .conference-list .conference-text{font-size:13px !important;line-height:1.5 !important}
+}
