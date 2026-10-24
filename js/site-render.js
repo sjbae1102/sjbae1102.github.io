@@ -188,6 +188,17 @@
     return base;
   }
 
+  /** Biography CV line: same “label - organization” pattern as Education (about/index.html). */
+  function awardToCvLine(award, lang) {
+    if (award.titleEn || award.titleKo) {
+      const title = lang === 'ko' && award.titleKo ? award.titleKo : award.titleEn;
+      const org = lang === 'ko' && award.orgKo ? award.orgKo : award.orgEn;
+      if (title && org) return `${title} - ${org}`;
+      return title || org || '';
+    }
+    return lang === 'ko' && award.textKo ? award.textKo : award.textEn || '';
+  }
+
   function renderConferences(root) {
     if (!root || !window.SITE_DATA) return;
     const data = window.SITE_DATA.conferences;
@@ -238,7 +249,7 @@
         date.textContent = award.year;
         const detail = document.createElement('div');
         detail.className = 'cv-detail';
-        detail.textContent = lang === 'ko' && award.textKo ? award.textKo : award.textEn;
+        detail.textContent = awardToCvLine(award, lang);
         entry.appendChild(date);
         entry.appendChild(detail);
         awardsRoot.appendChild(entry);
