@@ -369,6 +369,7 @@ html[data-theme='dark'] .page-v4 #news-section .news-image{filter:brightness(.88
 .page-v4 .cv-entry .cv-detail{font-size:12px !important;line-height:1.6 !important}
 .page-v4 .cv-detail .cv-cite,.page-v4 .cv-detail .cv-cite *{font-size:11.5px !important;line-height:1.6 !important}
 .page-v4 .cv-detail .cv-cite .if-subtle{font-size:9.75px !important}
+.page-v4 .cv-detail .cv-award-prize{font-size:10.5px !important}
 .page-v4 .cv-subsection .cv-subheading{font-size:10.5px !important}
 .page-v4 .cv-detail .conference-type-badge{font-size:9.75px !important}
 .page-v4 .conference-text .conference-type-badge{font-size:10.5px !important}
