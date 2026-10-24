@@ -200,11 +200,16 @@
     const title = awardField(award, 'title', lang);
     const event = awardField(award, 'event', lang);
     const org = awardField(award, 'org', lang);
+    const prize =
+      lang === 'ko' && award.prizeKo
+        ? award.prizeKo
+        : award.prizeEn || (lang === 'ko' ? '' : award.prizeKo);
     if (title && event && org) {
       return (
         `<div class="cv-cite cv-award">` +
         `<span class="pub-title">${title}</span>` +
         `<span class="cv-award-event">${event}</span>` +
+        (prize ? `<span class="cv-award-prize">${prize}</span>` : '') +
         `<span class="conference-type-badge cv-award-org">${org}</span>` +
         `</div>`
       );

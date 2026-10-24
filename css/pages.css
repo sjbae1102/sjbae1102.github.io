@@ -247,6 +247,7 @@ html[data-theme='dark'] .page-v4 #news-section .news-image{filter:brightness(.88
 .page-v4 .cv-detail .conference-type-badge{display:inline !important;white-space:normal;margin:4px 0 0 !important}
 .page-v4 .cv-award .pub-title{display:block;margin:0 0 2px}
 .page-v4 .cv-award-event{display:block;color:var(--t2);margin:0 0 4px}
+.page-v4 .cv-award-prize{display:block;font-size:12px;line-height:1.5;color:var(--t3);margin:0 0 4px;font-weight:400}
 .page-v4 .cv-award .cv-award-org{display:block !important;width:fit-content;margin:4px 0 0 !important;white-space:normal}
 }
 .page-v4 .conference-list li.conf-year::after{display:block !important;content:'' !important;flex:1;height:1px;background:var(--g-line)}
