@@ -278,18 +278,15 @@ const SITE_DATA = {
       {
         id: 'award-molit-2026',
         year: '2026',
-        textEn:
-          'Encouragement Award, Land, Infrastructure and Transport Technology Fair — National Land, Infrastructure and Transport R&D Top 20 Excellent Papers. Paper: Hourly gross primary productivity estimation using Himawari-8 geostationary satellite and AI: analysis of aerosol effects.',
-        textKo:
-          '장려상, 국토교통기술대전 — 국토교통R&D 우수논문 20선. 논문: AI와 Himawari-8 정지궤도위성을 활용한 시간별 총일차생산량(GPP) 추정: 에어로졸의 영향 분석',
+        textEn: 'Encouragement Award, Land, Infrastructure and Transport Technology Fair.',
+        textKo: '장려상, 국토교통기술대전.',
       },
       {
         id: 'award-aoge-2026',
         year: '2026',
         textEn:
-          'Selected Proposal, AOGEO Tasking Group International Cooperation Support Program — KASA and KARI.',
-        textKo:
-          '선정, AOGEO 태스킹 그룹 국제협력 지원 프로그램. 우주항공청(KASA)·한국항공우주연구원(KARI).',
+          'Selected Proposal, AOGEO Tasking Group International Cooperation Support Program.',
+        textKo: '선정, AOGEO 태스킹 그룹 국제협력 지원 프로그램.',
       },
       {
         id: 'award-ksrs-2025',
@@ -307,10 +304,8 @@ const SITE_DATA = {
       {
         id: 'award-kasa-2024',
         year: '2024',
-        textEn:
-          "Administrator's Award (Grand Prize), Satellite Information Application Contest — Division 2: Development of a Change Detection Algorithm Based on Multi-temporal Images. Korea Aerospace Administration (KASA).",
-        textKo:
-          '우주항공청장상(대상), 위성정보활용 경진대회 — 부문2: 다시기 영상 기반 변화탐지 알고리즘 개발. 우주항공청(KASA)',
+        textEn: "Administrator's Award (Grand Prize), Satellite Information Application Contest.",
+        textKo: '우주항공청장상(대상), 위성정보활용 경진대회.',
       },
       {
         id: 'award-kagis-2024',
