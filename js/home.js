@@ -24,7 +24,7 @@ const P=D.publications,C=D.conferences;
 const HL=[[P.international.length+P.domestic.length,t.st[0]],[P.international.filter(p=>p.metrics&&+p.metrics.top<=25).length,t.st[1]],[C.international.length+C.domestic.length,t.st[2]],[D.about.awards.length,t.st[3]]];
 const ko=lang==='ko',K=(o,f)=>ko&&o[f+'Ko']?o[f+'Ko']:o[f];
 const EDU=(PR.education||[]).map(e=>[K(e,'period'),K(e,'degree'),K(e,'detail')]);
-const AW=D.about.awards.map(a=>{const line=(ko&&a.textKo?a.textKo:a.textEn)||'';const i=line.indexOf(', ');return{year:a.year,t:i>0?line.slice(0,i):line,o:i>0?line.slice(i+2):''}});
+const AW=D.about.awards.map(a=>{const line=(ko&&a.textKo?a.textKo:a.textEn)||'';const parts=line.split(' / ');return{year:a.year,t:parts[0]||'',o:parts.slice(1).join(' / ')||''}});
 const metric=h=>(h||'').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim().replace(/^IF\s*/,'');
 
 m.innerHTML=`

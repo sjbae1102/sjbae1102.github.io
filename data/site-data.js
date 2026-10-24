@@ -278,48 +278,53 @@ const SITE_DATA = {
       {
         id: 'award-molit-2026',
         year: '2026',
-        textEn: 'Encouragement Award, Land, Infrastructure and Transport Technology Fair.',
-        textKo: '장려상, 국토교통기술대전.',
+        textEn:
+          'Encouragement Award / Land, Infrastructure and Transport Technology Fair / Ministry of Land, Infrastructure and Transport (MOLIT)',
+        textKo: '장려상 / 국토교통기술대전 / 국토교통부(MOLIT)',
       },
       {
         id: 'award-aoge-2026',
         year: '2026',
         textEn:
-          'Selected Proposal, AOGEO Tasking Group International Cooperation Support Program (AOGEO).',
-        textKo: '선정, AOGEO 태스킹 그룹 국제협력 지원 프로그램.',
+          'Selected Proposal / AOGEO Tasking Group International Cooperation Support Program / Korea Aerospace Administration (KASA) and Korea Aerospace Research Institute (KARI)',
+        textKo:
+          '선정 / AOGEO 태스킹 그룹 국제협력 지원 프로그램 / 우주항공청(KASA) · 한국항공우주연구원(KARI)',
       },
       {
         id: 'award-ksrs-2025',
         year: '2025',
-        textEn: 'Best Presentation Award, Korean Society of Remote Sensing (KSRS).',
-        textKo: '우수발표논문상, 대한원격탐사학회(KSRS).',
+        textEn:
+          'Best Presentation Award / Korean Society of Remote Sensing Autumn Conference / Korean Society of Remote Sensing (KSRS)',
+        textKo: '우수발표논문상 / 대한원격탐사학회 추계학술대회 / 대한원격탐사학회(KSRS)',
       },
       {
         id: 'award-kagis-2025',
         year: '2025',
         textEn:
-          'Outstanding Paper Presentation Award, Korean Association of Geographic Information Studies (KAGIS).',
-        textKo: '우수논문상, 한국지리정보학회(KAGIS).',
+          'Outstanding Paper Presentation Award / KAGIS Spring Conference / Korean Association of Geographic Information Studies (KAGIS)',
+        textKo: '우수논문상 / 한국지리정보학회 춘계학술대회 / 한국지리정보학회(KAGIS)',
       },
       {
         id: 'award-kasa-2024',
         year: '2024',
         textEn:
-          "Administrator's Award (Grand Prize), Satellite Information Application Contest, Korea Aerospace Administration (KASA).",
-        textKo: '우주항공청장상(대상), 위성정보활용 경진대회, 우주항공청(KASA).',
+          "Administrator's Award (Grand Prize) / Satellite Information Application Contest / Korea Aerospace Administration (KASA)",
+        textKo: '우주항공청장상(대상) / 위성정보활용 경진대회 / 우주항공청(KASA)',
       },
       {
         id: 'award-kagis-2024',
         year: '2024',
         textEn:
-          'Outstanding Paper Presentation Award, Korean Association of Geographic Information Studies (KAGIS).',
-        textKo: '우수논문상, 한국지리정보학회(KAGIS).',
+          'Outstanding Paper Presentation Award / KAGIS Spring Conference / Korean Association of Geographic Information Studies (KAGIS)',
+        textKo: '우수논문상 / 한국지리정보학회 춘계학술대회 / 한국지리정보학회(KAGIS)',
       },
       {
         id: 'award-agri-2021',
         year: '2021',
-        textEn: 'Encouragement Award, Agricultural and Forestry Satellite Idea Challenge.',
-        textKo: '장려상, 농림위성 활용 아이디어 경진대회.',
+        textEn:
+          'Encouragement Award / Agricultural and Forestry Satellite Idea Challenge / Ministry of Agriculture, Food and Rural Affairs (MAFRA) and Korea Forest Service (KFS)',
+        textKo:
+          '장려상 / 농림위성 활용 아이디어 경진대회 / 농림축산식품부(MAFRA) · 산림청(KFS)',
       },
     ],
     grants: [
