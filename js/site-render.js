@@ -188,6 +188,31 @@
     return base;
   }
 
+  function awardField(award, key, lang) {
+    const ko = lang === 'ko';
+    const v = ko ? award[key + 'Ko'] : award[key + 'En'];
+    if (v) return v;
+    return ko ? award[key + 'En'] : award[key + 'Ko'];
+  }
+
+  /** Biography awards: same cv-cite emphasis pattern as publications + conference badges. */
+  function awardToCvHtml(award, lang) {
+    const title = awardField(award, 'title', lang);
+    const event = awardField(award, 'event', lang);
+    const org = awardField(award, 'org', lang);
+    if (title && event && org) {
+      return (
+        `<div class="cv-cite cv-award">` +
+        `<span class="pub-title">${title}</span>` +
+        `<span class="cv-award-event">${event}</span>` +
+        `<span class="conference-type-badge cv-award-org">${org}</span>` +
+        `</div>`
+      );
+    }
+    const legacy = lang === 'ko' && award.textKo ? award.textKo : award.textEn;
+    return legacy ? `<div class="cv-cite cv-award">${legacy}</div>` : '';
+  }
+
   function renderConferences(root) {
     if (!root || !window.SITE_DATA) return;
     const data = window.SITE_DATA.conferences;
@@ -238,7 +263,7 @@
         date.textContent = award.year;
         const detail = document.createElement('div');
         detail.className = 'cv-detail';
-        detail.textContent = lang === 'ko' && award.textKo ? award.textKo : award.textEn;
+        detail.innerHTML = awardToCvHtml(award, lang);
         entry.appendChild(date);
         entry.appendChild(detail);
         awardsRoot.appendChild(entry);

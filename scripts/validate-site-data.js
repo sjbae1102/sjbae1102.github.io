@@ -179,7 +179,17 @@ function main() {
     (data.conferences[kind] || []).forEach((c) => remember(c.id, `conference-${kind}`));
   });
 
-  (data.about?.awards || []).forEach((a) => remember(a.id, 'award'));
+  (data.about?.awards || []).forEach((a) => {
+    remember(a.id, 'award');
+    ['titleEn', 'titleKo', 'eventEn', 'eventKo', 'orgEn', 'orgKo'].forEach((field) => {
+      if (!a[field] || !String(a[field]).trim()) {
+        errors.push(`award ${a.id}: ${field} is required`);
+      }
+    });
+    if (String(a.titleEn || '').includes(' / ') || String(a.eventEn || '').includes(' / ')) {
+      errors.push(`award ${a.id}: use title/event/org fields instead of " / " in text`);
+    }
+  });
   (data.about?.grants || []).forEach((g) => remember(g.id, 'grant'));
 
   checkBiographyPublicationSync(data, errors);
