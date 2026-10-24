@@ -278,23 +278,28 @@ const SITE_DATA = {
       {
         id: 'award-aoge-2026',
         year: '2026',
-        titleEn: 'Selected Proposal',
-        titleKo: '선정',
+        titleEn: 'Selected Competition Proposal',
+        titleKo: '공모 제안 선정',
         eventEn: 'AOGEO Tasking Group International Cooperation Support Program',
         eventKo: 'AOGEO 태스킹 그룹 국제협력 지원 프로그램',
         orgEn:
           'Korea Aerospace Administration (KASA) and Korea Aerospace Research Institute (KARI)',
         orgKo: '우주항공청(KASA) 및 한국항공우주연구원(KARI)',
+        prizeEn: '₩5,000,000',
+        prizeKo: '500만원',
       },
       {
         id: 'award-molit-2026',
         year: '2026',
         titleEn: 'Encouragement Award',
         titleKo: '장려상',
-        eventEn: 'Land, Infrastructure and Transport Technology Fair',
-        eventKo: '국토교통기술대전',
+        eventEn:
+          'Top 20 Excellent Papers in National Land, Infrastructure and Transport R&D — 2026 Land, Infrastructure and Transport Technology Fair',
+        eventKo: '국토교통R&D 우수논문 20선 — 2026 국토교통기술대전',
         orgEn: 'Ministry of Land, Infrastructure and Transport (MOLIT)',
         orgKo: '국토교통부(MOLIT)',
+        prizeEn: '₩200,000',
+        prizeKo: '20만원',
       },
       {
         id: 'award-ksrs-2025',
@@ -305,6 +310,8 @@ const SITE_DATA = {
         eventKo: '대한원격탐사학회 추계학술대회',
         orgEn: 'Korean Society of Remote Sensing (KSRS)',
         orgKo: '대한원격탐사학회(KSRS)',
+        prizeEn: '₩200,000',
+        prizeKo: '20만원',
       },
       {
         id: 'award-kagis-2025',
@@ -325,6 +332,8 @@ const SITE_DATA = {
         eventKo: '위성정보활용 경진대회',
         orgEn: 'Korea Aerospace Administration (KASA)',
         orgKo: '우주항공청(KASA)',
+        prizeEn: '₩3,000,000',
+        prizeKo: '300만원',
       },
       {
         id: 'award-kagis-2024',

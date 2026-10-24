@@ -200,14 +200,22 @@
     const title = awardField(award, 'title', lang);
     const event = awardField(award, 'event', lang);
     const org = awardField(award, 'org', lang);
+    const prize =
+      lang === 'ko' && award.prizeKo
+        ? award.prizeKo
+        : award.prizeEn || (lang === 'ko' ? '' : award.prizeKo);
     if (title && event && org) {
-      return (
+      const sep = '<span class="cv-award-sep" aria-hidden="true"> · </span>';
+      let html =
         `<div class="cv-cite cv-award">` +
-        `<span class="pub-title">${title}</span>` +
-        `<span class="cv-award-event">${event}</span>` +
-        `<span class="conference-type-badge cv-award-org">${org}</span>` +
-        `</div>`
-      );
+        `<span class="pub-title">${title}</span>${sep}` +
+        `<span class="cv-award-event">${event}</span>${sep}` +
+        `<span class="cv-award-org">${org}</span>`;
+      if (prize) {
+        html += `${sep}<span class="cv-award-prize">${prize}</span>`;
+      }
+      html += `</div>`;
+      return html;
     }
     const legacy = lang === 'ko' && award.textKo ? award.textKo : award.textEn;
     return legacy ? `<div class="cv-cite cv-award">${legacy}</div>` : '';

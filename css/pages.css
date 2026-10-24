@@ -114,6 +114,12 @@ body{background:var(--bg) !important}
 .page-v4 .cv-detail b,.page-v4 .cv-detail strong{font-weight:600;color:var(--t)}
 .page-v4 .cv-subsection{margin:0 0 8px}.page-v4 .cv-subheading{font-size:13px !important;font-weight:600;color:var(--t3) !important;margin:16px 0 4px !important;letter-spacing:.04em}
 .page-v4 .cv-section .conference-type-badge,.page-v4 .cv-section .status-badge{display:inline;margin-left:6px !important;padding:0 !important;background:none !important;border:0 !important;font-size:12.5px !important;color:var(--t3) !important}
+.page-v4 .cv-award{line-height:1.55}
+.page-v4 .cv-award .pub-title{display:inline;margin:0;color:var(--t);font-weight:600}
+.page-v4 .cv-award-event{display:inline;color:var(--t2)}
+.page-v4 .cv-award-org{display:inline;color:var(--t3);font-size:12.5px;font-weight:500}
+.page-v4 .cv-award-prize{display:inline;color:var(--t3);font-size:12px;font-weight:400}
+.page-v4 .cv-award-sep{color:var(--t3);opacity:.55;font-weight:400;white-space:pre}
 .page-v4 #about-conferences>div,.page-v4 #about-publications>div{grid-column:auto}
 
 /* Others / Contact */
@@ -245,9 +251,12 @@ html[data-theme='dark'] .page-v4 #news-section .news-image{filter:brightness(.88
 .page-v4 .cv-subsection .cv-entry{grid-template-columns:minmax(44px,auto) minmax(0,1fr) !important;gap:6px 12px !important}
 .page-v4 .cv-entry.cv-same-year .cv-detail{grid-column:2}
 .page-v4 .cv-detail .conference-type-badge{display:inline !important;white-space:normal;margin:4px 0 0 !important}
-.page-v4 .cv-award .pub-title{display:block;margin:0 0 2px}
-.page-v4 .cv-award-event{display:block;color:var(--t2);margin:0 0 4px}
-.page-v4 .cv-award .cv-award-org{display:block !important;width:fit-content;margin:4px 0 0 !important;white-space:normal}
+.page-v4 .cv-award{line-height:1.5}
+.page-v4 .cv-award .pub-title{display:inline}
+.page-v4 .cv-award-event,.page-v4 .cv-award-org,.page-v4 .cv-award-prize,.page-v4 .cv-award-sep{display:inline}
+.page-v4 .cv-award-org{font-size:11.5px !important}
+.page-v4 .cv-award-prize{font-size:10.5px !important}
+.page-v4 #about-awards .cv-entry{padding:10px 0 !important}
 }
 .page-v4 .conference-list li.conf-year::after{display:block !important;content:'' !important;flex:1;height:1px;background:var(--g-line)}
 /* ===== v8: unified citations, IF badges, prominent international papers ===== */
@@ -368,6 +377,7 @@ html[data-theme='dark'] .page-v4 #news-section .news-image{filter:brightness(.88
 .page-v4 .cv-entry .cv-detail{font-size:12px !important;line-height:1.6 !important}
 .page-v4 .cv-detail .cv-cite,.page-v4 .cv-detail .cv-cite *{font-size:11.5px !important;line-height:1.6 !important}
 .page-v4 .cv-detail .cv-cite .if-subtle{font-size:9.75px !important}
+.page-v4 .cv-detail .cv-award-prize{font-size:10.5px !important}
 .page-v4 .cv-subsection .cv-subheading{font-size:10.5px !important}
 .page-v4 .cv-detail .conference-type-badge{font-size:9.75px !important}
 .page-v4 .conference-text .conference-type-badge{font-size:10.5px !important}
