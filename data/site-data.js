@@ -278,53 +278,74 @@ const SITE_DATA = {
       {
         id: 'award-molit-2026',
         year: '2026',
-        textEn:
-          'Encouragement Award / Land, Infrastructure and Transport Technology Fair / Ministry of Land, Infrastructure and Transport (MOLIT)',
-        textKo: '장려상 / 국토교통기술대전 / 국토교통부(MOLIT)',
+        titleEn: 'Encouragement Award',
+        titleKo: '장려상',
+        eventEn: 'Land, Infrastructure and Transport Technology Fair',
+        eventKo: '국토교통기술대전',
+        orgEn: 'Ministry of Land, Infrastructure and Transport (MOLIT)',
+        orgKo: '국토교통부(MOLIT)',
       },
       {
         id: 'award-aoge-2026',
         year: '2026',
-        textEn:
-          'Selected Proposal / AOGEO Tasking Group International Cooperation Support Program / Korea Aerospace Administration (KASA) and Korea Aerospace Research Institute (KARI)',
-        textKo:
-          '선정 / AOGEO 태스킹 그룹 국제협력 지원 프로그램 / 우주항공청(KASA) · 한국항공우주연구원(KARI)',
+        titleEn: 'Selected Proposal',
+        titleKo: '선정',
+        eventEn: 'AOGEO Tasking Group International Cooperation Support Program',
+        eventKo: 'AOGEO 태스킹 그룹 국제협력 지원 프로그램',
+        orgEn:
+          'Korea Aerospace Administration (KASA) and Korea Aerospace Research Institute (KARI)',
+        orgKo: '우주항공청(KASA) 및 한국항공우주연구원(KARI)',
       },
       {
         id: 'award-ksrs-2025',
         year: '2025',
-        textEn:
-          'Best Presentation Award / Korean Society of Remote Sensing Autumn Conference / Korean Society of Remote Sensing (KSRS)',
-        textKo: '우수발표논문상 / 대한원격탐사학회 추계학술대회 / 대한원격탐사학회(KSRS)',
+        titleEn: 'Best Presentation Award',
+        titleKo: '우수발표논문상',
+        eventEn: 'Korean Society of Remote Sensing Autumn Conference',
+        eventKo: '대한원격탐사학회 추계학술대회',
+        orgEn: 'Korean Society of Remote Sensing (KSRS)',
+        orgKo: '대한원격탐사학회(KSRS)',
       },
       {
         id: 'award-kagis-2025',
         year: '2025',
-        textEn:
-          'Outstanding Paper Presentation Award / KAGIS Spring Conference / Korean Association of Geographic Information Studies (KAGIS)',
-        textKo: '우수논문상 / 한국지리정보학회 춘계학술대회 / 한국지리정보학회(KAGIS)',
+        titleEn: 'Outstanding Paper Presentation Award',
+        titleKo: '우수논문상',
+        eventEn: 'KAGIS Spring Conference',
+        eventKo: '한국지리정보학회 춘계학술대회',
+        orgEn: 'Korean Association of Geographic Information Studies (KAGIS)',
+        orgKo: '한국지리정보학회(KAGIS)',
       },
       {
         id: 'award-kasa-2024',
         year: '2024',
-        textEn:
-          "Administrator's Award (Grand Prize) / Satellite Information Application Contest / Korea Aerospace Administration (KASA)",
-        textKo: '우주항공청장상(대상) / 위성정보활용 경진대회 / 우주항공청(KASA)',
+        titleEn: "Administrator's Award (Grand Prize)",
+        titleKo: '우주항공청장상(대상)',
+        eventEn: 'Satellite Information Application Contest',
+        eventKo: '위성정보활용 경진대회',
+        orgEn: 'Korea Aerospace Administration (KASA)',
+        orgKo: '우주항공청(KASA)',
       },
       {
         id: 'award-kagis-2024',
         year: '2024',
-        textEn:
-          'Outstanding Paper Presentation Award / KAGIS Spring Conference / Korean Association of Geographic Information Studies (KAGIS)',
-        textKo: '우수논문상 / 한국지리정보학회 춘계학술대회 / 한국지리정보학회(KAGIS)',
+        titleEn: 'Outstanding Paper Presentation Award',
+        titleKo: '우수논문상',
+        eventEn: 'KAGIS Spring Conference',
+        eventKo: '한국지리정보학회 춘계학술대회',
+        orgEn: 'Korean Association of Geographic Information Studies (KAGIS)',
+        orgKo: '한국지리정보학회(KAGIS)',
       },
       {
         id: 'award-agri-2021',
         year: '2021',
-        textEn:
-          'Encouragement Award / Agricultural and Forestry Satellite Idea Challenge / Ministry of Agriculture, Food and Rural Affairs (MAFRA) and Korea Forest Service (KFS)',
-        textKo:
-          '장려상 / 농림위성 활용 아이디어 경진대회 / 농림축산식품부(MAFRA) · 산림청(KFS)',
+        titleEn: 'Encouragement Award',
+        titleKo: '장려상',
+        eventEn: 'Agricultural and Forestry Satellite Idea Challenge',
+        eventKo: '농림위성 활용 아이디어 경진대회',
+        orgEn:
+          'Ministry of Agriculture, Food and Rural Affairs (MAFRA) and Korea Forest Service (KFS)',
+        orgKo: '농림축산식품부(MAFRA) 및 산림청(KFS)',
       },
     ],
     grants: [
