@@ -276,16 +276,6 @@ const SITE_DATA = {
   about: {
     awards: [
       {
-        id: 'award-molit-2026',
-        year: '2026',
-        titleEn: 'Encouragement Award',
-        titleKo: '장려상',
-        eventEn: 'Land, Infrastructure and Transport Technology Fair',
-        eventKo: '국토교통기술대전',
-        orgEn: 'Ministry of Land, Infrastructure and Transport (MOLIT)',
-        orgKo: '국토교통부(MOLIT)',
-      },
-      {
         id: 'award-aoge-2026',
         year: '2026',
         titleEn: 'Selected Proposal',
@@ -295,6 +285,16 @@ const SITE_DATA = {
         orgEn:
           'Korea Aerospace Administration (KASA) and Korea Aerospace Research Institute (KARI)',
         orgKo: '우주항공청(KASA) 및 한국항공우주연구원(KARI)',
+      },
+      {
+        id: 'award-molit-2026',
+        year: '2026',
+        titleEn: 'Encouragement Award',
+        titleKo: '장려상',
+        eventEn: 'Land, Infrastructure and Transport Technology Fair',
+        eventKo: '국토교통기술대전',
+        orgEn: 'Ministry of Land, Infrastructure and Transport (MOLIT)',
+        orgKo: '국토교통부(MOLIT)',
       },
       {
         id: 'award-ksrs-2025',
