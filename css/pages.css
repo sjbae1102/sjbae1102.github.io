@@ -240,7 +240,11 @@ html[data-theme='dark'] .page-v4 #news-section .news-image{filter:brightness(.88
 .page-v4 .cv-info-grid{grid-template-columns:1fr !important;gap:2px !important}
 .page-v4 .cv-info-grid dd{margin-bottom:8px !important}
 .page-v4 .cv-section{grid-template-columns:1fr !important;padding:22px 0 !important}
-.page-v4 .cv-entry{grid-template-columns:1fr !important;gap:2px !important}
+.page-v4 .cv-entry{grid-template-columns:minmax(44px,auto) minmax(0,1fr) !important;gap:6px 12px !important;align-items:start}
+.page-v4 .cv-subsection{grid-column:1 !important;min-width:0;width:100%}
+.page-v4 .cv-subsection .cv-entry{grid-template-columns:minmax(44px,auto) minmax(0,1fr) !important;gap:6px 12px !important}
+.page-v4 .cv-entry.cv-same-year .cv-detail{grid-column:2}
+.page-v4 .cv-detail .conference-type-badge{display:inline !important;white-space:normal;margin:4px 0 0 !important}
 }
 .page-v4 .conference-list li.conf-year::after{display:block !important;content:'' !important;flex:1;height:1px;background:var(--g-line)}
 /* ===== v8: unified citations, IF badges, prominent international papers ===== */

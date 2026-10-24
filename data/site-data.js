@@ -279,41 +279,51 @@ const SITE_DATA = {
         id: 'award-molit-2026',
         year: '2026',
         textEn:
-          "Encouragement Award (장려상), Top 20 Excellent Papers in National Land, Infrastructure and Transport R&D (국토교통R&D 우수논문 20선), 2026 Land, Infrastructure and Transport Technology Fair — paper: AI와 Himawari-8 정지궤도위성을 활용한 시간별 총일차생산량(GPP) 추정: 에어로졸의 영향 분석",
+          'Encouragement Award, Land, Infrastructure and Transport Technology Fair — National Land, Infrastructure and Transport R&D Top 20 Excellent Papers. Paper: Hourly gross primary productivity estimation using Himawari-8 geostationary satellite and AI: analysis of aerosol effects.',
         textKo:
-          '2026 국토교통기술대전 국토교통R&D 우수논문 20선 장려상 — 논문: AI와 Himawari-8 정지궤도위성을 활용한 시간별 총일차생산량(GPP) 추정: 에어로졸의 영향 분석',
+          '장려상, 국토교통기술대전 — 국토교통R&D 우수논문 20선. 논문: AI와 Himawari-8 정지궤도위성을 활용한 시간별 총일차생산량(GPP) 추정: 에어로졸의 영향 분석',
+      },
+      {
+        id: 'award-aoge-2026',
+        year: '2026',
+        textEn:
+          'Selected Proposal, AOGEO Tasking Group International Cooperation Support Program — Assessing Uncertainty in Carbon Estimates and Supporting National MRV in South and Southeast Asia Using Greenhouse Gas Geospatial Data. Korea Aerospace Administration (KASA) and Korea Aerospace Research Institute (KARI).',
+        textKo:
+          '선정, AOGEO 태스킹 그룹 국제협력 지원 프로그램 — 온실가스 지구공간정보를 활용한 탄소 추정 불확실성 평가 및 남아시아·동남아시아 국가 MRV 지원. 우주항공청(KASA) 및 한국항공우주연구원(KARI)',
       },
       {
         id: 'award-ksrs-2025',
         year: '2025',
-        textEn: 'Best Presentation Award, Korean Society of Remote Sensing',
-        textKo: '우수발표논문상, 대한원격탐사학회',
+        textEn: 'Best Presentation Award, Korean Society of Remote Sensing (KSRS).',
+        textKo: '우수발표논문상, 대한원격탐사학회(KSRS).',
       },
       {
         id: 'award-kagis-2025',
         year: '2025',
-        textEn: 'Outstanding Paper Presentation Award, Korean Association of Geographic Information Studies',
-        textKo: '우수논문상, 한국지리정보학회',
+        textEn:
+          'Outstanding Paper Presentation Award, Korean Association of Geographic Information Studies (KAGIS).',
+        textKo: '우수논문상, 한국지리정보학회(KAGIS).',
       },
       {
         id: 'award-kasa-2024',
         year: '2024',
         textEn:
-          "Korea Aerospace Administration (KASA) Administrator's Award (Grand Prize), 2024 Satellite Information Application Contest - [Division 2] Development of a Change Detection Algorithm Based on Multi-temporal Images",
+          "Administrator's Award (Grand Prize), Satellite Information Application Contest — Division 2: Development of a Change Detection Algorithm Based on Multi-temporal Images. Korea Aerospace Administration (KASA).",
         textKo:
-          '우주항공청장상, 2024 위성정보활용 경진대회 - [부문2] 다시기 영상 기반 변화탐지 알고리즘 개발',
+          '우주항공청장상(대상), 위성정보활용 경진대회 — 부문2: 다시기 영상 기반 변화탐지 알고리즘 개발. 우주항공청(KASA)',
       },
       {
         id: 'award-kagis-2024',
         year: '2024',
-        textEn: 'Outstanding Paper Presentation Award, Korean Association of Geographic Information Studies',
-        textKo: '우수논문상, 한국지리정보학회',
+        textEn:
+          'Outstanding Paper Presentation Award, Korean Association of Geographic Information Studies (KAGIS).',
+        textKo: '우수논문상, 한국지리정보학회(KAGIS).',
       },
       {
         id: 'award-agri-2021',
         year: '2021',
-        textEn: 'Encouragement Award, 2021 Agricultural and Forestry Satellite Idea Challenge',
-        textKo: '2021 농림위성 활용 아이디어 경진대회 장려상',
+        textEn: 'Encouragement Award, Agricultural and Forestry Satellite Idea Challenge.',
+        textKo: '장려상, 농림위성 활용 아이디어 경진대회.',
       },
     ],
     grants: [
