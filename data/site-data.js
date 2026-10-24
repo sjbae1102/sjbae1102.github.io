@@ -287,9 +287,9 @@ const SITE_DATA = {
         id: 'award-aoge-2026',
         year: '2026',
         textEn:
-          'Selected Proposal, AOGEO Tasking Group International Cooperation Support Program — Assessing Uncertainty in Carbon Estimates and Supporting National MRV in South and Southeast Asia Using Greenhouse Gas Geospatial Data. Korea Aerospace Administration (KASA) and Korea Aerospace Research Institute (KARI).',
+          'Selected Proposal, AOGEO Tasking Group International Cooperation Support Program — KASA and KARI.',
         textKo:
-          '선정, AOGEO 태스킹 그룹 국제협력 지원 프로그램 — 온실가스 지구공간정보를 활용한 탄소 추정 불확실성 평가 및 남아시아·동남아시아 국가 MRV 지원. 우주항공청(KASA) 및 한국항공우주연구원(KARI)',
+          '선정, AOGEO 태스킹 그룹 국제협력 지원 프로그램. 우주항공청(KASA)·한국항공우주연구원(KARI).',
       },
       {
         id: 'award-ksrs-2025',
