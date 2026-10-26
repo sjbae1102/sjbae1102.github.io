@@ -211,6 +211,12 @@ const SITE_DATA = {
     ],
     domestic: [
       {
+        id: 'conf-ksrs-fall-2026',
+        date: 'Oct 22, 2026',
+        textEn: 'Korean Society of Remote Sensing (KSRS) Autumn Conference',
+        textKo: '대한원격탐사학회 추계학술대회',
+      },
+      {
         id: 'conf-kcc-spring-2026',
         date: 'Jun 25, 2026',
         textEn: '2026 Korean Society of Climate Change Spring Conference',
@@ -372,6 +378,15 @@ const SITE_DATA = {
 
   news: [
     {
+      id: 'news-ksrs-fall-2026',
+      date: 'Oct 22, 2026',
+      content:
+        "I delivered an oral presentation at the **Korean Society of Remote Sensing (KSRS)** Autumn Conference in Busan, Korea entitled '**Evaluating Integration Strategies of Multimodal Geospatial Foundation Model for Landslide Semantic Segmentation**'.",
+      contentKo:
+        "부산에서 열린 **대한원격탐사학회(KSRS) 추계학술대회**에서 '**Evaluating Integration Strategies of Multimodal Geospatial Foundation Model for Landslide Semantic Segmentation**' 제목으로 구두 발표를 진행했습니다.",
+      image: 'news/ksrs2026_oral.jpg',
+    },
+    {
       id: 'news-acm2026-oral',
       date: 'Oct 13, 2026',
       content:
@@ -508,16 +523,14 @@ const SITE_DATA = {
         "I delivered a presentation at the **2025 CMAS-Asia-Pacific and Regional IUAPPA Conference** entitled 'Unveiling the impact of aerosol-induced radiation dynamics on vegetation productivity: AI-driven hourly GPP mapping in East Asia using Himawari-8'.",
       contentKo:
         "**2025 CMAS-Asia-Pacific and Regional IUAPPA Conference**에서 'Unveiling the impact of aerosol-induced radiation dynamics on vegetation productivity: AI-driven hourly GPP mapping in East Asia using Himawari-8' 제목으로 발표했습니다.",
-      link: 'https://www.cmas-asia-pacific-2025.org/index.asp',
-      linkText: '2025 CMAS-Asia-Pacific and Regional IUAPPA Conference',
     },
     {
       id: 'news-rse2025-published',
       date: 'Jun 01, 2025',
       content:
-        "Our new paper entitled '**Advancing hourly gross primary productivity mapping over East Asia using Himawari-8 AHI and artificial intelligence: Unveiling the impact of aerosol-induced radiation dynamics**' has been published in **Remote Sensing of Environment (IF: 11.4, JCR: 2.4%)**",
+        "Our new paper entitled '**Advancing hourly gross primary productivity mapping over East Asia using Himawari-8 AHI and artificial intelligence: Unveiling the impact of aerosol-induced radiation dynamics**' has been published in **Remote Sensing of Environment (IF: 12.3, Top 6.1%)**",
       contentKo:
-        "새 논문 '**Advancing hourly gross primary productivity mapping over East Asia using Himawari-8 AHI and artificial intelligence: Unveiling the impact of aerosol-induced radiation dynamics**'이 **Remote Sensing of Environment (IF: 11.4, JCR: 2.4%)**에 게재되었습니다.",
+        "새 논문 '**Advancing hourly gross primary productivity mapping over East Asia using Himawari-8 AHI and artificial intelligence: Unveiling the impact of aerosol-induced radiation dynamics**'이 **Remote Sensing of Environment (IF: 12.3, Top 6.1%)**에 게재되었습니다.",
       link: 'https://doi.org/10.1016/j.rse.2025.114735',
       linkText:
         'Advancing hourly gross primary productivity mapping over East Asia using Himawari-8 AHI and artificial intelligence: Unveiling the impact of aerosol-induced radiation dynamics',
