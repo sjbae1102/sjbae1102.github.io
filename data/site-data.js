@@ -291,7 +291,7 @@ const SITE_DATA = {
       {
         id: 'award-nier-2026',
         year: '2026',
-        titleEn: "Director's Award",
+        titleEn: "NIER President's Award",
         titleKo: '국립환경과학원장상',
         eventEn: '2026 Atmospheric Environment Research Contest',
         eventKo: '2026 대기환경 연구 공모전',
