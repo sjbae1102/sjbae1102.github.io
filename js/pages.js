@@ -73,23 +73,33 @@
     });
     if (document.body.classList.contains('page-v4')) groupNews(ko);
     if (document.body.classList.contains('page-v4')) {
-      document.querySelectorAll('.conference-list').forEach((ul) => {
+      document.querySelectorAll('#conference-section .conference-list').forEach((ul) => {
         ul.querySelectorAll('li.conf-year').forEach((li) => li.remove());
         const items = Array.from(ul.children).filter((li) => li.querySelector('.conference-date'));
-        items.sort((a, b) => new Date(b.querySelector('.conference-date').textContent) - new Date(a.querySelector('.conference-date').textContent));
+        items.forEach((li) => {
+          li.classList.remove('conf-same-year', 'conf-year-start');
+        });
+        items.sort((a, b) => {
+          const da = a.getAttribute('data-conf-date') || '';
+          const db = b.getAttribute('data-conf-date') || '';
+          return new Date(db) - new Date(da);
+        });
         items.forEach((li) => ul.appendChild(li));
-        let last = '';
-        Array.from(ul.children).forEach((li) => {
-          const d = li.querySelector('.conference-date');
-          if (!d) return;
-          const y = (d.textContent.match(/(\d{4})/) || [])[1];
-          if (y && y !== last) {
-            const yl = document.createElement('li');
-            yl.className = 'conf-year';
-            yl.setAttribute('aria-hidden', 'true');
-            yl.textContent = y;
-            ul.insertBefore(yl, li);
-            last = y;
+        let lastYear = '';
+        items.forEach((li) => {
+          const full = (li.getAttribute('data-conf-date') || '').trim();
+          const y = (full.match(/(\d{4})/) || [])[1];
+          const yearEl = li.querySelector('.conference-year');
+          const dateEl = li.querySelector('.conference-date');
+          if (!y || !yearEl || !dateEl) return;
+          dateEl.textContent = full.replace(/,?\s*\d{4}\s*$/, '').trim();
+          if (y !== lastYear) {
+            lastYear = y;
+            yearEl.textContent = y;
+            li.classList.add('conf-year-start');
+          } else {
+            li.classList.add('conf-same-year');
+            yearEl.textContent = y;
           }
         });
       });

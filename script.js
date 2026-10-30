@@ -796,6 +796,9 @@ function sortConferenceLists() {
     const conferenceLists = document.querySelectorAll('.conference-list');
     
     conferenceLists.forEach(list => {
+        if (document.body.classList.contains('page-v4') && list.closest('#conference-section')) {
+            return;
+        }
         const items = Array.from(list.querySelectorAll('li'));
         
         // 각 아이템을 날짜를 기준으로 정렬

@@ -385,3 +385,58 @@ html[data-theme='dark'] .page-v4 #news-section .news-image{filter:brightness(.88
 .page-v4 .conference-list .conference-date{font-size:10.5px !important}
 .page-v4 .conference-list .conference-text{font-size:13px !important;line-height:1.5 !important}
 }
+/* v34: Conference page only — calm rows, biography-style year groups, quiet badges */
+.page-v4 #conference-section .conference-category>h3::before{display:none !important}
+.page-v4 #conference-section .conference-list li.conf-year{display:none !important}
+.page-v4 #conference-section .conference-content{gap:48px !important}
+.page-v4 #conference-section .conference-category>h3{margin:0 0 12px !important}
+.page-v4 #conference-section .conference-list{border-top:1px solid var(--t) !important}
+.page-v4 #conference-section .conference-list li{
+  grid-template-columns:52px 80px minmax(0,1fr) !important;
+  gap:20px !important;
+  padding:10px 0 !important;
+  border-bottom:0 !important;
+  box-shadow:none !important;
+}
+.page-v4 #conference-section .conference-year{
+  font-size:12px !important;
+  font-weight:600;
+  letter-spacing:.08em;
+  color:var(--t3) !important;
+  padding-top:3px;
+  font-variant-numeric:tabular-nums;
+}
+.page-v4 #conference-section .conference-list li.conf-same-year .conference-year{visibility:hidden}
+.page-v4 #conference-section .conference-list li:hover{background:none !important;box-shadow:none !important}
+.page-v4 #conference-section .conference-list li:not(.conf-same-year):hover .conference-text{color:var(--t2) !important}
+.page-v4 #conference-section .conference-date{font-variant-numeric:tabular-nums;font-size:12px !important;font-weight:600;letter-spacing:.06em;text-transform:none;color:var(--t3) !important;padding-top:3px}
+.page-v4 #conference-section .conference-text{font-size:15px !important;font-weight:500 !important;line-height:1.6 !important;color:var(--t2) !important}
+.page-v4 #conference-section .conference-type-badge{
+  display:inline !important;
+  margin:0 0 0 6px !important;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:none !important;
+  color:var(--t3) !important;
+  font-size:12.5px !important;
+  font-weight:500 !important;
+  white-space:normal;
+}
+.page-v4 #conference-section .conference-list li:has(+ .conf-same-year){padding-bottom:6px !important}
+.page-v4 #conference-section .conference-list li.conf-same-year{
+  padding-top:6px !important;
+  background:linear-gradient(var(--line),var(--line)) no-repeat 152px 0/calc(100% - 152px) 1px !important;
+}
+.page-v4 #conference-section .conference-list li.conf-same-year + li:not(.conf-same-year){padding-top:22px !important}
+@media(max-width:860px){
+.page-v4 #conference-section .conference-list li{grid-template-columns:40px minmax(52px,auto) minmax(0,1fr) !important;gap:6px 10px !important;align-items:start}
+.page-v4 #conference-section .conference-list li.conf-same-year .conference-year{display:none}
+.page-v4 #conference-section .conference-list li.conf-same-year{background-position:0 0 !important;background-size:100% 1px !important}
+}
+@media(max-width:420px){
+.page-v4 #conference-section .conference-text{font-size:12px !important;line-height:1.6 !important}
+.page-v4 #conference-section .conference-text .conference-type-badge{font-size:10.5px !important}
+.page-v4 #conference-section .conference-year{font-size:10.5px !important}
+.page-v4 #conference-section .conference-date{font-size:10.5px !important}
+}

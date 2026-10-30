@@ -221,6 +221,11 @@
     return legacy ? `<div class="cv-cite cv-award">${legacy}</div>` : '';
   }
 
+  function conferenceMonthDay(dateString) {
+    if (!dateString) return '';
+    return String(dateString).replace(/,?\s*\d{4}\s*$/, '').trim();
+  }
+
   function renderConferences(root) {
     if (!root || !window.SITE_DATA) return;
     const data = window.SITE_DATA.conferences;
@@ -235,12 +240,16 @@
       ul.innerHTML = '';
       items.forEach((item) => {
         const li = document.createElement('li');
+        li.setAttribute('data-conf-date', item.date);
+        const year = document.createElement('span');
+        year.className = 'conference-year';
         const date = document.createElement('span');
         date.className = 'conference-date';
-        date.textContent = item.date;
+        date.textContent = conferenceMonthDay(item.date);
         const text = document.createElement('span');
         text.className = 'conference-text';
         text.innerHTML = conferenceText(item, lang);
+        li.appendChild(year);
         li.appendChild(date);
         li.appendChild(text);
         ul.appendChild(li);
