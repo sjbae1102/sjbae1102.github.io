@@ -296,6 +296,8 @@ const SITE_DATA = {
         eventKo: '2026 대기환경 연구 공모전',
         orgEn: 'National Institute of Environmental Research (NIER)',
         orgKo: '국립환경과학원(NIER)',
+        prizeEn: '₩3,000,000',
+        prizeKo: '300만원',
       },
       {
         id: 'award-aoge-2026',
