@@ -215,7 +215,6 @@ const SITE_DATA = {
         date: 'Oct 30, 2026',
         textEn: '69th Korean Society for Atmospheric Environment (KOSAE) Fall Conference',
         textKo: '제69회 한국대기환경학회 추계학술대회',
-        presentationType: 'Oral',
       },
       {
         id: 'conf-ksrs-fall-2026',
@@ -297,6 +296,8 @@ const SITE_DATA = {
         eventKo: '2026 대기환경 연구 공모전',
         orgEn: 'National Institute of Environmental Research (NIER)',
         orgKo: '국립환경과학원(NIER)',
+        prizeEn: '₩3,000,000',
+        prizeKo: '300만원',
       },
       {
         id: 'award-aoge-2026',
