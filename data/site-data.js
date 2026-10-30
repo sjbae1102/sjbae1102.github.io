@@ -211,6 +211,13 @@ const SITE_DATA = {
     ],
     domestic: [
       {
+        id: 'conf-kosae-fall-2026',
+        date: 'Oct 30, 2026',
+        textEn: '69th Korean Society for Atmospheric Environment (KOSAE) Fall Conference',
+        textKo: '제69회 한국대기환경학회 추계학술대회',
+        presentationType: 'Oral',
+      },
+      {
         id: 'conf-ksrs-fall-2026',
         date: 'Oct 22, 2026',
         textEn: 'Korean Society of Remote Sensing (KSRS) Autumn Conference',
@@ -282,6 +289,16 @@ const SITE_DATA = {
   about: {
     awards: [
       {
+        id: 'award-nier-2026',
+        year: '2026',
+        titleEn: "NIER President's Award",
+        titleKo: '국립환경과학원장상',
+        eventEn: '2026 Atmospheric Environment Research Contest',
+        eventKo: '2026 대기환경 연구 공모전',
+        orgEn: 'National Institute of Environmental Research (NIER)',
+        orgKo: '국립환경과학원(NIER)',
+      },
+      {
         id: 'award-aoge-2026',
         year: '2026',
         titleEn: 'Selected Competition Proposal',
@@ -332,7 +349,7 @@ const SITE_DATA = {
       {
         id: 'award-kasa-2024',
         year: '2024',
-        titleEn: "Administrator's Award (Grand Prize)",
+        titleEn: "KASA Administrator's Award",
         titleKo: '우주항공청장상(대상)',
         eventEn: 'Satellite Information Application Contest',
         eventKo: '위성정보활용 경진대회',
@@ -377,6 +394,26 @@ const SITE_DATA = {
   },
 
   news: [
+    {
+      id: 'news-kosae-fall-2026-oral',
+      date: 'Oct 30, 2026',
+      content:
+        "I delivered an oral presentation at the **69th Korean Society for Atmospheric Environment (KOSAE) Fall Conference** at EXCO in Daegu, Korea entitled '**Spatiotemporally continuous all-sky hourly gross primary productivity modeling by fusing multi-satellite data and artificial intelligence**'.",
+      contentKo:
+        "대구 EXCO에서 열린 **제69회 한국대기환경학회(KOSAE) 추계학술대회**에서 '**다중 위성 자료와 인공지능을 융합한 시공간 연속적 전천(All-sky) 시간별 총일차생산량 모델링**' 제목으로 구두 발표를 진행했습니다.",
+      image: 'news/kosae2026_oral.jpg',
+    },
+    {
+      id: 'news-nier-award-2026',
+      date: 'Oct 29, 2026',
+      content:
+        "I was honored to receive the **President's Award of the National Institute of Environmental Research (NIER) (국립환경과학원장상)** at the **2026 Atmospheric Environment Research Contest** (2026 대기환경 연구 공모전) together with **Yejin Kim** and **Hyunyoung Choi** (UNIST).",
+      contentKo:
+        '**2026 대기환경 연구 공모전**에서 **김예진**, **최현영** 연구원과 함께 **국립환경과학원장상**을 수상했습니다.',
+      link: 'https://kosae.or.kr:50010/finedust2026/01.html',
+      linkText: '2026 Atmospheric Environment Research Contest',
+      image: 'news/nier2026_award.jpg',
+    },
     {
       id: 'news-ksrs-fall-2026',
       date: 'Oct 22, 2026',
