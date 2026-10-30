@@ -407,7 +407,7 @@ const SITE_DATA = {
       id: 'news-nier-award-2026',
       date: 'Oct 29, 2026',
       content:
-        "I was honored to receive the **Director's Award (국립환경과학원장상)** at the **2026 Atmospheric Environment Research Contest** (2026 대기환경 연구 공모전) together with **Yejin Kim** and **Hyunyoung Choi** (UNIST).",
+        "I was honored to receive the **President's Award of the National Institute of Environmental Research (NIER) (국립환경과학원장상)** at the **2026 Atmospheric Environment Research Contest** (2026 대기환경 연구 공모전) together with **Yejin Kim** and **Hyunyoung Choi** (UNIST).",
       contentKo:
         '**2026 대기환경 연구 공모전**에서 **김예진**, **최현영** 연구원과 함께 **국립환경과학원장상**을 수상했습니다.',
       link: 'https://kosae.or.kr:50010/finedust2026/01.html',
