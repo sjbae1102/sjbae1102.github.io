@@ -380,8 +380,23 @@ function setupMobileNavLanguage() {
 setupMobileNavLanguage();
 
 if (hamburger) {
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
         navMenu.classList.toggle('active');
+    });
+}
+
+document.addEventListener('click', (e) => {
+    if (!navMenu || !navMenu.classList.contains('active')) return;
+    const bar = document.querySelector('.navbar');
+    if (bar && !bar.contains(e.target)) {
+        navMenu.classList.remove('active');
+    }
+});
+
+if (navMenu) {
+    navMenu.addEventListener('click', (e) => {
+        e.stopPropagation();
     });
 }
 
