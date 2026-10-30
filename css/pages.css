@@ -429,10 +429,47 @@ html[data-theme='dark'] .page-v4 #news-section .news-image{filter:brightness(.88
   background:linear-gradient(var(--line),var(--line)) no-repeat 152px 0/calc(100% - 152px) 1px !important;
 }
 .page-v4 #conference-section .conference-list li.conf-same-year + li:not(.conf-same-year){padding-top:22px !important}
-@media(max-width:860px){
-.page-v4 #conference-section .conference-list li{grid-template-columns:40px minmax(52px,auto) minmax(0,1fr) !important;gap:6px 10px !important;align-items:start}
-.page-v4 #conference-section .conference-list li.conf-same-year .conference-year{display:none}
-.page-v4 #conference-section .conference-list li.conf-same-year{background-position:0 0 !important;background-size:100% 1px !important}
+/* v35: Conference mobile — year label row, uniform date|title columns (desktop unchanged above 640px) */
+@media(max-width:640px){
+.page-v4 #conference-section .conference-list li{
+  grid-template-columns:4.75rem minmax(0,1fr) !important;
+  grid-template-areas:"date text";
+  gap:4px 12px !important;
+  align-items:start;
+}
+.page-v4 #conference-section .conference-list li.conf-year-start{
+  grid-template-areas:"year year" "date text";
+  padding-top:16px !important;
+}
+.page-v4 #conference-section .conference-list>li.conf-year-start:first-child{padding-top:10px !important}
+.page-v4 #conference-section .conference-list li.conf-same-year + li.conf-year-start{padding-top:22px !important}
+.page-v4 #conference-section .conference-year{
+  grid-area:year;
+  visibility:visible !important;
+  display:block !important;
+  font-size:11px !important;
+  font-weight:600;
+  letter-spacing:.1em;
+  color:var(--t3) !important;
+  padding:0 0 6px !important;
+  margin:0;
+}
+.page-v4 #conference-section .conference-list li.conf-same-year .conference-year{display:none !important;visibility:hidden !important}
+.page-v4 #conference-section .conference-date{
+  grid-area:date;
+  white-space:nowrap !important;
+  width:4.75rem;
+  min-width:4.75rem;
+  max-width:4.75rem;
+  padding-top:0 !important;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.page-v4 #conference-section .conference-text{grid-area:text;min-width:0}
+.page-v4 #conference-section .conference-list li.conf-same-year{
+  background:linear-gradient(var(--line),var(--line)) no-repeat calc(4.75rem + 12px) 0/calc(100% - 4.75rem - 12px) 1px !important;
+}
+.page-v4 #conference-section .conference-list li.conf-same-year + li:not(.conf-same-year){padding-top:18px !important}
 }
 @media(max-width:420px){
 .page-v4 #conference-section .conference-text{font-size:12px !important;line-height:1.6 !important}
