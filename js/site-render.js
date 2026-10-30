@@ -226,12 +226,8 @@
     return String(dateString).replace(/,?\s*\d{4}\s*$/, '').trim();
   }
 
-  function conferenceMetaLine(item, lang) {
-    const ko = lang === 'ko';
-    const parts = [];
-    if (item.presentationType) parts.push(item.presentationType);
-    if (/🏆/.test(item.textEn || '')) parts.push(ko ? '수상' : 'Award');
-    return parts.length ? parts.join(' · ') : '';
+  function conferenceMetaLine(item) {
+    return item.presentationType ? item.presentationType : '';
   }
 
   function renderConferences(root) {
@@ -263,7 +259,7 @@
         const text = document.createElement('span');
         text.className = 'conference-text';
         const base = lang === 'ko' && item.textKo ? item.textKo : item.textEn;
-        text.textContent = base.replace(/🏆/g, '').trim();
+        text.textContent = base.trim();
         body.appendChild(text);
         if (item.presentationType) {
           const badge = document.createElement('span');
@@ -271,7 +267,7 @@
           badge.textContent = item.presentationType;
           body.appendChild(badge);
         }
-        const meta = conferenceMetaLine(item, lang);
+        const meta = conferenceMetaLine(item);
         if (meta) {
           const metaEl = document.createElement('p');
           metaEl.className = 'conference-meta';
