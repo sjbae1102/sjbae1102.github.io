@@ -349,7 +349,7 @@ const SITE_DATA = {
       {
         id: 'award-kasa-2024',
         year: '2024',
-        titleEn: "Administrator's Award (Grand Prize)",
+        titleEn: "KASA Administrator's Award",
         titleKo: '우주항공청장상(대상)',
         eventEn: 'Satellite Information Application Contest',
         eventKo: '위성정보활용 경진대회',
