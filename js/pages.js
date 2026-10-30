@@ -42,6 +42,13 @@
       }
     });
   }
+  function fmtConfDate(d, ko) {
+    const x = new Date(d);
+    if (isNaN(x)) return d;
+    return ko
+      ? `${x.getFullYear()}.${String(x.getMonth() + 1).padStart(2, '0')}.${String(x.getDate()).padStart(2, '0')}`
+      : d;
+  }
   function decorate(lang) {
     const ko = (lang || localStorage.getItem('language')) === 'ko';
     document.documentElement.lang = ko ? 'ko' : 'en';
@@ -93,6 +100,8 @@
           const dateEl = li.querySelector('.conference-date');
           if (!y || !yearEl || !dateEl) return;
           dateEl.textContent = full.replace(/,?\s*\d{4}\s*$/, '').trim();
+          const fullEl = li.querySelector('.conference-date-full');
+          if (fullEl) fullEl.textContent = fmtConfDate(full, ko);
           if (y !== lastYear) {
             lastYear = y;
             yearEl.textContent = y;

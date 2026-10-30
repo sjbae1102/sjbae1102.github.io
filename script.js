@@ -235,6 +235,9 @@ function setLanguage(lang) {
             btn.classList.add('active');
         }
     });
+    document.querySelectorAll('.nav-lang-opt').forEach((btn) => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
     
     // Update navigation links and tab buttons
     document.querySelectorAll('[data-i18n^="nav."]').forEach(element => {
@@ -350,6 +353,31 @@ document.addEventListener('DOMContentLoaded', () => {
 // Mobile menu toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
+
+function setupMobileNavLanguage() {
+    if (!navMenu || navMenu.querySelector('.nav-lang-mobile')) return;
+    const li = document.createElement('li');
+    li.className = 'nav-lang-mobile';
+    li.innerHTML =
+        '<div class="nav-lang-switch" role="group" aria-label="Language">' +
+        '<button type="button" class="nav-lang-opt" data-lang="en">English</button>' +
+        '<span class="nav-lang-sep" aria-hidden="true">/</span>' +
+        '<button type="button" class="nav-lang-opt" data-lang="ko">한국어</button>' +
+        '</div>';
+    navMenu.appendChild(li);
+    li.querySelectorAll('.nav-lang-opt').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            setLanguage(btn.getAttribute('data-lang'));
+            if (navMenu) navMenu.classList.remove('active');
+        });
+    });
+    const saved = localStorage.getItem('language') || 'en';
+    li.querySelectorAll('.nav-lang-opt').forEach((btn) => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === saved);
+    });
+}
+
+setupMobileNavLanguage();
 
 if (hamburger) {
     hamburger.addEventListener('click', () => {
