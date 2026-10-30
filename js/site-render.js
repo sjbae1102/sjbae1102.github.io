@@ -221,6 +221,15 @@
     return legacy ? `<div class="cv-cite cv-award">${legacy}</div>` : '';
   }
 
+  function conferenceMonthDay(dateString) {
+    if (!dateString) return '';
+    return String(dateString).replace(/,?\s*\d{4}\s*$/, '').trim();
+  }
+
+  function conferenceMetaLine(item) {
+    return item.presentationType ? item.presentationType : '';
+  }
+
   function renderConferences(root) {
     if (!root || !window.SITE_DATA) return;
     const data = window.SITE_DATA.conferences;
@@ -235,14 +244,40 @@
       ul.innerHTML = '';
       items.forEach((item) => {
         const li = document.createElement('li');
+        li.setAttribute('data-conf-date', item.date);
+        li.setAttribute('data-conf-id', item.id);
+        const year = document.createElement('span');
+        year.className = 'conference-year';
+        const dateFull = document.createElement('span');
+        dateFull.className = 'conference-date-full';
+        dateFull.textContent = item.date;
         const date = document.createElement('span');
         date.className = 'conference-date';
-        date.textContent = item.date;
+        date.textContent = conferenceMonthDay(item.date);
+        const body = document.createElement('div');
+        body.className = 'conference-body';
         const text = document.createElement('span');
         text.className = 'conference-text';
-        text.innerHTML = conferenceText(item, lang);
+        const base = lang === 'ko' && item.textKo ? item.textKo : item.textEn;
+        text.textContent = base.trim();
+        body.appendChild(text);
+        if (item.presentationType) {
+          const badge = document.createElement('span');
+          badge.className = 'conference-type-badge';
+          badge.textContent = item.presentationType;
+          body.appendChild(badge);
+        }
+        const meta = conferenceMetaLine(item);
+        if (meta) {
+          const metaEl = document.createElement('p');
+          metaEl.className = 'conference-meta';
+          metaEl.textContent = meta;
+          body.appendChild(metaEl);
+        }
+        li.appendChild(year);
+        li.appendChild(dateFull);
         li.appendChild(date);
-        li.appendChild(text);
+        li.appendChild(body);
         ul.appendChild(li);
       });
     });

@@ -235,6 +235,12 @@ function setLanguage(lang) {
             btn.classList.add('active');
         }
     });
+    document.querySelectorAll('.nav-lang-opt').forEach((btn) => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+    document.querySelectorAll('.nav-lang-seg-btn').forEach((btn) => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
     
     // Update navigation links and tab buttons
     document.querySelectorAll('[data-i18n^="nav."]').forEach(element => {
@@ -351,9 +357,53 @@ document.addEventListener('DOMContentLoaded', () => {
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
+function setupMobileNavLanguage() {
+    if (!navMenu || navMenu.querySelector('.nav-lang-mobile')) return;
+    const li = document.createElement('li');
+    li.className = 'nav-lang-mobile';
+    li.innerHTML =
+        '<div class="nav-lang-row">' +
+        '<span class="nav-lang-label" aria-hidden="true">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">' +
+        '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/>' +
+        '</svg></span>' +
+        '<div class="nav-lang-seg" role="group" aria-label="Language">' +
+        '<button type="button" class="nav-lang-seg-btn" data-lang="en">EN</button>' +
+        '<button type="button" class="nav-lang-seg-btn" data-lang="ko">한</button>' +
+        '</div></div>';
+    navMenu.appendChild(li);
+    li.querySelectorAll('.nav-lang-seg-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            setLanguage(btn.getAttribute('data-lang'));
+            if (navMenu) navMenu.classList.remove('active');
+        });
+    });
+    const saved = localStorage.getItem('language') || 'en';
+    li.querySelectorAll('.nav-lang-seg-btn').forEach((btn) => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === saved);
+    });
+}
+
+setupMobileNavLanguage();
+
 if (hamburger) {
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
         navMenu.classList.toggle('active');
+    });
+}
+
+document.addEventListener('click', (e) => {
+    if (!navMenu || !navMenu.classList.contains('active')) return;
+    const bar = document.querySelector('.navbar');
+    if (bar && !bar.contains(e.target)) {
+        navMenu.classList.remove('active');
+    }
+});
+
+if (navMenu) {
+    navMenu.addEventListener('click', (e) => {
+        e.stopPropagation();
     });
 }
 
@@ -796,6 +846,9 @@ function sortConferenceLists() {
     const conferenceLists = document.querySelectorAll('.conference-list');
     
     conferenceLists.forEach(list => {
+        if (document.body.classList.contains('page-v4') && list.closest('#conference-section')) {
+            return;
+        }
         const items = Array.from(list.querySelectorAll('li'));
         
         // 각 아이템을 날짜를 기준으로 정렬
