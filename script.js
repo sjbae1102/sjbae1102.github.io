@@ -238,6 +238,9 @@ function setLanguage(lang) {
     document.querySelectorAll('.nav-lang-opt').forEach((btn) => {
         btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
+    document.querySelectorAll('.nav-lang-seg-btn').forEach((btn) => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
     
     // Update navigation links and tab buttons
     document.querySelectorAll('[data-i18n^="nav."]').forEach(element => {
@@ -359,20 +362,24 @@ function setupMobileNavLanguage() {
     const li = document.createElement('li');
     li.className = 'nav-lang-mobile';
     li.innerHTML =
-        '<div class="nav-lang-switch" role="group" aria-label="Language">' +
-        '<button type="button" class="nav-lang-opt" data-lang="en">English</button>' +
-        '<span class="nav-lang-sep" aria-hidden="true">/</span>' +
-        '<button type="button" class="nav-lang-opt" data-lang="ko">한국어</button>' +
-        '</div>';
+        '<div class="nav-lang-row">' +
+        '<span class="nav-lang-label" aria-hidden="true">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">' +
+        '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/>' +
+        '</svg></span>' +
+        '<div class="nav-lang-seg" role="group" aria-label="Language">' +
+        '<button type="button" class="nav-lang-seg-btn" data-lang="en">EN</button>' +
+        '<button type="button" class="nav-lang-seg-btn" data-lang="ko">한</button>' +
+        '</div></div>';
     navMenu.appendChild(li);
-    li.querySelectorAll('.nav-lang-opt').forEach((btn) => {
+    li.querySelectorAll('.nav-lang-seg-btn').forEach((btn) => {
         btn.addEventListener('click', () => {
             setLanguage(btn.getAttribute('data-lang'));
             if (navMenu) navMenu.classList.remove('active');
         });
     });
     const saved = localStorage.getItem('language') || 'en';
-    li.querySelectorAll('.nav-lang-opt').forEach((btn) => {
+    li.querySelectorAll('.nav-lang-seg-btn').forEach((btn) => {
         btn.classList.toggle('active', btn.getAttribute('data-lang') === saved);
     });
 }
