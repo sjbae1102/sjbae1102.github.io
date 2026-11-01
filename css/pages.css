@@ -469,6 +469,23 @@ html[data-theme='dark'] .page-v4 #news-section .news-image{filter:brightness(.88
 .page-v4 #conference-section .conference-text{font-size:12.5px !important}
 .page-v4 #conference-section .conference-meta{font-size:11px !important}
 }
+/* v38: injected li.nav-lang-mobile must not appear in desktop nav row (≥769px) */
+@media(min-width:769px){
+.navbar .nav-menu>li.nav-lang-mobile{
+  display:none !important;
+  visibility:hidden !important;
+  position:absolute !important;
+  width:0 !important;
+  height:0 !important;
+  min-height:0 !important;
+  max-height:0 !important;
+  overflow:hidden !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  pointer-events:none !important;
+}
+}
 /* v37: mobile nav — compact dropdown under header (top-right), not full-screen drawer */
 @media(max-width:768px){
 .navbar .container{display:flex !important;align-items:center !important;justify-content:space-between !important;padding:12px 20px !important;gap:12px;position:relative !important}
@@ -546,7 +563,7 @@ html[data-theme='dark'] .page-v4 #news-section .news-image{filter:brightness(.88
 }
 .nav-menu>li:not(.nav-lang-mobile)+li:not(.nav-lang-mobile) .nav-link{border-top:1px solid var(--line) !important}
 .nav-menu .nav-link:hover,.nav-menu .nav-link.active{background:none !important;color:var(--t) !important;font-weight:600}
-.nav-menu>li.nav-lang-mobile{
+.navbar .nav-menu>li.nav-lang-mobile{
   list-style:none;
   margin:0 !important;
   padding:0 16px !important;
@@ -555,9 +572,13 @@ html[data-theme='dark'] .page-v4 #news-section .news-image{filter:brightness(.88
   max-height:44px !important;
   box-sizing:border-box !important;
   display:flex !important;
+  visibility:visible !important;
+  position:static !important;
+  width:100% !important;
+  overflow:visible !important;
+  pointer-events:auto !important;
   align-items:center !important;
   border-top:1px solid var(--line);
-  width:100%;
 }
 .nav-lang-row{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%}
 .nav-lang-label{display:flex;align-items:center;justify-content:center;color:var(--t3);flex:none;line-height:0}
