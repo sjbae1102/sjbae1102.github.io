@@ -213,7 +213,7 @@ const SITE_DATA = {
       {
         id: 'conf-geoai-fall-2026',
         date: 'Nov 03, 2026',
-        textEn: '2026 Fall Conference of the GeoAI Data Society',
+        textEn: '2026 GeoAI Data Autumn Conference',
         textKo: '2026년 (사)GeoAI데이터학회 추계학술대회',
       },
       {
@@ -405,7 +405,7 @@ const SITE_DATA = {
       id: 'news-geoai-fall-2026-oral',
       date: 'Nov 05, 2026',
       content:
-        "I delivered an oral presentation at the **2026 Fall Conference of the GeoAI Data Society** (Nov 3–6, 2026) at Parnas Hotel Jeju in Seogwipo, Korea entitled '**Landslide Detection Based on a Geospatial Foundation Model**' (authors: **Sejeong Bae**, **Seohyun Yoon**, **Jungho Im** (corresponding)).",
+        "I delivered an oral presentation at the **2026 GeoAI Data Autumn Conference** (Nov 3–6, 2026) at Parnas Hotel Jeju in Seogwipo, Korea entitled '**Landslide Detection Based on a Geospatial Foundation Model**' (authors: **Sejeong Bae**, **Seohyun Yoon**, **Jungho Im** (corresponding)).",
       contentKo:
         "제주 서귀포 **판라스호텔 제주**에서 열린 **2026년 (사)GeoAI데이터학회 추계학술대회**(2026년 11월 3일–6일)에서 '**공간정보 파운데이션 모델 기반 산사태 탐지**' 제목으로 구두 발표를 진행했습니다. (저자: **배세정**, **윤서현**, **임정호**(교신저자))",
       image: 'news/geoai2026.jpg',
