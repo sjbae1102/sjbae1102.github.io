@@ -57,6 +57,7 @@ h2{font-size:32px;letter-spacing:-.025em;font-weight:700;margin:0;line-height:1.
 .ce h3{font-size:16px;font-weight:600;line-height:1.45;margin:0}.ce p{font-size:14px;color:var(--t3);margin:4px 0 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .home-v3 .ce.ce--conf{align-items:start;gap:16px;min-height:5.5rem;padding:18px 0}
 .home-v3 .ce.ce--conf .ce-meta--conf{display:block;-webkit-line-clamp:unset;-webkit-box-orient:horizontal;overflow:visible;min-height:calc(1.45em + 4px);margin-top:6px;line-height:1.45}
+.home-v3 .ce.ce--conf-dom .ce-meta--conf{color:transparent;user-select:none}
 .home-v3 .ce.ce--conf h3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(1.45em * 3)}
 .sub2{font-size:20px;font-weight:600;letter-spacing:-.015em;margin:0 0 16px}
 @media(max-width:860px){.hl{grid-template-columns:1fr 1fr}.hl div:nth-child(3){border-left:0;padding-left:0}.hl div:nth-child(n+3){border-top:1px solid var(--line)}.hl div{padding:24px 0 24px 14px}.hl span{font-size:12.5px;line-height:1.4}.hl b em{display:block;width:fit-content;margin:8px 0 0;font-size:11.5px;padding:2px 8px}.hl b{font-size:32px}

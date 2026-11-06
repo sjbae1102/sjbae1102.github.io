@@ -162,8 +162,8 @@ const SITE_DATA = {
       {
         id: 'conf-acm2026',
         date: 'Oct 13, 2026',
-        textEn: '2026 5th Asian Conference on Meteorology (ACM2026)',
-        textKo: '2026 5th Asian Conference on Meteorology (ACM2026)',
+        textEn: '5th Asian Conference on Meteorology (ACM2026)',
+        textKo: '5th Asian Conference on Meteorology (ACM2026)',
         presentationType: 'Oral',
       },
       {
@@ -176,8 +176,8 @@ const SITE_DATA = {
       {
         id: 'conf-agu2025',
         date: 'Dec 15, 2025',
-        textEn: '2025 25th American Geophysical Union (AGU) Fall Meeting',
-        textKo: '2025 25th American Geophysical Union (AGU) Fall Meeting',
+        textEn: '25th American Geophysical Union (AGU) Fall Meeting',
+        textKo: '25th American Geophysical Union (AGU) Fall Meeting',
         presentationType: 'Oral',
       },
       {
@@ -219,8 +219,8 @@ const SITE_DATA = {
       {
         id: 'conf-kosae-fall-2026',
         date: 'Oct 30, 2026',
-        textEn: '2026 69th Korean Society for Atmospheric Environment (KOSAE) Fall Conference',
-        textKo: '2026년 제69회 한국대기환경학회 추계학술대회',
+        textEn: '69th Korean Society for Atmospheric Environment (KOSAE) Fall Conference',
+        textKo: '제69회 한국대기환경학회 추계학술대회',
       },
       {
         id: 'conf-ksrs-fall-2026',
@@ -414,9 +414,9 @@ const SITE_DATA = {
       id: 'news-kosae-fall-2026-oral',
       date: 'Oct 30, 2026',
       content:
-        "I delivered an oral presentation at the **2026 69th Korean Society for Atmospheric Environment (KOSAE) Fall Conference** at EXCO in Daegu, Korea entitled '**Spatiotemporally continuous all-sky hourly gross primary productivity modeling by fusing multi-satellite data and artificial intelligence**'.",
+        "I delivered an oral presentation at the **69th Korean Society for Atmospheric Environment (KOSAE) Fall Conference** at EXCO in Daegu, Korea entitled '**Spatiotemporally continuous all-sky hourly gross primary productivity modeling by fusing multi-satellite data and artificial intelligence**'.",
       contentKo:
-        "대구 EXCO에서 열린 **2026년 제69회 한국대기환경학회(KOSAE) 추계학술대회**에서 '**다중 위성 자료와 인공지능을 융합한 시공간 연속적 전천(All-sky) 시간별 총일차생산량 모델링**' 제목으로 구두 발표를 진행했습니다.",
+        "대구 EXCO에서 열린 **제69회 한국대기환경학회(KOSAE) 추계학술대회**에서 '**다중 위성 자료와 인공지능을 융합한 시공간 연속적 전천(All-sky) 시간별 총일차생산량 모델링**' 제목으로 구두 발표를 진행했습니다.",
       image: 'news/kosae2026_oral.jpg',
     },
     {
@@ -443,9 +443,9 @@ const SITE_DATA = {
       id: 'news-acm2026-oral',
       date: 'Oct 13, 2026',
       content:
-        "I delivered an oral presentation at the **2026 5th Asian Conference on Meteorology (ACM2026)** in Gyeongju, Korea entitled '**Hourly all-sky GPP across East Asia from Himawari-8 and multi-source observations: identifying the dominant climatic controls on afternoon decline and sub-daily variation**'.",
+        "I delivered an oral presentation at the **5th Asian Conference on Meteorology (ACM2026)** in Gyeongju, Korea entitled '**Hourly all-sky GPP across East Asia from Himawari-8 and multi-source observations: identifying the dominant climatic controls on afternoon decline and sub-daily variation**'.",
       contentKo:
-        "경주에서 열린 **2026 5th Asian Conference on Meteorology (ACM2026)**에서 '**Hourly all-sky GPP across East Asia from Himawari-8 and multi-source observations: identifying the dominant climatic controls on afternoon decline and sub-daily variation**' 제목으로 구두 발표를 진행했습니다.",
+        "경주에서 열린 **5th Asian Conference on Meteorology (ACM2026)**에서 '**Hourly all-sky GPP across East Asia from Himawari-8 and multi-source observations: identifying the dominant climatic controls on afternoon decline and sub-daily variation**' 제목으로 구두 발표를 진행했습니다.",
       image: 'news/acm2026.jpg',
     },
     {
@@ -524,8 +524,8 @@ const SITE_DATA = {
     {
       id: 'news-agu2025',
       date: 'Dec 15, 2025',
-      content: 'I attended the **2025 25th American Geophysical Union (AGU) Fall Meeting** international conference.',
-      contentKo: '**2025 25th American Geophysical Union (AGU) Fall Meeting** 국제학회에 참석했습니다.',
+      content: 'I attended the **25th American Geophysical Union (AGU) Fall Meeting** international conference.',
+      contentKo: '**25th American Geophysical Union (AGU) Fall Meeting** 국제학회에 참석했습니다.',
       image: 'news/agu2025.jpg',
     },
     {
