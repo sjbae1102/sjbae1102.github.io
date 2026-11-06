@@ -4,7 +4,7 @@
  * Edit this file only; pages render via js/site-render.js.
  */
 const SITE_DATA = {
-  lastUpdated: 'October 2026',
+  lastUpdated: 'November 2026',
   copyrightYear: 2026,
 
   /** Home hero (index.html, rendered by js/home.js) */
@@ -211,6 +211,12 @@ const SITE_DATA = {
     ],
     domestic: [
       {
+        id: 'conf-geoai-fall-2026',
+        date: 'Nov 06, 2026',
+        textEn: '2026 Fall Conference of the GeoAI Data Society',
+        textKo: '2026년 (사)GeoAI데이터학회 추계학술대회',
+      },
+      {
         id: 'conf-kosae-fall-2026',
         date: 'Oct 30, 2026',
         textEn: '69th Korean Society for Atmospheric Environment (KOSAE) Fall Conference',
@@ -395,6 +401,15 @@ const SITE_DATA = {
   },
 
   news: [
+    {
+      id: 'news-geoai-fall-2026-oral',
+      date: 'Nov 05, 2026',
+      content:
+        "I delivered an oral presentation at the **2026 Fall Conference of the GeoAI Data Society** at Parnas Hotel Jeju in Seogwipo, Korea entitled '**Landslide Detection Based on a Geospatial Foundation Model**' (authors: **Sejeong Bae**, **Seohyun Yoon**, **Jungho Im** (corresponding)).",
+      contentKo:
+        "제주 서귀포 **판라스호텔 제주**에서 열린 **2026년 (사)GeoAI데이터학회 추계학술대회**에서 '**공간정보 파운데이션 모델 기반 산사태 탐지**' 제목으로 구두 발표를 진행했습니다. (저자: **배세정**, **윤서현**, **임정호**(교신저자))",
+      image: 'news/geoai2026.jpg',
+    },
     {
       id: 'news-kosae-fall-2026-oral',
       date: 'Oct 30, 2026',
