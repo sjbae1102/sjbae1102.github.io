@@ -212,7 +212,7 @@ const SITE_DATA = {
     domestic: [
       {
         id: 'conf-geoai-fall-2026',
-        date: 'Nov 06, 2026',
+        date: 'Nov 03, 2026',
         textEn: '2026 Fall Conference of the GeoAI Data Society',
         textKo: '2026년 (사)GeoAI데이터학회 추계학술대회',
       },
