@@ -96,6 +96,9 @@ const translations = {
         },
         news: {
             title: 'News'
+        },
+        float: {
+            irisLab: 'IRIS Lab ↗'
         }
     },
     ko: {
@@ -192,6 +195,9 @@ const translations = {
         },
         news: {
             title: '소식'
+        },
+        float: {
+            irisLab: 'IRIS 연구실 ↗'
         }
     }
 };
