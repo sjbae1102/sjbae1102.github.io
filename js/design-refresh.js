@@ -4,6 +4,8 @@
 (function () {
   'use strict';
 
+  const IRIS_LAB_URL = 'https://irisunist.wixsite.com/irislab';
+
   const THEME_KEY = 'site-theme';
   function applyTheme(theme) {
     const next = theme === 'dark' ? 'dark' : 'light';
@@ -35,9 +37,33 @@
     initThemeToggle();
   }
 
+  function injectIrisLabFloat() {
+    if (document.querySelector('.iris-lab-float')) return;
+    const link = document.createElement('a');
+    link.className = 'iris-lab-float';
+    link.href = IRIS_LAB_URL;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.setAttribute('data-i18n-aria', 'float.ariaLabel');
+    link.setAttribute('aria-label', 'Visit IRIS Lab at UNIST');
+    link.innerHTML =
+      '<span class="iris-lab-float__body">' +
+      '<span class="iris-lab-float__label" data-i18n="float.currentLab">CURRENT LAB</span>' +
+      '<span class="iris-lab-float__main">' +
+      '<span class="iris-lab-float__main-text" data-i18n="float.irisMain">IRIS Lab · UNIST</span>' +
+      '<span class="iris-lab-float__arrow" aria-hidden="true">↗</span>' +
+      '</span>' +
+      '<span class="iris-lab-float__sub" data-i18n="float.advisor">Prof. Jungho Im</span>' +
+      '</span>';
+    document.body.appendChild(link);
+  }
+
+  injectIrisLabFloat();
+
   window.DesignRefresh = {
     init,
     applyTheme,
+    irisLabUrl: IRIS_LAB_URL,
   };
 
   document.addEventListener('DOMContentLoaded', init);
