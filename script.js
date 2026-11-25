@@ -98,7 +98,10 @@ const translations = {
             title: 'News'
         },
         float: {
-            irisLab: 'IRIS Lab ↗'
+            currentLab: 'CURRENT LAB',
+            irisMain: 'IRIS Lab · UNIST',
+            advisor: 'Prof. Jungho Im',
+            ariaLabel: 'Visit IRIS Lab at UNIST'
         }
     },
     ko: {
@@ -197,7 +200,10 @@ const translations = {
             title: '소식'
         },
         float: {
-            irisLab: 'IRIS 연구실 ↗'
+            currentLab: '현재 소속',
+            irisMain: 'IRIS Lab · UNIST',
+            advisor: '임정호 교수',
+            ariaLabel: 'UNIST IRIS 연구실 방문'
         }
     }
 };
@@ -226,6 +232,23 @@ function applyDataI18n(lang) {
             } else {
                 element.textContent = translation;
             }
+        }
+    });
+
+    document.querySelectorAll('[data-i18n-aria]').forEach((element) => {
+        const key = element.getAttribute('data-i18n-aria');
+        const keys = key.split('.');
+        let translation = translations[lang];
+        for (let i = 0; i < keys.length; i++) {
+            if (translation && translation[keys[i]]) {
+                translation = translation[keys[i]];
+            } else {
+                translation = null;
+                break;
+            }
+        }
+        if (translation) {
+            element.setAttribute('aria-label', translation);
         }
     });
 }
