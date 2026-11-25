@@ -609,7 +609,11 @@ body{background:#f5f6f7 !important;font-family:var(--font-sans);letter-spacing:-
   content: '';
   width: 4px;
   flex-shrink: 0;
-  background: linear-gradient(180deg, #0d7377 0%, #14a085 100%);
+  background: #cbd5e1;
+}
+
+html[data-theme='dark'] .iris-lab-float::before {
+  background: #4b5563;
 }
 
 .iris-lab-float__body {
