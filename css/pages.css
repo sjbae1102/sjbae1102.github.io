@@ -178,7 +178,7 @@ html[data-theme='dark']{--g-soft:rgba(95,214,180,.13);--g-line:rgba(95,214,180,.
 .page-v4 .conference-list li.conf-year::after,.page-v4 .news-year::after{content:'';flex:1;height:1px;background:var(--g-line)}
 .page-v4 .conference-type-badge{display:inline-block !important;padding:1px 10px !important;border-radius:999px !important;background:var(--g-soft) !important;color:var(--g) !important;font-size:12px !important;font-weight:600 !important;margin-top:6px !important}
 .home-v3 .ce p{color:var(--t3)}
-.page-v4 .conference-list li:not(.conf-year):hover .conference-text,.page-v4 .publication-item>ul>li:hover .publication-title-text,.home-v3 .row:hover h3,.home-v3 .pc:hover h3{color:var(--g)}
+.page-v4 .conference-list li:not(.conf-year):hover .conference-text,.page-v4 .publication-item>ul>li:hover .publication-title-text,.home-v3 .row:hover h3,.home-v3 .pc-main:hover h3{color:var(--g)}
 .page-v4 .cv-section>h3::before{content:'';display:inline-block;width:3px;height:16px;border-radius:2px;background:var(--g);margin-right:10px;vertical-align:-2px}
 .page-v4 .publication-item>h3::before,.page-v4 .conference-category>h3::before{content:'';display:inline-block;width:3px;height:16px;border-radius:2px;background:var(--g);margin-right:10px;vertical-align:-2px}
 /* conference: stacked */
